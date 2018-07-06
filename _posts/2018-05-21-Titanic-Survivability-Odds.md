@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Titanic Survivability Odds
-published: False
+published: True
 image: titanic.png
 
 ---
