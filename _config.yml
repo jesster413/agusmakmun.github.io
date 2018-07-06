@@ -16,14 +16,10 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link:
+
     - icon: fa-linkedin
       link: "https://www.linkedin.com/in/jessica-chace/"
-    - icon: fa-stack-exchange
-      link: "#"
+
     - icon: fa-github
       link: "https://github.com/jesster413"
 
