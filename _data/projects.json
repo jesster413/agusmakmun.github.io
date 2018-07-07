@@ -3,39 +3,43 @@
 		"slug": "Titanic-Survivability-Odds",
 		"name": "Titanic Survivability Odds",
 		"image": "titanic.jpeg",
-		"url": "https://www.google.com",
 		"date": "May 2018",
-		"tags": ["Predictive Modeling","Data Analysis"]
+		"tags": ["Predictive Modeling","Classification","Kaggle competition"]
 	},
 	{
 		"slug": "Ames-Iowa-Housing",
 		"name": "Ames, Iowa Housing Prices",
 		"image": "housing.jpeg",
-		"url": "#",
 		"date": "May 2018",
-		"tags": ["Predictive Modeling","Data Analysis"]
+		"tags": ["Predictive Modeling","Regression","Kaggle competition"]
 	},
 	{
 		"slug": "Reddit-Hot-Posts",
 		"name": "Reddit 'Hot' Posts",
 		"image": "reddit.png",
-		"url": "#",
 		"date": "June 2018",
-		"tags": ["Predictive Modeling","Natural Language Processing"]
+		"tags": ["Predictive Modeling","Web Scraping","Natural Language Processing","scikit-learn","Classification"]
 	},
 	{
 		"slug": "West-Nile-Virus",
 		"name": "West Nile Virus",
 		"image": "wnv.jpeg",
 		"date": "June 201",
-		"tags": ["Predictive Modeling","Geospatial", "Data Analysis"]
+		"tags": ["Predictive Modeling","Geospatial Data","Imbalanced Classes","scikit-learn","imblearn","Kaggle competition","Classification"]
 	},
 	{
 		"slug": "SEC-Filings",
 		"name": "SEC Filings",
 		"image": "sec.png",
 		"date": "July 2018",
-		"tags": ["Predictive Modeling","Data Analysis","Natural Language Processing"]
+		"tags": ["Predictive Modeling","Web Scraping","Natural Language Processing","Imbalanced Classes","scikit-learn", "imblearn","Classification"]
+	},
+	{
+		"slug": "Salary-Predictions",
+		"name": "Salary Predictions",
+		"image": "salary.jpg",
+		"date": "June 2018",
+		"tags": ["Predictive Modeling","scikit-learn","Regression"]
 	},
 
 ]
