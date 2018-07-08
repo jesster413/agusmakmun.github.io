@@ -30,10 +30,12 @@ share:
 urls:
     - text: About Me
       url: /about/
-    - text: My Projects
+    - text: Projects
       url: /projects/
-    - text: My Reading List
+    - text: Reading List
       url: /reading/
+    - text: Events
+      url: /events/
     - text: XML Feed
       url: /feed.xml
 
