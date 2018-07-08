@@ -27,12 +27,7 @@ In exploring the null values of my 'Text' column which corresponded to the 'self
 
 With the exception of 'wls' which had 684 missing entries, the rest of my dataset was filled with values.  I decided to fill the missing 'wls' values with 6 since that was the mode for the column.
 
-score
-mean: 1590.903400
-max: 133613.000000
-min: 25
-
-The score stats directly mirrored the 'ups' stats - there was nothing to be gleaned from the 'downs' stats given that all of the data were 0s.  
+The score stats directly mirrored the 'ups' stats with a maximum score of 133,613, a mean score of 1,590 and a minimum score of 25.  There was nothing to be gleaned from the 'downs' stats given that all of the data were 0s.  
 
 I also created two boolean columns 'IsPinned' and 'IsStickied' which I mapped to the 'pinned' and 'stickied' variables.  I then dropped the original 'pinned' and 'stickied' object columns for modeling purposes.
 
@@ -40,16 +35,36 @@ The comments column, however, was the column I was most interested in, since it 
 
 ## Popular, you're going to be pop-u-lar
 
+I then created a bag of words of all of the words from the 'Title' feature using a for-loop running across the rows in the 'Title feature'.  In total, there were 10,445 unique words not including common 'stop' words such as 'the', 'a', & 'and.'  I was able to exclude these common 'stop' words using the 'stop_words' arg in my CountVectorizer, specifying 'english' as my language.  The following words were the top 20 most common words in the 'Title' bag of words.
+
+Word	Count
+0	new	149
+1	just	148
+2	like	119
+3	time	87
+4	day	82
+5	oc	72
+6	people	70
+7	today	70
+8	don	69
+9	years	69
+10	got	69
+11	post	61
+12	happy	60
+13	old	58
+14	year	58
+15	trump	57
+16	best	57
+17	little	56
+18	ve	56
+19	think	52  
+
+I then took those top 20 words and dummified them into columns of their own in my dataframe in the hope that it would improve my model performance.
+
 ![popular.gif](/static/img/popular.gif)
 
-I then created a bag of words with the words in all of my titles with a for-loop running across my 'Title' feature.
+After standardizing my dataset with Standard Scaler and conducting a train-test split, I was ready to run some models.
 
-
-## 7. Fit Models
-
-Linear Regression with Lasso, Ridge
-
-
-## 8. Model Evaluation
+I gridsearched over six different models, including a LogisticRegression, an SGDClassifier, a KNeighborsClassifier, a BernoulliNB, a DecisionTreeClassifier, and a RandomForestClassifier.  Disappointingly, they all performed more or less the same, in the high .60s, low .70s R2 scores.  However, all of the models I ran beat the baseline accuracy score of 0.42779.
 
 ![reddit-models.png](/static/img/reddit-models.png)
