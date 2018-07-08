@@ -19,6 +19,8 @@ This was my first project wherein I had to gather my own data (as opposed to dow
 
 With any Reddit post, there are upwards of 85 identifying features, and while I did pull all 85 of those features for each of my 5,000 posts, I decided to limit the features that I built into my dataframe to those I thought would be most predictive of popularity.  I pared the 85 features down to 14 and stored them in variables.  The features I chose to use in my model were: 'author', 'title', 'subreddit', 'subreddit_subscribers', 'score', 'ups', 'downs', 'num_comments', 'num_crossposts', 'selftext', 'pinned', 'stickied', 'wls', 'created_utc.'  If a post had actual original text, it was stored in the 'selftext' feature, however, when I began to explore my dataset in more depth, I learned that many Reddit posts don't actually have original content, but rather, are links to a previous post.
 
+![heidi.jpg](/static/img/heidi.jpg)
+
 With my dataframe finally built out, I was able to start exploring the posts I pulled.  My un-engineed dataset began with 5000 rows and 17 columns.  When I grouped by 'subreddit', I identified 1950 unique subreddits within my dataset.  While it would be too much to name every single subreddit in this blog post, a few of my favorites were: 'todayilearned', 'mildlyinteresting', and 'Showerthoughts.'
 
 In exploring the null values of my 'Text' column which corresponded to the 'selftext' feature of my scrape from Reddit, only 416 of posts that I pulled had actual text in the post.  The rest were empty and presumably re-posts.  Given this, I decided to fill the missing values with 0 in order to keep track of which rows had actual text.
