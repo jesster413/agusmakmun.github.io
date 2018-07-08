@@ -32,10 +32,11 @@ urls:
       url: /about/
     - text: My Projects
       url: /projects/
+    - text: My Reading List
+      url: /reading/
     - text: XML Feed
       url: /feed.xml
-    - text: Reading List
-      url: /reading/
+
 
 url: "https://jesster413.github.io"
 baseurl: ""
