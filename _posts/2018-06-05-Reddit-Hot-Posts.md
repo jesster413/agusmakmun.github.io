@@ -37,34 +37,33 @@ The comments column, however, was the column I was most interested in, since it 
 
 I then created a bag of words of all of the words from the 'Title' feature using a for-loop running across the rows in the 'Title feature'.  In total, there were 10,445 unique words not including common 'stop' words such as 'the', 'a', & 'and.'  I was able to exclude these common 'stop' words using the 'stop_words' arg in my CountVectorizer, specifying 'english' as my language.  The following words were the top 20 most common words in the 'Title' bag of words.
 
-Word	Count
-0	new	149
-1	just	148
-2	like	119
-3	time	87
-4	day	82
-5	oc	72
-6	people	70
-7	today	70
-8	don	69
-9	years	69
-10	got	69
-11	post	61
-12	happy	60
-13	old	58
-14	year	58
-15	trump	57
-16	best	57
-17	little	56
-18	ve	56
-19	think	52  
+| Word   | Count |
+|--------|-------|
+| new    | 149   |
+| just   | 148   |
+| like   | 119   |
+| time   | 87    |
+| day    | 82    |
+| oc     | 72    |
+| people | 70    |
+| today  | 70    |
+| don    | 69    |
+| years  | 69    |
+| got    | 69    |
+| post   | 61    |
+| happy  | 60    |
+| old    | 58    |
+| year   | 58    |
+| trump  | 57    |
+| best   | 57    |
+| little | 56    |
+| ve     | 56    |
+| think  | 52    |
 
-I then took those top 20 words and dummified them into columns of their own in my dataframe in the hope that it would improve my model performance.
+I then took those top 20 words and dummified them into columns of their own in my dataframe in the hope that it would improve my model performance.  After standardizing my dataset with Standard Scaler and conducting a train-test split, I was ready to run some models.
 
 ![popular.gif](/static/img/popular.gif)
 
-After standardizing my dataset with Standard Scaler and conducting a train-test split, I was ready to run some models.
-
-I gridsearched over six different models, including a LogisticRegression, an SGDClassifier, a KNeighborsClassifier, a BernoulliNB, a DecisionTreeClassifier, and a RandomForestClassifier.  Disappointingly, they all performed more or less the same, in the high .60s, low .70s R2 scores.  However, all of the models I ran beat the baseline accuracy score of 0.42779.
+I gridsearched over six different models, including a LogisticRegression, an SGDClassifier, a KNeighborsClassifier, a BernoulliNB, a DecisionTreeClassifier, and a RandomForestClassifier.  They all performed more or less the same, with R2 scores in the high .60s and low.  Among the six models, the Random Forest model performed the best.  While I had hoped that these training scores had been higher, all of the models I ran beat the baseline accuracy score of 0.42779.
 
 ![reddit-models.png](/static/img/reddit-models.png)
