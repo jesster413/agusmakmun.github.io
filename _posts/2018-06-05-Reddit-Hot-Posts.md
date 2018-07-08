@@ -31,29 +31,100 @@ The score stats directly mirrored the 'ups' stats with a maximum score of 133,61
 
 I also created two boolean columns 'IsPinned' and 'IsStickied' which I mapped to the 'pinned' and 'stickied' variables.  I then dropped the original 'pinned' and 'stickied' object columns for modeling purposes.
 
-The comments column, however, was the column I was most interested in, since it made sense that a posts popularity might be greatly correlated with its volume of comments.  For the posts that I pulled, the max number of comments was 20,246, the minimum, 0, the mean, 76, and the median, 16.  While I did pull these posts from the 'Hot Posts' section from Reddit to begin with, I was tasked with identifying and mapping posts whose comments were above a certain threshold.  I used a lambda function to create a new column called 'Hot' which represented posts 16 comments (50% percentile) and above and another column called 'Super Hot' which represented posts with 44 comments (75% percentile) and above.
+The comments column, however, was the column I was most interested in, since it made sense that a post's popularity might be greatly correlated with its volume of comments.  For the posts that I pulled, the max number of comments was 20,246, the minimum, 0, the mean, 76, and the median, 16.  While I did pull these posts from the 'Hot Posts' section from Reddit to begin with, I was tasked with identifying and mapping posts whose comments were above a certain threshold.  I used a lambda function to create a new column called 'Hot' which represented posts 16 comments (50% percentile) and above and another column called 'Super Hot' which represented posts with 44 comments (75% percentile) and above.
 
 ## Popular, you're going to be pop-u-lar
 
-I then created a bag of words of all of the words from the 'Title' feature using a for-loop running across the rows in the 'Title feature'.  In total, there were 10,445 unique words not including common 'stop' words such as 'the', 'a', & 'and.'  I was able to exclude these common 'stop' words using the 'stop_words' arg in my CountVectorizer, specifying 'english' as my language.  The following words were the top 20 most common words in the 'Title' bag of words.
+I then created a bag of words of all of the words from the 'Title' feature using a for-loop running across the rows in the 'Title feature'.  In total, there were 10,445 unique words not including common 'stop' words such as 'the', 'a', & 'and.'  I was able to exclude these common 'stop' words using the 'stop_words' arg in my CountVectorizer, specifying 'english' as my language.
 
-                | Word   | Count |        | Word   | Count |  
-                |--------|-------|        |--------|-------|
-                | new    | 149   |        | got    | 69    |
-                | just   | 148   |        | post   | 61    |
-                | like   | 119   |        | happy  | 60    |
-                | time   | 87    |        | old    | 58    |
-                | day    | 82    |        | year   | 58    |
-                | oc     | 72    |        | trump  | 57    |
-                | people | 70    |        | best   | 57    |
-                | today  | 70    |        | little | 56    |
-                | don    | 69    |        | ve     | 56    |
-                | years  | 69    |        | think  | 52    |
+<!-- | Word | Count |
+|:--------|:-------:|
+| new     | 149   |
+|----
+| just    | 148   |
+|----
+| like    | 119   |
+|----
+| time    | 87    |
+|----
+|day      | 82
+|----
+| oc      | 72
+|----
+| people  | 70
+|----
+| today   | 70
+|----
+| don     | 69
+|----
+| years   | 69
+|----
+|got      | 69
+|----
+| post    | 61
+|----
+| happy   | 60
+|----
+| old     | 58
+|----
+| year    | 58
+|----
+| trump   | 57
+|----
+| best    | 57
+|----
+| little  | 56
+|----
+| ve      | 56
+|----
+| think   | 52
+|=====
+{: rules="groups"} -->
 
 I then took those top 20 words and dummified them into columns of their own in my dataframe in the hope that it would improve my model performance.  After standardizing my dataset with Standard Scaler and conducting a train-test split, I was ready to run some models.
 
-![popular.gif](/static/img/popular.gif)
+<!-- ![popular.gif](/static/img/popular.gif) -->
 
-I gridsearched over six different models, including a LogisticRegression, an SGDClassifier, a KNeighborsClassifier, a BernoulliNB, a DecisionTreeClassifier, and a RandomForestClassifier.  They all performed more or less the same, with R2 scores in the high .60s and low.  Among the six models, the Random Forest model performed the best.  While I had hoped that these training scores had been higher, all of the models I ran beat the baseline accuracy score of 0.42779.
+I gridsearched over six different models, including a LogisticRegression, an SGDClassifier, a KNeighborsClassifier, a BernoulliNB, a DecisionTreeClassifier, and a RandomForestClassifier.  They all performed more or less the same, with R2 scores in the high .60s and low.  Among the six models, the Random Forest model performed the best.  While I had hoped that these training scores had been higher, all of the models I ran beat the baseline accuracy score of 0.42779.  The following is an executive summary of the six models I ran:
+
+```
+GridSearchCV across LogisticRegression:
+Best Parameters = {'logreg__C': 0.44306214575838776, 'logreg__penalty': 'l1', 'logreg__solver': 'liblinear'}
+Best CV Score = 0.7002666666666667
+Train Score = 0.7010666666666666
+Test Score = 0.72
+
+GridSearchCV across SGDClassifier:
+Best Parameters = {'SGD__eta0': 1, 'SGD__learning_rate': 'invscaling', 'SGD__loss': 'log', 'SGD__penalty': 'l1'}
+Best CV Score = 0.692
+Train Score = 0.6981333333333334
+Test Score = 0.6984
+
+GridSearchCV across kNN Classification:
+Best Parameters = {'knn__metric': 'manhattan', 'knn__n_neighbors': 21, 'knn__weights': 'distance'}
+Best CV Score = 0.712
+Train Score = 1.0
+Test Score = 0.7072
+
+GridSearchCV across BernoulliNB:
+Best Parameters = {'bNB__alpha': 1e-05}
+Best CV Score = 0.6589333333333334
+Train Score = 0.6666666666666666
+Test Score = 0.6816
+
+GridSearchCV across Decision Tree:
+Best Parameters = {'dt__max_depth': 3, 'dt__min_samples_split': 2}
+Best CV Score = 0.7176
+Train Score = 0.7192
+Test Score = 0.7272
+
+GridSearchCV across Random Forest:
+Best Parameters = {'rf__max_depth': 5, 'rf__n_estimators': 10}
+Best CV Score = 0.7208
+Train Score = 0.7408
+Test Score = 0.7328
+```
+
+I summarized the above into a bar plot, with the bold lines at the top of each bar representing the standard deviation of each cross validation run.  The red horizontal line represents the baseline accuracy score.
 
 ![reddit-models.png](/static/img/reddit-models.png)
