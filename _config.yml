@@ -34,6 +34,8 @@ urls:
       url: /projects/
     - text: XML Feed
       url: /feed.xml
+    - text: Reading List
+      url: /reading/
 
 url: "https://jesster413.github.io"
 baseurl: ""
