@@ -37,28 +37,18 @@ The comments column, however, was the column I was most interested in, since it 
 
 I then created a bag of words of all of the words from the 'Title' feature using a for-loop running across the rows in the 'Title feature'.  In total, there were 10,445 unique words not including common 'stop' words such as 'the', 'a', & 'and.'  I was able to exclude these common 'stop' words using the 'stop_words' arg in my CountVectorizer, specifying 'english' as my language.  The following words were the top 20 most common words in the 'Title' bag of words.
 
-| Word   | Count |
-|--------|-------|
-| new    | 149   |
-| just   | 148   |
-| like   | 119   |
-| time   | 87    |
-| day    | 82    |
-| oc     | 72    |
-| people | 70    |
-| today  | 70    |
-| don    | 69    |
-| years  | 69    |
-| got    | 69    |
-| post   | 61    |
-| happy  | 60    |
-| old    | 58    |
-| year   | 58    |
-| trump  | 57    |
-| best   | 57    |
-| little | 56    |
-| ve     | 56    |
-| think  | 52    |
+                | Word   | Count |        | Word   | Count |  
+                |--------|-------|        |--------|-------|
+                | new    | 149   |        | got    | 69    |
+                | just   | 148   |        | post   | 61    |
+                | like   | 119   |        | happy  | 60    |
+                | time   | 87    |        | old    | 58    |
+                | day    | 82    |        | year   | 58    |
+                | oc     | 72    |        | trump  | 57    |
+                | people | 70    |        | best   | 57    |
+                | today  | 70    |        | little | 56    |
+                | don    | 69    |        | ve     | 56    |
+                | years  | 69    |        | think  | 52    |
 
 I then took those top 20 words and dummified them into columns of their own in my dataframe in the hope that it would improve my model performance.  After standardizing my dataset with Standard Scaler and conducting a train-test split, I was ready to run some models.
 
