@@ -72,6 +72,43 @@ Explain how Balanaced Bagging Classifier words here.
 
 Talk about scoring on 'roc-auc' instead of accuracy here.  What is roc-auc.
 
+Model Evaluation: Confusion Matrix and Classification Report
+
+Confusion Matrix for Random Forest
+True Negatives: 1800
+
+False Positives: 205
+
+False Negatives: 55
+
+True Positives: 59
+
+Confusion Matrix for XGBoost
+True Negatives: 1758
+
+False Positives: 247
+
+False Negatives: 41
+
+True Positives: 73
+
+Confusion Matrix for Balanced Bagging Classifer
+True Negatives: 1803
+
+False Positives: 202
+
+False Negatives: 58
+
+True Positives: 56
+
+![wnv-confusion.png](/static/img/wnv-confusion.png)
+
+
+
+
+Random Forest | XGBoost | Balanced Bagging Classifier
+- | - | - |
+![rf-rocauc.png](/static/img/rf-rocauc.png) | ![xgb-rocauc.png](/static/img/xgb-rocauc.png) | ![bbc-rocauc.png](/static/img/bbc-rocauc.png)
 
 
 ---
