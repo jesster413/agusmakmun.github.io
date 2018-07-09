@@ -15,9 +15,9 @@ While the infamous shipwreck happened over 100 years ago, its cultural significa
 
 For this project, I want to predict a passenger's fate using machine learning across several different types of models.  I am also interested in identifying which features had the greatest impact on a person's chances of survival.
 
-This dataset is neatly packaged in a csv file that can be downloaded [here](https://www.kaggle.com/c/titanic/data) from Kaggle.  Other projects are not as accessible, and I explore other methods of extracting data in other posts.  
+This dataset is neatly packaged in a csv file that can be downloaded from Kaggle's [Titanic competition](https://www.kaggle.com/c/titanic/data) page.  Other projects are not as accessible, and I explore other methods of extracting data in other posts.  
 
-After I downloaded the 'train' set, I read the data into my Jupyter Notebook to begin my analysis.  You can see all of the code I wrote for this project [here].
+After I downloaded the 'train' set, I read the data into my Jupyter Notebook to begin my analysis.  You can see all of the code associated with this project in the corresponding [GitHub repo](https://github.com/jesster413/Titanic-Survival-Predictions).
 
 ## "Remember, they love money, so pretend like you own a gold mine and you're in the club"
 
