@@ -110,6 +110,8 @@ Random Forest | XGBoost | Balanced Bagging Classifier
 - | - | - |
 ![rf-rocauc.png](/static/img/rf-rocauc.png) | ![xgb-rocauc.png](/static/img/xgb-rocauc.png) | ![bbc-rocauc.png](/static/img/bbc-rocauc.png)
 
+Then talk here about submitting predictions on the test set and submitting it to Kaggle.
+
 
 ---
 [^1]: [http://www.northwestmvcd.org/Northwestmvcd/West_Nile.html](http://www.northwestmvcd.org/Northwestmvcd/West_Nile.html)
