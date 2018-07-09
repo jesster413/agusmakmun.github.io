@@ -12,7 +12,6 @@ For this project, I was tasked with analyzing a subset of Reddit's "Hot Posts" s
 
 With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) keystrokes, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.
 
-
 ## Let's give 'em something to talk about
 
 This was my first project wherein I had to gather my own data (as opposed to downloading a dataset from Kaggle, for example.)  In order to build out my dataset, I scraped 5,000 posts from the "Hot Posts" section of Reddit's website using the 'requests' and 'Beautiful Soup' libraries.  Later on in the project, I used Reddit's popular API wrapper PRAW to grab some comments from my top 50 'hot' posts.  After a few hours (with three second delays in between each set of 25 posts pulled so as not to be black listed by Reddit's servers), my scrape was complete.
@@ -91,7 +90,7 @@ I gridsearched over six different models, including a LogisticRegression, an SGD
 
 NOTE: Talk here about features/coeffs - what actually contributed the most to the prediction??
 
-## What we talk about when we post on Reddit
+## Rumor has it
 
 With modeling done, I wanted to continue exploring the text in my posts to see what, if any, themes rose to the top.  Because I had already done a CountVectorizer on the titles of my posts, I wanted to try another natural language processing technique to help me better understand my data.  So, I subset my data to 'hot' posts only (posts with 16 or more comments) and ran a for-loop across those rows to create another bag of words - this time, filled with words that were linked to 'hot' posts.  I did the same thing again to my 'super hot' posts.  With these two bags of words, I then used a word cloud on the data set to visually inspect any themes.  The images below represent the results of this analysis.  Given that one of the most common words in the 'super hot' bag of words was 'need', I suspect that more than a few people on Reddit are giving some (unsolicited) advice.
 
