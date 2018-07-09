@@ -36,6 +36,8 @@ urls:
       url: /reading/
     - text: Events
       url: /events/
+    - text: Contact
+      url: /contact/
     - text: XML Feed
       url: /feed.xml
 
