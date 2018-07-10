@@ -55,7 +55,23 @@ XGBoost is an optimized distributed gradient boosting library designed to be hig
 
 Explain how Balanaced Bagging Classifier words here.
 
+## We're going to want to run more tests
+
 Talk about scoring on 'roc-auc' instead of accuracy here.  What is roc-auc.
+
+Since to compare two different models it is often more convenient to have a single metric rather than several ones, we compute two metrics from the confusion matrix, which we will later combine into one:
+
+True positive rate (TPR), aka. sensitivity, hit rate, and recall, which is defined as TPTP+FN. Intuitively this metric corresponds to the proportion of positive data points that are correctly considered as positive, with respect to all positive data points. In other words, the higher TPR, the fewer positive data points we will miss.
+
+
+False positive rate (FPR), aka. fall-out, which is defined as FPFP+TN. Intuitively this metric corresponds to the proportion of negative data points that are mistakenly considered as positive, with respect to all negative data points. In other words, the higher FPR, the more negative data points will be missclassified.
+To combine the FPR and the TPR into one single metric, we first compute the two former metrics with many different threshold (for example 0.00;0.01,0.02,…,1.00) for the logistic regression, then plot them on a single graph, with the FPR values on the abscissa and the TPR values on the ordinate. The resulting curve is called ROC curve, and the metric we consider is the AUC of this curve, which we call AUROC.
+
+The ROC-AUC metric is a comparison of these two metrics - the true positive rate and the false positive rate.  I plotted the ROC-AUC curves of my three models below.
+
+Random Forest | XGBoost | Balanced Bagging Classifier
+- | - | - |
+![rf-rocauc.png](/static/img/rf-rocauc.png) | ![xgb-rocauc.png](/static/img/xgb-rocauc.png) | ![bbc-rocauc.png](/static/img/bbc-rocauc.png)
 
 Model Evaluation: Confusion Matrix and Classification Report
 
@@ -91,9 +107,7 @@ True Positives: 56
 
 
 
-Random Forest | XGBoost | Balanced Bagging Classifier
-- | - | - |
-![rf-rocauc.png](/static/img/rf-rocauc.png) | ![xgb-rocauc.png](/static/img/xgb-rocauc.png) | ![bbc-rocauc.png](/static/img/bbc-rocauc.png)
+
 
 Then talk here about submitting predictions on the test set and submitting it to Kaggle.
 
