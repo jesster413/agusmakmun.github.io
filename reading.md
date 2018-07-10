@@ -4,10 +4,18 @@ title: Reading List
 permalink: /reading/
 ---
 
-Here's a list of data science/machine learning books that I'm looking forward to reading.  Feel free to reach out with suggestions!
+Here's a list of data science/machine learning books/blogs that I've read or am looking forward to read.  I would love to hear new suggestions and expand this list.
 
-### Machine Learning Book 1
+[An Introduction to Statistical Learning with Applications in R](https://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf)
 
-## Machine Learning Book 2
+[Paul Ford's 'What is Code'](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)
 
-# Machine Learning Book 3
+[Dan Bader's Blog](https://dbader.org/blog/)
+
+[Toward Data Science](https://towardsdatascience.com/)
+
+[Probabilistic Programming and Bayesian Methods for Hackers](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
+
+[Python to Scala](https://legacy.gitbook.com/book/wrobstory/python-to-scala/details)
+
+[GitHub History of Scala](https://www.datacamp.com/projects/163)
