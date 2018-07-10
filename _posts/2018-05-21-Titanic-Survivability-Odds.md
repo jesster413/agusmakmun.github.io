@@ -5,11 +5,11 @@ published: True
 image: titanic.png
 excerpt_separator: <!--more-->
 
----
-
 While the infamous shipwreck happened over 100 years ago, its cultural significance is sunk deep into our collective memory as one of the most tragic manifestations of hubris, classism, and dumb luck.  To that end, I analyzed the data provided on Kaggle's website to determine more specifically how features such as age, gender, class, and wealth predetermined a passenger's fate on April 15, 1911 aboard the USS Titanic.
 
 <!--more-->
+
+---
 
 ## "Where to, Miss?"
 
