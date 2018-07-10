@@ -8,11 +8,13 @@ Here's a list of data science/machine learning books/blogs that I've read or am 
 
 [An Introduction to Statistical Learning with Applications in R](https://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf)
 
+[Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python?a_aid=keras&a_bid=76564dff)
+
 [Paul Ford's 'What is Code'](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)
 
 [Dan Bader's Blog](https://dbader.org/blog/)
 
-[Toward Data Science](https://towardsdatascience.com/)
+[Towards Data Science](https://towardsdatascience.com/)
 
 [Probabilistic Programming and Bayesian Methods for Hackers](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
 
