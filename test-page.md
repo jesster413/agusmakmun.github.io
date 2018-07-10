@@ -64,7 +64,5 @@ label {
 
 Comments
 --------
-{% raw %}
-{{include comments.html replies_to=page.url}}
-{{include comment-form.html replies_to=page.url}}
-{% endraw %}
+{ {include comments.html replies_to=page.url} }
+{ {include comment-form.html replies_to=page.url} }
