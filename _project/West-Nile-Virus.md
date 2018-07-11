@@ -35,7 +35,7 @@ Given that the 'Species' and 'Trap' features were categorical data, I label enco
 
 Finally, I merged the weather set onto my train set in preparation of modeling.
 
-## We're going to need to run more tests
+## We're going to need to run some tests
 
 One of the most difficult aspects of this project was the fact that the baseline accuracy for the dataset was 95% accuracy.  This meant that if you were to guess that WNV was not present, you would be correct 95 out of 100 times.  While this may not seem like a big deal, it is very costly to the City to A. spray expensive pesticides where WNV is not present and run the risk of unnecessarily exposing residents to the toxins (a false negative) and B. not spray pesticides where WNV is present and run the risk of residents becoming ill with the virus and potentially being sued for negligence (a false positive).
 
@@ -67,43 +67,9 @@ Random Forest | XGBoost | Balanced Bagging Classifier
 - | - | - |
 ![rf-rocauc.png](/static/img/rf-rocauc.png) | ![xgb-rocauc.png](/static/img/xgb-rocauc.png) | ![bbc-rocauc.png](/static/img/bbc-rocauc.png)
 
-I also ran a confusion matrix and classification report on the three models I ran as well.
-
-Model Evaluation: Confusion Matrix and Classification Report
-
-Confusion Matrix for Random Forest
-True Negatives: 1800
-
-False Positives: 205
-
-False Negatives: 55
-
-True Positives: 59
-
-Confusion Matrix for XGBoost
-True Negatives: 1758
-
-False Positives: 247
-
-False Negatives: 41
-
-True Positives: 73
-
-Confusion Matrix for Balanced Bagging Classifer
-True Negatives: 1803
-
-False Positives: 202
-
-False Negatives: 58
-
-True Positives: 56
+Because the baseline accuracy score was so high already, I wanted to take a closer look at how many positive datapoints I correctly (and incorrectly) predicted, so I ran a confusion matrix on all three models.  I was mostly concerned with reducing the amount of false positives as much as I could while increasing the true positives.  For example, while the XGBoost model produced 73 true positives, it also predicted 247 false positives.  In comparison, the Balanced Bagging Classifier model only predicted 56 positives correctly, however, it also only incorrectly predicted 202 positives.  The decision of which model's trade-off to choose depends on the goals of the project.  On the one hand, it might be better to spray pesticides on more areas that were correctly predicted to have WNV.  On the other hand, it also might be more expensive to the City.  For illustrative purposes, I plotted the true positives and false positives of all three models below.
 
 ![wnv-confusion.png](/static/img/wnv-confusion.png)
-
-
-
-
-
 
 Then talk here about submitting predictions on the test set and submitting it to Kaggle.
 
@@ -113,4 +79,4 @@ Then talk here about submitting predictions on the test set and submitting it to
 [^2]: [http://chicago.cbslocal.com/2018/05/30/west-nile-virus-reported/](http://chicago.cbslocal.com/2018/05/30/west-nile-virus-reported/)
 [^3]: [https://xgboost.ai/about](https://xgboost.ai/about)
 [^4]: [https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it](https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
-[^5][https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it](https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
+[^5]:[https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it](https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
