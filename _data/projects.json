@@ -30,7 +30,7 @@
 	{
 		"slug": "SEC-Filings",
 		"name": "SEC Filings",
-		"image": "sec.png",
+		"image": "sec-resized.png",
 		"date": "July 2018",
 		"tags": ["Predictive Modeling","Web Scraping","Natural Language Processing","Imbalanced Classes","scikit-learn", "imblearn","Classification"]
 	},
