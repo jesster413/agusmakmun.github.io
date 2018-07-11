@@ -35,7 +35,7 @@ Given that the 'Species' and 'Trap' features were categorical data, I label enco
 
 Finally, I merged the weather set onto my train set in preparation of modeling.
 
-## What's the Prognosis?
+## We're going to need to run more tests
 
 One of the most difficult aspects of this project was the fact that the baseline accuracy for the dataset was 95% accuracy.  This meant that if you were to guess that WNV was not present, you would be correct 95 out of 100 times.  While this may not seem like a big deal, it is very costly to the City to A. spray expensive pesticides where WNV is not present and run the risk of unnecessarily exposing residents to the toxins (a false negative) and B. not spray pesticides where WNV is present and run the risk of residents becoming ill with the virus and potentially being sued for negligence (a false positive).
 
@@ -49,29 +49,25 @@ What does it stand for. Explain how SMOTEEN works here - it synthetically create
 
 I ran three models, Random Forest Classifier, XGBoost, and a Balanced Bagging Classifier.
 
-I installed the [XGBoost](https://github.com/dmlc/xgboost) package.
+I installed the [XGBoost](https://github.com/dmlc/xgboost) package.  XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples.[^3]  
 
-XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples.[^3]  
+BalancedBaggingClassifier allows to resample each subset of data before to train each estimator of the ensemble. In short, it combines the output of an EasyEnsemble sampler with an ensemble of classifiers (i.e. BaggingClassifier). Therefore, BalancedBaggingClassifier takes the same parameters than the scikit-learn BaggingClassifier.
 
-Explain how Balanaced Bagging Classifier words here.
+## What's the prognosis?
 
-## We're going to want to run more tests
+ROC-AUC is short for Receiver Operating Characteristic - Area Under the Curve.  It is a metric created by plotting the true positive rate against the false positive rate.
 
-Talk about scoring on 'roc-auc' instead of accuracy here.  What is roc-auc.
+The true positive rate is also known as recall, where true positives are divided by the sum of true positives and false negatives.  The true positive rate is a metric that evaluates the proportion of positive data points that were correctly predicted as positive.  A higher true positive rate means better accuracy with respect to positive data points.[^4]
 
-Since to compare two different models it is often more convenient to have a single metric rather than several ones, we compute two metrics from the confusion matrix, which we will later combine into one:
+The false positive rate is called the fall-out and is calculated by the number of false positives divided by the sum of false positives and true negatives.  This can be interpreted as the proportion of negative data points that were incorrectly predicted as positive.  A higher false positive rate means more negative data points are classified incorrectly as positive.[^5]
 
-True positive rate (TPR), aka. sensitivity, hit rate, and recall, which is defined as TPTP+FN. Intuitively this metric corresponds to the proportion of positive data points that are correctly considered as positive, with respect to all positive data points. In other words, the higher TPR, the fewer positive data points we will miss.
-
-
-False positive rate (FPR), aka. fall-out, which is defined as FPFP+TN. Intuitively this metric corresponds to the proportion of negative data points that are mistakenly considered as positive, with respect to all negative data points. In other words, the higher FPR, the more negative data points will be missclassified.
-To combine the FPR and the TPR into one single metric, we first compute the two former metrics with many different threshold (for example 0.00;0.01,0.02,…,1.00) for the logistic regression, then plot them on a single graph, with the FPR values on the abscissa and the TPR values on the ordinate. The resulting curve is called ROC curve, and the metric we consider is the AUC of this curve, which we call AUROC.
-
-The ROC-AUC metric is a comparison of these two metrics - the true positive rate and the false positive rate.  I plotted the ROC-AUC curves of my three models below.
+I plotted the ROC-AUC curves of my three models below.
 
 Random Forest | XGBoost | Balanced Bagging Classifier
 - | - | - |
 ![rf-rocauc.png](/static/img/rf-rocauc.png) | ![xgb-rocauc.png](/static/img/xgb-rocauc.png) | ![bbc-rocauc.png](/static/img/bbc-rocauc.png)
+
+I also ran a confusion matrix and classification report on the three models I ran as well.
 
 Model Evaluation: Confusion Matrix and Classification Report
 
@@ -116,3 +112,5 @@ Then talk here about submitting predictions on the test set and submitting it to
 [^1]: [http://www.northwestmvcd.org/Northwestmvcd/West_Nile.html](http://www.northwestmvcd.org/Northwestmvcd/West_Nile.html)
 [^2]: [http://chicago.cbslocal.com/2018/05/30/west-nile-virus-reported/](http://chicago.cbslocal.com/2018/05/30/west-nile-virus-reported/)
 [^3]: [https://xgboost.ai/about](https://xgboost.ai/about)
+[^4]: [https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it](https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
+[^5][https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it](https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
