@@ -4,6 +4,7 @@ title: Reddit Hot Posts
 published: True
 image: titanic.png
 comments: true
+category: Natural Language Processing
 
 ---
 
