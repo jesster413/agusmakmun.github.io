@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Reading List
-permalink: /reading/
+title: Resources
+permalink: /resources/
+comments: true
 ---
 
-Here's a list of data science/machine learning books/blogs that I've read or am looking forward to read.  I would love to hear new suggestions and expand this list.
+Here's a list of data science related resources that I've collected so far.  I would love to hear new suggestions and expand this list.
 
 ## Books
 
@@ -28,3 +29,15 @@ Here's a list of data science/machine learning books/blogs that I've read or am 
 [<span style="font-size:1.5em;">GitHub History of Scala</span>](https://www.datacamp.com/projects/163)
 
 ## Podcasts
+
+[<span style="font-size:1.5em;">99% Invisible</span>](https://99percentinvisible.org/episodes/)
+
+[<span style="font-size:1.5em;">DataFramed</span>](https://www.datacamp.com/community/podcast)
+
+[<span style="font-size:1.5em;">Data Skeptic</span>](https://dataskeptic.com/podcast?limit=10&offset=0)
+
+[<span style="font-size:1.5em;">Storytelling with Data</span>](http://www.storytellingwithdata.com/podcast/)
+
+[<span style="font-size:1.5em;">Sum of All Parts</span>](http://www.abc.net.au/radionational/programs/sum-of-all-parts/)
+
+[<span style="font-size:1.5em;">Undiscovered</span>](https://www.undiscoveredpodcast.org/)
