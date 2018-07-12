@@ -27,14 +27,33 @@ But what about my not_target set?  If I was going to make predictions, I needed 
 
 With CIK ID numbers for both of my target and not_target, I was able to scrape the SEC website for indices of filings for all of my corporates (target and not_target included) using a nested for loop with the requests and Beautiful soup libraries.  Having saved all of my filings in a list for each of my 65,000 rows, I then transformed those individual filings into their own unique dummy columns and filled each column with the value counts of the corporate.  With this final transformation, I had a working dataset with target and not_target values that I could analyze and subsequently feed into a model.
 
+This is for mean number of active years.  So what this is saying is that the average amount of years active for the Indicted class (175 cases) is just under half the average number of years for the Not_Indicted class (65,324).  And this makes sense given that many of the indicted corporates were not even active for a full year, as visualized in the plot below.  
+
+![Years_Active.png](/static/img/Years_Active.png)
 
 Indicted Stats: count    175.000000
 mean       3.320000
+std        4.627554
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        6.000000
+max       15.000000
+Name: Years_Active, dtype: float64
 
 Not_Indicted Stats: count    65324.000000
 mean         6.738473
+std          4.803204
+min          0.000000
+25%          3.000000
+50%          6.000000
+75%         11.000000
+max         15.000000
+Name: Years_Active, dtype: float64
+
 
 For Indicted: the maximum amount of 10-Qs filed was 14, less than half the amount of 10-Qs filed for the Not_Indicted (30)
+
 
 ## Balancing the scales
 
