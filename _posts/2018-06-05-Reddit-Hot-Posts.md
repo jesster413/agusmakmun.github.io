@@ -4,7 +4,6 @@ title: Reddit Hot Posts
 published: True
 image: titanic.png
 comments: true
-categories: bash
 
 ---
 
