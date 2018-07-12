@@ -11,7 +11,7 @@ Talk more here about SEC filings in general and who is required to submit filing
 
 Every corporation listed on a U.S. stock exchange is required to file annual reports with the SEC. These reports—called “10-K forms”—are intended to help investors and regulators better understand the risks, assets, and current leadership of a company in order to make informed investment decisions. One of the requirements of a 10-K filing is that it must include a section that lists any other companies that are owned by the corporation making the filing. This “Exhibit 21” provides a rough snapshot of the ownership hierarchy of the subsidiary “child” companies along with the location or jurisdiction of incorporation of each subsidiary. Thanks to the efforts of various government transparency advocates, the SEC makes all of this filing information available on the web for free.[^1](http://api.corpwatch.org/documentation/faq.html)
 
-## All rise
+## Identifying the target
 
 My first task was to identify my targets so I could train my model on what suspicious cases might look like.  I researched SEC indictments reports and found that the SEC releases annual reports of their enforcement cases.  [For example](https://www.sec.gov/files/2017-03/secstats2016.pdf), in these reports I found, there is a list of indictments with information about the defendant (either an individual or a corporation) as well as date information and related charges.  I located reports for the years 2006-2016.  Given that these reports were in pdf format, my first task was to find a way to extract the information I needed into a format that I could eventually feed into my model.  I first tried using a package I found that reads in material from pdfs, but because of the inherent unstable process of extracting text, the formula I wrote to extract the text from the first report did not extract text in the same way as the next.  Because I only had a couple of weeks to complete this project and needed to extract text from eleven reports just to identify my targets, I quickly abandoned this method.  I later found a free website that more accurately (and quickly) converted my reports to excel files.  In data science as in many disciplines, sometimes the simplest tool is the best.
 
@@ -21,7 +21,7 @@ The next big hurdle to overcome was the fact that names of individuals and corpo
 
 For now, I manually entered the names of the cases into the EDGAR search field to identify their corresponding CIK ID Number.  Because I didn't want to manually search 5,000 entries, I pared my initial list of defendants down to corporations.  Many of the names of the corporate defendants did not turn up a CIK number.  (For some cases, this makes sense given that these corporations were accused of financial crime and may never have filed the required reports).  From the 1600 or so corporate cases I had, I was able to identify 175 corporates with CIK ID numbers.  I finally had my target set.
 
-## Call your next witness, please
+## Putting the case together
 
 But what about my not_target set?  If I was going to make predictions, I needed to build out my dataset with not_target values.  Initially, I thought about doing the same process over again with just a random list of companies from the S&P500, but after more research, I found a [similar project](http://api.corpwatch.org/) that had already done some of the work that I wanted to.  Given my time constraints, I decided to download their datasets, which also identifies corporations by CIK numbers.  These datasets contained the types of data points I was looking for, namely, locations, years active, and identification numbers.  I suspected that the 175 target corporations I had previously identified were somewhere in the 65,000 rows of corporates, I subset my target data set out of the much larger not_target dataset.  When I compared the shapes of the prior not_target to the new not_target, sure enough, 175 rows were dropped.  I created a new column within my new not_target dataset called 'Indicted' and set it to '0' - my not_target column.  Then, I concatenated my target dataset on the 0 axis with its corresponding 'Indicted' column and set it to 1, meaning, positive for having been indicted.  
 
@@ -46,7 +46,7 @@ Before running the models, however, I wanted to implement SMOTEENN (which I have
 
 I ran four models: Random Forest, a Decision Tree, XGBoost, and a Balanced Bagging Classifier.  I chose these models based on their past performance with some of my classification problems as well as their computation speed.  Maybe talk here about how you explained them in depth in the WNV project or should I re-explain here?
 
-## Has the jury reached a verdict?
+## Reaching a verdict
 
 Talk here about cross-val results and the test results.  What was I most concerned with in this project (false positives - because accusing someone of financial crime is a serious thing and can be extremely costly to the SEC, both in terms of potential monetary penalties when the corporation turns around and sues the government as well as lost faith in the justice system.)
 
@@ -90,8 +90,17 @@ False Negatives: 11
 
 True Positives: 22
 
+precision    recall  f1-score   support
+
+      0       0.99      1.00      1.00      2500
+      1       1.00      0.52      0.69        44
+
+avg / total       0.99      0.99      0.99      2544
+
+Feature Selection features: '2-A', 'ADV-H-T', 'DEFR14C', 'DOS', 'SC 14F1/A', 'STOP ORDER',
 
 
+## Going to Press
 
 
 
