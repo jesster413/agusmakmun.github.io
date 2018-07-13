@@ -37,27 +37,17 @@ Using Select KBest, I identified features that were most correlated to my minori
 
 '1-A/A' (Regulation A Offering Statement under the Securities Exchange Act of 1933[^1])
 
-![1-A.png](/static/img/1-A.png)
-
 '2-A' (Report of Sales and Uses of Proceeds, is a requirement under Rule 257 of Regulation A of the Securities Exchange Act of 1933[^2]
-
-![2-A.png](/static/img/2-A.png)
 
 'ADV-H-T' (Application for Temporary Hardship)[^3]
 
-![ADVHT.png](/static/img/ADVHT.png)
-
 'DEFR14C' (Definitive revised information statement materials[^4])
-
-![DEFR14C.png](/static/img/DEFR14C.png)
 
 'NT 10-K' (Notice under Rule 12b25 of inability to timely file all or part of a Form 10-K, 10-KSB, or 10KT[^5])
 
-![NT10K.png](/static/img/NT10K.png)
-
 'SC 14F1/A' (Third party tender offer statement filed pursuant to Rule 14d-1(b) by foreign issuers (Amendment)[^6])
 
-![SC-14F1.png](/static/img/SC-14F1.png)
+![filings.png](/static/img/filings.png)
 
 
 
