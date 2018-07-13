@@ -127,7 +127,7 @@ precision    recall  f1-score   support
 avg / total       0.99      0.99      0.99      2544
 
 
-
+![confusion-xgb.png](/static/img/confusion-xgb.png)
 
 
 
