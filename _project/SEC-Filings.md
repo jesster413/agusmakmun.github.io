@@ -49,7 +49,7 @@ In addition to the number of years a corporation has been active, Select KBest a
 
 The Indicted class filed these types of filings more frequently than did the Not Indicted class, as illustrated in the plot below.
 
-![filings.png](/static/img/filings.png)
+![filings-updated.png](/static/img/filings-updated.png)
 
 ## Balancing the scales
 
