@@ -31,33 +31,22 @@ This is for mean number of active years.  So what this is saying is that the ave
 
 ![Years_Active.png](/static/img/Years_Active.png)
 
-Indicted Stats: count    175.000000
-mean       3.320000
-std        4.627554
-min        0.000000
-25%        0.000000
-50%        0.000000
-75%        6.000000
-max       15.000000
-Name: Years_Active, dtype: float64
+## Feature Selection
 
-Not_Indicted Stats: count    65324.000000
-mean         6.738473
-std          4.803204
-min          0.000000
-25%          3.000000
-50%          6.000000
-75%         11.000000
-max         15.000000
-Name: Years_Active, dtype: float64
+Using Select KBest, I identified features that were most correlated to my minority class, including 'max_year', 'min_year', 'most_recent', '1-A/A', '2-A', 'ADV-H-T', 'DEFR14C', 'NT 10-K', 'SC 14F1/A', and 'Years_Active'.  
 
+Provide definitions:
 
+I plotted some of these to illustrate the difference in filings between the Indicted and Not Indicted classes.
 
-
-For Indicted: the maximum amount of 10-Qs filed was 14, less than half the amount of 10-Qs filed for the Not_Indicted (30)
+![SC-14F1.png](/static/img/SC-14F1.png)
 
 
 ## Balancing the scales
+
+My baseline accuracy for this project was 99.7%.  This means that if you guessed that a corporation was not indicted (0 in the target column), you would be right 99.7% of the time.  With my majority and minority classes so imbalanced, it is difficult for the machine to pick up on the (very subtle) signals that the minority class is sending out.  To counter-act this imbalance, I used several different class balancing techniques to amplify the minority class's signals.
+
+First, I used a resampling technique called downsampling from scikit-learn's utils package.  This technique allowed me to reduce the majority
 
 Because I had such dramatically imbalanced classes, I knew I needed to implement sampling techniques.  First, I downsampled my majority class from 65,000 to 5,000 to help my models be more sensitive to my target class.  
 
