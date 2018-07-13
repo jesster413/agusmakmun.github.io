@@ -25,17 +25,19 @@ For now, I manually entered the names of the cases into the EDGAR search field t
 
 But what about my not_target set?  If I was going to make predictions, I needed to build out my dataset with not_target values.  Initially, I thought about doing the same process over again with just a random list of companies from the S&P500, but after more research, I found a [similar project](http://api.corpwatch.org/) that had already done some of the work that I wanted to.  Given my time constraints, I decided to download their datasets, which also identifies corporations by CIK numbers.  These datasets contained the types of data points I was looking for, namely, locations, years active, and identification numbers.  I suspected that the 175 target corporations I had previously identified were somewhere in the 65,000 rows of corporates, I subset my target data set out of the much larger not_target dataset.  When I compared the shapes of the prior not_target to the new not_target, sure enough, 175 rows were dropped.  I created a new column within my new not_target dataset called 'Indicted' and set it to '0' - my not_target column.  Then, I concatenated my target dataset on the 0 axis with its corresponding 'Indicted' column and set it to 1, meaning, positive for having been indicted.  
 
+Need to define CIK ID
+
 With CIK ID numbers for both of my target and not_target, I was able to scrape the SEC website for indices of filings for all of my corporates (target and not_target included) using a nested for loop with the requests and Beautiful soup libraries.  Having saved all of my filings in a list for each of my 65,000 rows, I then transformed those individual filings into their own unique dummy columns and filled each column with the value counts of the corporate.  With this final transformation, I had a working dataset with target and not_target values that I could analyze and subsequently feed into a model.
+
+## Witness Selection
+
+Using Select KBest, I identified features that were most correlated to my minority class, including temporal data such as 'max_year', 'min_year', 'most_recent', and 'Years_Active'
 
 This is for mean number of active years.  So what this is saying is that the average amount of years active for the Indicted class (175 cases) is just under half the average number of years for the Not_Indicted class (65,324).  And this makes sense given that many of the indicted corporates were not even active for a full year, as visualized in the plot below.  
 
 ![Years_Active.png](/static/img/Years_Active.png)
 
-## Witness Selection
-
-Using Select KBest, I identified features that were most correlated to my minority class, including temporal data such as 'max_year', 'min_year', 'most_recent', and 'Years_Active' as well as filing information, including filings such as:
-
-'1-A/A' (Regulation A Offering Statement under the Securities Exchange Act of 1933[^1])
+In addition to the number of years a corporation has been active, Select KBest also identified several filings that were highly predictive of the minority class:
 
 '2-A' (Report of Sales and Uses of Proceeds, is a requirement under Rule 257 of Regulation A of the Securities Exchange Act of 1933[^2]
 
@@ -43,21 +45,19 @@ Using Select KBest, I identified features that were most correlated to my minori
 
 'DEFR14C' (Definitive revised information statement materials[^4])
 
-'NT 10-K' (Notice under Rule 12b25 of inability to timely file all or part of a Form 10-K, 10-KSB, or 10KT[^5])
-
 'SC 14F1/A' (Third party tender offer statement filed pursuant to Rule 14d-1(b) by foreign issuers (Amendment)[^6])
 
+The Indicted class filed these types of filings more frequently than did the Not Indicted class, as illustrated in the plot below.
+
 ![filings.png](/static/img/filings.png)
-
-
 
 ## Balancing the scales
 
 My baseline accuracy for this project was 99.7%.  This means that if you guessed that a corporation was not indicted (0 in the target column), you would be right 99.7% of the time.  With my majority and minority classes so imbalanced, it is difficult for the machine to pick up on the (very subtle) signals that the minority class is sending out.  To counter-act this imbalance, I used several different class balancing techniques to amplify the minority class's signals.
 
-First, I used a resampling technique called downsampling from scikit-learn's utils package.  This technique allowed me to reduce the majority
+First, I used a resampling technique called downsampling from scikit-learn's utils package.  This technique allowed me to reduce the majority population to whatever size I wanted.  I chose to downsample my majority class from 65,324 down to 10,000.
 
-Because I had such dramatically imbalanced classes, I knew I needed to implement sampling techniques.  First, I downsampled my majority class from 65,000 to 5,000 to help my models be more sensitive to my target class.  
+Talk here about using SMOTEENN and describing what it does - maybe confirm shapes?
 
 Then, I took that downsampled dataset and did two train-test-splits on it - the first set would be used to initially train my models on my X_train and y_train.  Within this first set, I would conduct another train-test-split on my X_train and y_train which would be split into my cross-validation set (X_train_val, y_train_val, X_test_val, y_test_val).  Cross validating my models on a dataset that the model hasn't been trained on guards against overfitting my models to any one particular dataset.  If and when I was satisfied with the results of my models and satisfied with how my parameters were tuned, I would then predict on the X_test from the initial train-test-split - another dataset that the models have not yet seen.
 
