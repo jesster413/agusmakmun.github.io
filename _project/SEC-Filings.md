@@ -52,6 +52,8 @@ max         15.000000
 Name: Years_Active, dtype: float64
 
 
+
+
 For Indicted: the maximum amount of 10-Qs filed was 14, less than half the amount of 10-Qs filed for the Not_Indicted (30)
 
 
@@ -117,6 +119,10 @@ precision    recall  f1-score   support
 avg / total       0.99      0.99      0.99      2544
 
 Feature Selection features: '2-A', 'ADV-H-T', 'DEFR14C', 'DOS', 'SC 14F1/A', 'STOP ORDER',
+
+Confusion Matrix for XGB Cross-Validation Set | Confusion Matrix for XGB Test Set
+- | -
+![confusion-val-xgb.png](/static/img/confusion-val-xgb.png) | ![confusion-xgb.png](/static/img/confusion-xgb.png)
 
 
 ## Going to Press
