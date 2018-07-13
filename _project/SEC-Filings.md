@@ -31,15 +31,34 @@ This is for mean number of active years.  So what this is saying is that the ave
 
 ![Years_Active.png](/static/img/Years_Active.png)
 
-## Feature Selection
+## Witness Selection
 
-Using Select KBest, I identified features that were most correlated to my minority class, including 'max_year', 'min_year', 'most_recent', '1-A/A', '2-A', 'ADV-H-T', 'DEFR14C', 'NT 10-K', 'SC 14F1/A', and 'Years_Active'.  
+Using Select KBest, I identified features that were most correlated to my minority class, including temporal data such as 'max_year', 'min_year', 'most_recent', and 'Years_Active' as well as filing information, including filings such as:
 
-Provide definitions:
+'1-A/A' (Regulation A Offering Statement under the Securities Exchange Act of 1933[^1])
 
-I plotted some of these to illustrate the difference in filings between the Indicted and Not Indicted classes.
+![1-A.png](/static/img/1-A.png)
+
+'2-A' (Report of Sales and Uses of Proceeds, is a requirement under Rule 257 of Regulation A of the Securities Exchange Act of 1933[^2]
+
+![2-A.png](/static/img/2-A.png)
+
+'ADV-H-T' (Application for Temporary Hardship)[^3]
+
+![ADVHT.png](/static/img/ADVHT.png)
+
+'DEFR14C' (Definitive revised information statement materials[^4])
+
+![DEFR14C.png](/static/img/DEFR14C.png)
+
+'NT 10-K' (Notice under Rule 12b25 of inability to timely file all or part of a Form 10-K, 10-KSB, or 10KT[^5])
+
+![NT10K.png](/static/img/NT10K.png)
+
+'SC 14F1/A' (Third party tender offer statement filed pursuant to Rule 14d-1(b) by foreign issuers (Amendment)[^6])
 
 ![SC-14F1.png](/static/img/SC-14F1.png)
+
 
 
 ## Balancing the scales
@@ -107,15 +126,16 @@ precision    recall  f1-score   support
 
 avg / total       0.99      0.99      0.99      2544
 
-Feature Selection features: '2-A', 'ADV-H-T', 'DEFR14C', 'DOS', 'SC 14F1/A', 'STOP ORDER',
-
-Confusion Matrix for XGB Cross-Validation Set | Confusion Matrix for XGB Test Set
-- | -
-![confusion-val-xgb.png](/static/img/confusion-val-xgb.png) | ![confusion-xgb.png](/static/img/confusion-xgb.png)
 
 
-## Going to Press
 
 
 
 https://poseidon01.ssrn.com/delivery.php?ID=750066083101070100069066092117102076007056010023061049023085002108095109006125012111041119107107108043037092089121125101115095060086008008061127028087114087030075090084003017092068013080089027004080117121069009025029066068117074005098027003099005067&EXT=pdf
+
+[^1]: [https://www.investopedia.com/terms/s/sec-form-1-a.asp](https://www.investopedia.com/terms/s/sec-form-1-a.asp)
+[^2]:[https://www.investopedia.com/terms/s/sec-form-2-a.asp](https://www.investopedia.com/terms/s/sec-form-2-a.asp)
+[^3]:[https://www.iard.com/support_hardship](https://www.iard.com/support_hardship)
+[^4]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
+[^5]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
+[^6]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
