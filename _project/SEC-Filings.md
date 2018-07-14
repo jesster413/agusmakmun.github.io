@@ -49,7 +49,7 @@ In addition to the number of years a corporation has been active, Select KBest a
 
 The Indicted class filed these types of filings more frequently than did the Not Indicted class, as illustrated in the plot below.
 
-![filings-v3.png](/static/img/filings-v3.png)
+![filings-updated.png](/static/img/filings-updated.png)
 
 ## Balancing the scales
 
@@ -117,7 +117,7 @@ precision    recall  f1-score   support
 avg / total       0.99      0.99      0.99      2544
 
 
-![confusion-xgb.png](/static/img/confusion-xgb.png)
+![confusion-matrix.png](/static/img/confusion-matrix.png)
 
 
 
