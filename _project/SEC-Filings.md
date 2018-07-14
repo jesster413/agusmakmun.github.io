@@ -45,7 +45,10 @@ In addition to the number of years a corporation has been active, Select KBest a
 
 'DEFR14C' (Definitive revised information statement materials[^4])
 
-'SC 14F1/A' (Third party tender offer statement filed pursuant to Rule 14d-1(b) by foreign issuers (Amendment)[^6])
+SEC Form DEFR14C is a revision to form DEFA14C, a filing with the Securities and Exchange Commission (SEC) that discloses important information but is not connected to the solicitation of proxy votes. The information contained in a DEFA14C (or DEFR14C) form can cover a multitude of items related to corporate actions that must be disclosed to shareholders. However, these matters typically do not reach a level of significance that would necessitate a shareholder vote for approval. (https://www.investopedia.com/terms/s/sec-form-defr14c.asp)
+
+'SC 14F1/A' (Statement regarding change in majority of directors
+pursuant to Rule 14f-1)[^6])
 
 The Indicted class filed these types of filings more frequently than did the Not Indicted class, as illustrated in the plot below.
 
@@ -67,65 +70,33 @@ I ran four models: Random Forest, a Decision Tree, XGBoost, and a Balanced Baggi
 
 ## Reaching a verdict
 
-Talk here about cross-val results and the test results.  What was I most concerned with in this project (false positives - because accusing someone of financial crime is a serious thing and can be extremely costly to the SEC, both in terms of potential monetary penalties when the corporation turns around and sues the government as well as lost faith in the justice system.)
+When running my models, I decided to score on precision because I was most concerned with reducing false positives while also trying to increase the number of true positives as much as possible.  The equation for precision, seen below, calculates the positive predictive value but penalizes the score by how many positive values were predicted incorrectly.  In my project, a false positive would be a corporate that was predicted to be indicted but should not have been.
 
-Talk about scoring on precision.
+$$Precision = \frac{True Positive}{True Positive + False Positive}$$
 
-precision is the same thing as recall - it is a measure of truthiness.
+In a slightly different metric, recall measures the true positive rate by penalizing the score with false negatives (seen below).  In this project, a false negative would be a corporate that should have been indicted but wasn't.  
 
-Confusion Matrix for Random Forest Cross-Val
-True Negatives: 935
+$$Recall = \frac{True Positive}{True Positive + False Negative}$$
 
-False Positives: 3
+In sum, both precision and recall are measures of truthiness but with slightly different perspectives.  Because it is a much more serious thing to indict a corporation that is innocent (both in terms of potential monetary penalties when the corporation turns around and sues the government as well as lost faith in the justice system) than to not indict a potentially guilty corporation, I decided that precision was the most important measure of success.
 
-False Negatives: 11
-
-True Positives: 22
-
-Confusion Matrix for XGBoost Cross-Val
-True Negatives: 925
-
-False Positives: 13
-
-False Negatives: 15
-
-True Positives: 18
-
-Confusion Matrix for Balanced Bagging Classifer Cross-Val
-True Negatives: 927
-
-False Positives: 11
-
-False Negatives: 12
-
-True Positives: 21
-
-Confusion Matrix for Decision Tree Classifer Cross-Val
-True Negatives: 919
-
-False Positives: 19
-
-False Negatives: 11
-
-True Positives: 22
-
-precision    recall  f1-score   support
-
-      0       0.99      1.00      1.00      2500
-      1       1.00      0.52      0.69        44
-
-avg / total       0.99      0.99      0.99      2544
-
+To visualize this decision, I plotted two confusion matrices of the models I ran to represent the cross-validation run (left) and the test run (right).  Despite the name, a confusion matrix is actually quite a simple tool to interpret.  Simply, it is a matrix of four values: true positives (values that were predicted positive and supposed to be positive), false positives (values that were predicted positive but supposed to be negative), true negatives (values that were predicted negative and supposed to be negative), and false negatives (values that were predicted negative but supposed to be positive) to compare the number of false positives, true positives, and false negatives.  In the cross-validation run, both the Decision Tree and XGBoost Classifiers kept the false positives to 0 while predicting 14 true positives.  They both left 19 false negatives on the table (corporations that should have been indicted but weren't).  The Random Forest and Balanced Bagging Classifiers both predicted more true positives (18 and 21, respectively) but they also predicted more false positives (5 and 17, respectively).  In my mind, the benefit of indicting 4 to 7 more corporations does not outweigh the cost of inappropriately accusing 5 to 17 corporations (and the attendant damage caused to the company for being embroiled in litigation).
 
 ![confusion-matrix.png](/static/img/confusion-matrix.png)
 
+To focus in on the Indicted class even more, I also plotted the classification reports of each the models.  Similar to a confusion matrix, a classification report is another tool that can be used to evaluate model performance other than accuracy.  Some of the outputs of a classification report are: precision, recall, and an f1-score. Because the Decision Tree and XGBoost Classifiers both reduced false positives to 0, they have perfect precision scores of 1.0.  However, because they both left corporations "on the table", their recall scores are not as great.  Because the goal of this project was to identify as many corporations as possible to further investigate without investigating a corporation that should not be, I considered these metrics a success. 
 
+![classification-report](/static/img/classification-report.png)
 
-https://poseidon01.ssrn.com/delivery.php?ID=750066083101070100069066092117102076007056010023061049023085002108095109006125012111041119107107108043037092089121125101115095060086008008061127028087114087030075090084003017092068013080089027004080117121069009025029066068117074005098027003099005067&EXT=pdf
+Computation time
+
+XGBoost: 16.1 minutes
+
+<!-- https://poseidon01.ssrn.com/delivery.php?ID=750066083101070100069066092117102076007056010023061049023085002108095109006125012111041119107107108043037092089121125101115095060086008008061127028087114087030075090084003017092068013080089027004080117121069009025029066068117074005098027003099005067&EXT=pdf -->
 
 [^1]: [https://www.investopedia.com/terms/s/sec-form-1-a.asp](https://www.investopedia.com/terms/s/sec-form-1-a.asp)
 [^2]:[https://www.investopedia.com/terms/s/sec-form-2-a.asp](https://www.investopedia.com/terms/s/sec-form-2-a.asp)
 [^3]:[https://www.iard.com/support_hardship](https://www.iard.com/support_hardship)
 [^4]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
 [^5]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
-[^6]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
+[^6]: [https://www.sec.gov/info/edgar/forms/edgform.pdf](https://www.sec.gov/info/edgar/forms/edgform.pdf)
