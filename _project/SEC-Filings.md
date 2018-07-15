@@ -3,9 +3,14 @@ layout: project_single
 title:  "SEC Filings"
 slug: "SEC-Filings"
 ---
-I talked a little bit about my background before I started General Assembly's.  I worked in law enforcement and later on a large-scale federal monitorship mandated by the Eastern District of New York.  Having completed a few projects, I felt ready to apply my new programming skills to a topic that really interested me.
 
-For my capstone, I wanted to see if I could identify a way to predict SEC indictments based on information pulled from the SEC website.  I wanted to do this project to see if there was a way I could help law enforcement professionals identify potential cases of financial crime.  
+The FBI and the American Association of Certified Fraud Examiners estimate that white collar crime costs 300 to 600 billion dollars a year.  That’s the equivalent of Warren Buffet’s net worth 3.5 times over, or buying out the debt of New York City's MTA 9 times over, or purchasing the New York Knicks 90 times over.  It’s incredible amount of money and also a very wide range, suggesting that enforcement agencies don't actually know the extent of the damage cause by white collar crime.
+
+And that damage is not just limited to the crime itself - the ripple effects of financial crime are even wider, more opaque, but undoubtedly affect every single one of us.  Companies that are defrauded will raise prices on consumer goods to recoup losses.  Scammed insurance companies will demand higher premiums on their policies. Hedge fund schemes that manipulate equity markets can decrease stock prices. And if the government gets taken for a ride, well, we all know what happens then - more government taxes.
+
+Identifying these bad actors is difficult.  Complex financial schemes usually involve a lot of documents, some of which demand law or accounting degrees to truly understand.  Moreover, as with many government agencies, there's just not enough people to review all of those complex documents.  And the select few who are tasked with reviewing these complex cases are doing it with outdated and insufficient technology.
+
+To that end, I wanted to use data science techniques like web scraping, exploratory data analysis, and machine learning to identify ‘bad actor’ corporations to help financial regulators like the SEC focus their investigations of white collar crime.
 
 Talk more here about SEC filings in general and who is required to submit filings and describe the kind of massive scale of data available.  Maybe link to a description of all of the different filings.
 
@@ -84,7 +89,7 @@ To visualize this decision, I plotted two confusion matrices of the models I ran
 
 ![confusion-matrix.png](/static/img/confusion-matrix.png)
 
-To focus in on the Indicted class even more, I also plotted the classification reports of each the models.  Similar to a confusion matrix, a classification report is another tool that can be used to evaluate model performance other than accuracy.  Some of the outputs of a classification report are: precision, recall, and an f1-score. Because the Decision Tree and XGBoost Classifiers both reduced false positives to 0, they have perfect precision scores of 1.0.  However, because they both left corporations "on the table", their recall scores are not as great.  Because the goal of this project was to identify as many corporations as possible to further investigate without investigating a corporation that should not be, I considered these metrics a success. 
+To focus in on the Indicted class even more, I also plotted the classification reports of each the models.  Similar to a confusion matrix, a classification report is another tool that can be used to evaluate model performance other than accuracy.  Some of the outputs of a classification report are: precision, recall, and an f1-score. Because the Decision Tree and XGBoost Classifiers both reduced false positives to 0, they have perfect precision scores of 1.0.  However, because they both left corporations "on the table", their recall scores are not as great.  Because the goal of this project was to identify as many corporations as possible to further investigate without investigating a corporation that should not be, I considered these metrics a success.
 
 ![classification-report](/static/img/classification-report.png)
 
