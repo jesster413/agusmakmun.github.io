@@ -19,3 +19,5 @@ For a full analysis of General Assembly's Data Science Immersive course, check o
 Adding stuff to check if rename works
 
 Adding more stuff with Adam in Atom
+
+one more time for the cheap seats
