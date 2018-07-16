@@ -10,13 +10,11 @@ And that damage is not just limited to the crime itself - the ripple effects of 
 
 Identifying these bad actors is difficult.  Complex financial schemes usually involve a lot of documents, some of which demand law or accounting degrees to truly understand.  Moreover, as with many government agencies, there's just not enough people to review all of those complex documents.  And the select few who are tasked with reviewing these complex cases are doing it with outdated and insufficient technology.
 
+Corporations that are listed on any U.S. stock exchange are required to submit financial reports to the Securities and Exchange Commission (SEC) to inform potential investors of the company's financial health.  There are [hundreds](https://en.wikipedia.org/wiki/SEC_filing) of filing types that a corporation can submit, and these filings include information like [quarterly](https://www.investopedia.com/terms/1/10q.asp) and [annual](https://www.investopedia.com/terms/1/10-k.asp) financial statements, [major events](https://www.investopedia.com/terms/1/8-k.asp), [changes to the institution's organizational structure](https://www.sec.gov/info/edgar/forms/edgform.pdf), and [foreign investments](https://www.investopedia.com/terms/s/sec-form-f-1.asp), to name a few.  The SEC makes these filings publicly available on their website.
+
 To that end, I wanted to use data science techniques like web scraping, exploratory data analysis, and machine learning to identify ‘bad actor’ corporations to help financial regulators like the SEC focus their investigations of white collar crime.
 
-Talk more here about SEC filings in general and who is required to submit filings and describe the kind of massive scale of data available.  Maybe link to a description of all of the different filings.
-
-Every corporation listed on a U.S. stock exchange is required to file annual reports with the SEC. These reports—called “10-K forms”—are intended to help investors and regulators better understand the risks, assets, and current leadership of a company in order to make informed investment decisions. One of the requirements of a 10-K filing is that it must include a section that lists any other companies that are owned by the corporation making the filing. This “Exhibit 21” provides a rough snapshot of the ownership hierarchy of the subsidiary “child” companies along with the location or jurisdiction of incorporation of each subsidiary. Thanks to the efforts of various government transparency advocates, the SEC makes all of this filing information available on the web for free.[^1](http://api.corpwatch.org/documentation/faq.html)
-
-## Identifying the target
+## Identifying the Target
 
 My first task was to identify my targets so I could train my model on what suspicious cases might look like.  I researched SEC indictments reports and found that the SEC releases annual reports of their enforcement cases.  [For example](https://www.sec.gov/files/2017-03/secstats2016.pdf), in these reports I found, there is a list of indictments with information about the defendant (either an individual or a corporation) as well as date information and related charges.  I located reports for the years 2006-2016.  Given that these reports were in pdf format, my first task was to find a way to extract the information I needed into a format that I could eventually feed into my model.  I first tried using a package I found that reads in material from pdfs, but because of the inherent unstable process of extracting text, the formula I wrote to extract the text from the first report did not extract text in the same way as the next.  Because I only had a couple of weeks to complete this project and needed to extract text from eleven reports just to identify my targets, I quickly abandoned this method.  I later found a free website that more accurately (and quickly) converted my reports to excel files.  In data science as in many disciplines, sometimes the simplest tool is the best.
 
@@ -26,7 +24,7 @@ The next big hurdle to overcome was the fact that names of individuals and corpo
 
 For now, I manually entered the names of the cases into the EDGAR search field to identify their corresponding CIK ID Number.  Because I didn't want to manually search 5,000 entries, I pared my initial list of defendants down to corporations.  Many of the names of the corporate defendants did not turn up a CIK number.  (For some cases, this makes sense given that these corporations were accused of financial crime and may never have filed the required reports).  From the 1600 or so corporate cases I had, I was able to identify 175 corporates with CIK ID numbers.  I finally had my target set.
 
-## Putting the case together
+## Putting the Case Together
 
 But what about my not_target set?  If I was going to make predictions, I needed to build out my dataset with not_target values.  Initially, I thought about doing the same process over again with just a random list of companies from the S&P500, but after more research, I found a [similar project](http://api.corpwatch.org/) that had already done some of the work that I wanted to.  Given my time constraints, I decided to download their datasets, which also identifies corporations by CIK numbers.  These datasets contained the types of data points I was looking for, namely, locations, years active, and identification numbers.  I suspected that the 175 target corporations I had previously identified were somewhere in the 65,000 rows of corporates, I subset my target data set out of the much larger not_target dataset.  When I compared the shapes of the prior not_target to the new not_target, sure enough, 175 rows were dropped.  I created a new column within my new not_target dataset called 'Indicted' and set it to '0' - my not_target column.  Then, I concatenated my target dataset on the 0 axis with its corresponding 'Indicted' column and set it to 1, meaning, positive for having been indicted.  
 
@@ -59,7 +57,7 @@ The Indicted class filed these types of filings more frequently than did the Not
 
 ![filings-updated.png](/static/img/filings-updated.png)
 
-## Balancing the scales
+## Balancing the Scales
 
 My baseline accuracy for this project was 99.7%.  This means that if you guessed that a corporation was not indicted (0 in the target column), you would be right 99.7% of the time.  With my majority and minority classes so imbalanced, it is difficult for the machine to pick up on the (very subtle) signals that the minority class is sending out.  To counter-act this imbalance, I used several different class balancing techniques to amplify the minority class's signals.
 
@@ -73,7 +71,7 @@ Before running the models, however, I wanted to implement SMOTEENN (which I have
 
 I ran four models: Random Forest, a Decision Tree, XGBoost, and a Balanced Bagging Classifier.  I chose these models based on their past performance with some of my classification problems as well as their computation speed.  Maybe talk here about how you explained them in depth in the WNV project or should I re-explain here?
 
-## Reaching a verdict
+## Reaching a Verdict
 
 When running my models, I decided to score on precision because I was most concerned with reducing false positives while also trying to increase the number of true positives as much as possible.  The equation for precision, seen below, calculates the positive predictive value but penalizes the score by how many positive values were predicted incorrectly.  In my project, a false positive would be a corporate that was predicted to be indicted but should not have been.
 
@@ -93,9 +91,11 @@ To focus in on the Indicted class even more, I also plotted the classification r
 
 ![classification-report](/static/img/classification-report.png)
 
-Computation time
+## Areas of Further Research
 
-XGBoost: 16.1 minutes
+Doing a pull of the directors themselves and seeing if there's any negative news on them.
+
+Do natural language processing, specifically, TFIDF on the filings identified by Select K Best to see if there's any additional information to be investigated.
 
 <!-- https://poseidon01.ssrn.com/delivery.php?ID=750066083101070100069066092117102076007056010023061049023085002108095109006125012111041119107107108043037092089121125101115095060086008008061127028087114087030075090084003017092068013080089027004080117121069009025029066068117074005098027003099005067&EXT=pdf -->
 
