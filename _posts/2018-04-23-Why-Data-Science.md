@@ -17,3 +17,5 @@ And that's the path that led me to writing for-loops over a dictionary of full o
 For a full analysis of General Assembly's Data Science Immersive course, check out my review post.
 
 Adding stuff to check if rename works
+
+Adding more stuff with Adam in Atom
