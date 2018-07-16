@@ -34,6 +34,8 @@ Here's a list of data science related resources that I've collected so far.  I w
 
 [<span style="font-size:1.5em;">DataFramed</span>](https://www.datacamp.com/community/podcast)
 
+[<span style="font-size:1.5em;">Data Hack Radio</span>](https://soundcloud.com/datahack-radio)
+
 [<span style="font-size:1.5em;">Data Skeptic</span>](https://dataskeptic.com/podcast?limit=10&offset=0)
 
 [<span style="font-size:1.5em;">Storytelling with Data</span>](http://www.storytellingwithdata.com/podcast/)
