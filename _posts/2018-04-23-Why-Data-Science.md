@@ -13,3 +13,7 @@ The decision to enroll in a data science bootcamp started the year prior when I 
 Frustrated with the limitations of my skillset, I initially took one-off Excel courses to boost my understanding of pivot tables and functions but did not feel satisfied with the results.  While Excel is a powerful tool and can be useful in some types of analyses, it cannot compute on datasets larger than a million rows and cannot identify the kind of insights machine learning packages can.  I realized if I wanted to keep moving forward in my career as an investigator, to be able to interrogate large datasets, to identify unprecedented insights, I needed to invest in upping my tech skills.
 
 And that's the path that led me to writing for-loops over a dictionary of full of Pokemon names, gym locations, and combat techniques.  Over the course of the next 12 weeks, I would learn even more about data mining, data enrichment, natural language processing, data visualization, and many different machine learning packages.
+
+For a full analysis of General Assembly's Data Science Immersive course, check out my review post.
+
+Adding stuff to check if rename works
