@@ -15,9 +15,3 @@ Frustrated with the limitations of my skillset, I initially took one-off Excel c
 And that's the path that led me to writing for-loops over a dictionary of full of Pokemon names, gym locations, and combat techniques.  Over the course of the next 12 weeks, I would learn even more about data mining, data enrichment, natural language processing, data visualization, and many different machine learning packages.
 
 For a full analysis of General Assembly's Data Science Immersive course, check out my review post.
-
-Adding stuff to check if rename works
-
-Adding more stuff with Adam in Atom
-
-one more time for the cheap seats
