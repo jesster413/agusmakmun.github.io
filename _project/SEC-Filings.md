@@ -52,8 +52,6 @@ With my majority class muffled a little bit, I then used another sampling tool c
 
 I then performed two train-test-splits on the dataset - the first set would be used to initially train my models on my X_train and y_train.  Within this first set, I would conduct another train-test-split on my X_train and y_train which would be split into my cross-validation set (X_train_val, y_train_val, X_test_val, y_test_val).  Cross validating my models on a dataset that the model hasn't been trained on guards against overfitting my models to any one particular dataset.  If and when I was satisfied with the results of my models and satisfied with how my parameters were tuned, I would then predict on the X_test from the initial train-test-split - another dataset that the models have not yet seen.
 
-I ran four models: Random Forest, a Decision Tree, XGBoost, and a Balanced Bagging Classifier.  I chose these models based on their past performance with some of my classification problems as well as their computation speed.  Maybe talk here about how you explained them in depth in the WNV project or should I re-explain here?
-
 ## Reaching a Verdict
 
 When running my models, I decided to score on precision because I was most concerned with reducing false positives while also trying to increase the number of true positives as much as possible.  The equation for precision, seen below, calculates the positive predictive value but penalizes the score by how many positive values were predicted incorrectly.  In my project, a false positive would be a corporate that was predicted to be indicted but should not have been.
@@ -74,11 +72,13 @@ To focus in on the Indicted class even more, I also plotted the classification r
 
 ![classification-report](/static/img/classification-report.png)
 
-The XGBoost model took 16.1 minutes to fit 2025 different combinations, including 3 cross-validations.  The Decision Tree model took 15.25 minutes to fit 392 combinations, including 5 cross-validations.
-
 ## Areas of Further Research
 
-While this was a toy project based on a handful of inputs related to corporate demographics and filing types, I think it demonstrates the point that machine learning techniques can help financial regulatory agencies identify potential targets for further investigation.  If I were to continue researching this topic, I would be interested in pulling in more data such as doing a scrape of the corporations' directors and pulling in any related negative news.  I would also be interested in "reading" the filings themselves using natural language processing, and specifically, a Term Frequency - Inverse Document Frequency (TF-IDF) analysis to identify any rare terminology used that might signal unusual behavior.
+While this was a toy project based on a handful of inputs related to corporate demographics and filing types, I think it demonstrates the point that machine learning techniques can help financial regulatory agencies identify potential targets for further investigation.  If I were to continue researching this topic, I would be interested in pulling in more data to feed the model, such as the names of the directors as well as any associated negative news.  I would also be interested in "reading" the filings themselves using natural language processing, and specifically, a Term Frequency - Inverse Document Frequency (TF-IDF) analysis to identify any rare terminology that might signal unusual behavior.
+
+To see all of the code associated with this project, head on over to the related [GitHub repo](https://github.com/jesster413/SEC-Filings).
+
+---
 
 [^1]: [https://www.investopedia.com/terms/s/sec-form-1-a.asp](https://www.investopedia.com/terms/s/sec-form-1-a.asp)
 [^2]:[https://www.investopedia.com/terms/s/sec-form-2-a.asp](https://www.investopedia.com/terms/s/sec-form-2-a.asp)
