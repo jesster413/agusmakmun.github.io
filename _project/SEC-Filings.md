@@ -12,13 +12,11 @@ Identifying these bad actors is difficult.  Complex financial schemes usually in
 
 Corporations that are listed on any U.S. stock exchange are required to submit financial reports to the Securities and Exchange Commission (SEC) to inform potential investors of the company's financial health.  There are [hundreds](https://en.wikipedia.org/wiki/SEC_filing) of filing types that a corporation can submit, and these filings include information like [quarterly](https://www.investopedia.com/terms/1/10q.asp) and [annual](https://www.investopedia.com/terms/1/10-k.asp) financial statements, [major events](https://www.investopedia.com/terms/1/8-k.asp), [changes to the institution's organizational structure](https://www.sec.gov/info/edgar/forms/edgform.pdf), and [foreign investments](https://www.investopedia.com/terms/s/sec-form-f-1.asp), to name a few.  The SEC makes these filings publicly available on their website.
 
-To that end, I wanted to use data science techniques like web scraping, exploratory data analysis, and machine learning to identify ‘bad actor’ corporations to help financial regulators like the SEC focus their investigations of white collar crime.
+To that end, I wanted to use data science techniques like web scraping, exploratory data analysis, and machine learning to see whether I could identify ‘bad actor’ corporations by the types of reports they file in concert with other demographic information to help financial regulators like the SEC focus their investigations of white collar crime.
 
 ## Identifying the Target
 
 My first task was to identify my targets so I could train my model on what suspicious cases might look like.  I researched SEC indictments reports and found that the SEC releases annual reports of their enforcement cases.  [For example](https://www.sec.gov/files/2017-03/secstats2016.pdf), in these reports I found, there is a list of indictments with information about the defendant (either an individual or a corporation) as well as date information and related charges.  I located reports for the years 2006-2016.  Given that these reports were in pdf format, my first task was to find a way to extract the information I needed into a format that I could eventually feed into my model.  I first tried using a package I found that reads in material from pdfs, but because of the inherent unstable process of extracting text, the formula I wrote to extract the text from the first report did not extract text in the same way as the next.  Because I only had a couple of weeks to complete this project and needed to extract text from eleven reports just to identify my targets, I quickly abandoned this method.  I later found a free website that more accurately (and quickly) converted my reports to excel files.  In data science as in many disciplines, sometimes the simplest tool is the best.
-
-With my target dataset in a format I could read into python, I was then able to concatenate my data sets on top of each other and conduct some analysis.
 
 The next big hurdle to overcome was the fact that names of individuals and corporations are not easily fed into searches.  In a future iteration of this project, I would try to use some of kind fuzzing matching algorithm like the [fuzzy wuzzy](https://github.com/seatgeek/fuzzywuzzy) package to feed the names of the defendants into a search box.  
 
@@ -26,48 +24,33 @@ For now, I manually entered the names of the cases into the EDGAR search field t
 
 ## Putting the Case Together
 
-But what about my not_target set?  If I was going to make predictions, I needed to build out my dataset with not_target values.  Initially, I thought about doing the same process over again with just a random list of companies from the S&P500, but after more research, I found a [similar project](http://api.corpwatch.org/) that had already done some of the work that I wanted to.  Given my time constraints, I decided to download their datasets, which also identifies corporations by CIK numbers.  These datasets contained the types of data points I was looking for, namely, locations, years active, and identification numbers.  I suspected that the 175 target corporations I had previously identified were somewhere in the 65,000 rows of corporates, I subset my target data set out of the much larger not_target dataset.  When I compared the shapes of the prior not_target to the new not_target, sure enough, 175 rows were dropped.  I created a new column within my new not_target dataset called 'Indicted' and set it to '0' - my not_target column.  Then, I concatenated my target dataset on the 0 axis with its corresponding 'Indicted' column and set it to 1, meaning, positive for having been indicted.  
+But what about my Not Indicted class?  If I was going to make predictions, I needed to build out my dataset with values associated with corporations that have not had enforcement action against them, given that that is the overwhelming norm.  Initially, I thought about doing the same process over again with just a random list of companies from the S&P500, but after more research, I found a [similar project](http://api.corpwatch.org/) that had already done some of the work that I wanted to.  Given my time constraints, I decided to download their datasets, which also identifies corporations by the Central Index Key (CIK).  These datasets contained the types of data points I was looking for, namely, locations and years active.  I suspected that the 175 target corporations I had previously identified were somewhere in the 65,000 rows of corporates, so I subset my target data set out of the much larger dataset.  When I compared the shapes of the prior set to the new set, sure enough, 175 rows were dropped.  I created a new column within my new dataset called 'Indicted' and set it to '0'.  Then, I concatenated my target dataset on the 0 axis with its corresponding 'Indicted' column and set it to 1, meaning, positive for having been indicted.  
 
-Need to define CIK ID
-
-With CIK ID numbers for both of my target and not_target, I was able to scrape the SEC website for indices of filings for all of my corporates (target and not_target included) using a nested for loop with the requests and Beautiful soup libraries.  Having saved all of my filings in a list for each of my 65,000 rows, I then transformed those individual filings into their own unique dummy columns and filled each column with the value counts of the corporate.  With this final transformation, I had a working dataset with target and not_target values that I could analyze and subsequently feed into a model.
+With the CIK ID numbers for both of my Indicted and Not Indicted classes, I was able to scrape the SEC website for their filings using a nested for loop with the requests and Beautiful soup libraries.  Having saved all of my filings in a list for each of my 65,000 rows, I then transformed those individual filings into their own unique dummy columns and filled each column with the value counts of the filing.  With this final transformation, I had a working dataset that I could analyze and subsequently feed into a model.
 
 ## Witness Selection
 
-Using Select KBest, I identified features that were most correlated to my minority class, including temporal data such as 'max_year', 'min_year', 'most_recent', and 'Years_Active'
-
-This is for mean number of active years.  So what this is saying is that the average amount of years active for the Indicted class (175 cases) is just under half the average number of years for the Not_Indicted class (65,324).  And this makes sense given that many of the indicted corporates were not even active for a full year, as visualized in the plot below.  
+I knew that I was likely going to use some 'blackbox' models that would limit my ability to interpret what weights were given to which features in predicting the Indicted class.  So, I decided to use a tool that does allow for interpretability of what factors are most predictive of the minority class.  [SelectKBest](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html), identified features that were most predictive of my Indicted class.  One of the top ten features identified was the number of years a corporation was active.  As visualized in the plot below, half of the Indicted class was active for less than a year, whereas there is more of a normal distribution among the Not Indicted class.
 
 ![Years_Active.png](/static/img/Years_Active.png)
 
-In addition to the number of years a corporation has been active, Select KBest also identified several filings that were highly predictive of the minority class:
+In addition to the number of years a corporation has been active, SelectKBest also identified several filing types that were highly predictive of the minority class, including the '2-A', a report of sales and uses of proceeds,[^2], the 'ADV-H-T', an application for temporary hardship,[^3] the 'DEFR14C', a filing that discloses pertinent information that is required to be disclosed to shareholders but does not required a shareholder vote for approval,[^4] and the 'SC 14F1/A', a filing disclosing a majority change in a corporation's directors.[^6]
 
-'2-A' (Report of Sales and Uses of Proceeds, is a requirement under Rule 257 of Regulation A of the Securities Exchange Act of 1933[^2]
-
-'ADV-H-T' (Application for Temporary Hardship)[^3]
-
-'DEFR14C' (Definitive revised information statement materials[^4])
-
-SEC Form DEFR14C is a revision to form DEFA14C, a filing with the Securities and Exchange Commission (SEC) that discloses important information but is not connected to the solicitation of proxy votes. The information contained in a DEFA14C (or DEFR14C) form can cover a multitude of items related to corporate actions that must be disclosed to shareholders. However, these matters typically do not reach a level of significance that would necessitate a shareholder vote for approval. (https://www.investopedia.com/terms/s/sec-form-defr14c.asp)
-
-'SC 14F1/A' (Statement regarding change in majority of directors
-pursuant to Rule 14f-1)[^6])
-
-The Indicted class filed these types of filings more frequently than did the Not Indicted class, as illustrated in the plot below.
+The Indicted class filed these types of filings with slightly more frequently than did the Not Indicted class, as illustrated in the plot below.
 
 ![filings-updated.png](/static/img/filings-updated.png)
+
+In analyzing the purpose of these filings, I posited that some corporations might be “hiding” pertinent information that in fact should be voted on by shareholders, or, in the case of the 'SC 14F1/A' registering the corporation with a 'straw owner' to give an air of legitimacy before the “real” directors take over to pursue potentially criminal activities.
 
 ## Balancing the Scales
 
 My baseline accuracy for this project was 99.7%.  This means that if you guessed that a corporation was not indicted (0 in the target column), you would be right 99.7% of the time.  With my majority and minority classes so imbalanced, it is difficult for the machine to pick up on the (very subtle) signals that the minority class is sending out.  To counter-act this imbalance, I used several different class balancing techniques to amplify the minority class's signals.
 
-First, I used a resampling technique called downsampling from scikit-learn's utils package.  This technique allowed me to reduce the majority population to whatever size I wanted.  I chose to downsample my majority class from 65,324 down to 10,000.
+First, I used a resampling technique called downsampling from scikit-learn's utils package.  This technique allowed me to reduce the majority population to try to "quiet" the amount of signals the majority class sends out.  I chose to downsample my majority class from 65,324 down to 10,000 and assumed that 10,000 samples of the majority class would have enough variety to represent the full 65,324 set.
 
-Talk here about using SMOTEENN and describing what it does - maybe confirm shapes?
+With my majority class muffled a little bit, I then used another sampling tool called SMOTEENN to try to amplify the signals of my minority class (the Indicted class).  Imblearn's [SMOTEENN](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.combine.SMOTEENN.html) is a slight variation of [SMOTE](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Oversampling TEchnique which randomly selects data points in the minority class and creates copies of them that mimic the characteristics of the minority class based on a k nearest neighbors distance calculation.  SMOTEENN differs slightly from SMOTE by additionally using Edited Nearest Neighbors (ENN), a technique that removes examples based on a k nearest neighbors distance calculation from the minority class.  I verified that the majority and minority classes were properly balanced by checking their shapes.  In fact, both had 10,892 rows of data.
 
-Then, I took that downsampled dataset and did two train-test-splits on it - the first set would be used to initially train my models on my X_train and y_train.  Within this first set, I would conduct another train-test-split on my X_train and y_train which would be split into my cross-validation set (X_train_val, y_train_val, X_test_val, y_test_val).  Cross validating my models on a dataset that the model hasn't been trained on guards against overfitting my models to any one particular dataset.  If and when I was satisfied with the results of my models and satisfied with how my parameters were tuned, I would then predict on the X_test from the initial train-test-split - another dataset that the models have not yet seen.
-
-Before running the models, however, I wanted to implement SMOTEENN (which I have previously used in another [imbalanced classes project](https://jesster413.github.io/project/West-Nile-Virus/) to synthetically create new data points that mimic the characteristics of my minority class (the Indicted cases).
+I then performed two train-test-splits on the dataset - the first set would be used to initially train my models on my X_train and y_train.  Within this first set, I would conduct another train-test-split on my X_train and y_train which would be split into my cross-validation set (X_train_val, y_train_val, X_test_val, y_test_val).  Cross validating my models on a dataset that the model hasn't been trained on guards against overfitting my models to any one particular dataset.  If and when I was satisfied with the results of my models and satisfied with how my parameters were tuned, I would then predict on the X_test from the initial train-test-split - another dataset that the models have not yet seen.
 
 I ran four models: Random Forest, a Decision Tree, XGBoost, and a Balanced Bagging Classifier.  I chose these models based on their past performance with some of my classification problems as well as their computation speed.  Maybe talk here about how you explained them in depth in the WNV project or should I re-explain here?
 
@@ -91,17 +74,15 @@ To focus in on the Indicted class even more, I also plotted the classification r
 
 ![classification-report](/static/img/classification-report.png)
 
+The XGBoost model took 16.1 minutes to fit 2025 different combinations, including 3 cross-validations.  The Decision Tree model took 15.25 minutes to fit 392 combinations, including 5 cross-validations.
+
 ## Areas of Further Research
 
-Doing a pull of the directors themselves and seeing if there's any negative news on them.
-
-Do natural language processing, specifically, TFIDF on the filings identified by Select K Best to see if there's any additional information to be investigated.
-
-<!-- https://poseidon01.ssrn.com/delivery.php?ID=750066083101070100069066092117102076007056010023061049023085002108095109006125012111041119107107108043037092089121125101115095060086008008061127028087114087030075090084003017092068013080089027004080117121069009025029066068117074005098027003099005067&EXT=pdf -->
+While this was a toy project based on a handful of inputs related to corporate demographics and filing types, I think it demonstrates the point that machine learning techniques can help financial regulatory agencies identify potential targets for further investigation.  If I were to continue researching this topic, I would be interested in pulling in more data such as doing a scrape of the corporations' directors and pulling in any related negative news.  I would also be interested in "reading" the filings themselves using natural language processing, and specifically, a Term Frequency - Inverse Document Frequency (TF-IDF) analysis to identify any rare terminology used that might signal unusual behavior.
 
 [^1]: [https://www.investopedia.com/terms/s/sec-form-1-a.asp](https://www.investopedia.com/terms/s/sec-form-1-a.asp)
 [^2]:[https://www.investopedia.com/terms/s/sec-form-2-a.asp](https://www.investopedia.com/terms/s/sec-form-2-a.asp)
 [^3]:[https://www.iard.com/support_hardship](https://www.iard.com/support_hardship)
-[^4]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
+[^4]: [https://www.investopedia.com/terms/s/sec-form-defr14c.asp](https://www.investopedia.com/terms/s/sec-form-defr14c.asp)
 [^5]: [https://en.wikipedia.org/wiki/SEC_filing](https://en.wikipedia.org/wiki/SEC_filing)
 [^6]: [https://www.sec.gov/info/edgar/forms/edgform.pdf](https://www.sec.gov/info/edgar/forms/edgform.pdf)
