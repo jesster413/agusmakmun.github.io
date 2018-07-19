@@ -2,7 +2,6 @@
 layout: post
 title: SEC Filings
 published: True
-image: titanic.png
 
 ---
 
@@ -12,7 +11,7 @@ The FBI and the American Association of Certified Fraud Examiners estimate that 
 {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
 {{ post.excerpt | strip_html }}
 
-And that damage is not just limited to the crime itself - the ripple effects of financial crime are even wider, more opaque, but undoubtedly affect every single one of us.  Companies that are defrauded will raise prices on consumer goods to recoup losses.  Scammed insurance companies will demand higher premiums on their policies. Hedge fund schemes that manipulate equity markets can decrease stock prices. And if the government gets taken for a ride, well, we all know what happens then - more government taxes.
+And that damage is not just limited to the crime itself - the ripple effects of financial crime are even wider, more opaque, but undoubtedly affect every single one of us.  Companies that are defrauded will raise prices on consumer goods to recoup losses.  Scammed insurance companies will demand higher premiums on their policies. Hedge fund schemes that manipulate equity markets can decrease stock prices. And if the government gets taken for a ride, we all know what happens then - more government taxes.
 
 Identifying these bad actors is difficult.  Complex financial schemes usually involve a lot of documents, some of which demand law or accounting degrees to truly understand.  Moreover, as with many government agencies, there's just not enough people to review all of those complex documents.  And the select few who are tasked with reviewing these complex cases are doing it with outdated and insufficient technology.
 
