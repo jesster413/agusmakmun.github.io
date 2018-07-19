@@ -70,15 +70,14 @@ While I initially thought that having only positive comments was ideal for posts
 
 Finally, I wanted to try to create my own machine learning sentences using a Markov chain generator.  In another post, I walk through more in depth what Markov chain's are and how they work, but for this project, I installed the [markovify](https://pypi.org/project/markovify/) package from PyPi and applied it to my 'hot' bag of words.  Using a very simple for-loop and limiting my range to one sentence, I used the 'beginning' arg of the 'make_sentence_with_start function to create one-liner sentences starting with words I specified.  The following is the output of that code.
 
-```
-Women need to give me pity cash.
+>Women need to give me pity cash.
 
-I will be replaced, and unfortunately, i don't think Ameer will be stickying this for four days.
+>I will be replaced, and unfortunately, i don't think Ameer will be stickying this for four days.
 
-I can't remember if it was pursuing me.  I glanced up at her, and five days after my hospitalization it started to happen.  I started working here almost two months ago.  We had talked on the couch, took off my sunglasses, and checked my phone.  Still no service.
+>I can't remember if it was pursuing me.  I glanced up at her, and five days after my hospitalization it started to happen.  I started working here almost two months ago.  We had talked on the couch, took off my sunglasses, and checked my phone.  Still no service.
 
-Why would someone do this?  There was just going to be literally upside down.
-```
+>Why would someone do this?  There was just going to be literally upside down.
+
 Again, these sentences were created from the corpus of 'hot' words I created from text in the posts I pulled from Reddit.
 
 
