@@ -14,3 +14,9 @@ In a future iteration of this project, I would not drop the extra training colum
 Maybe talk about data leakage.  This is the first time I came up against this issue.  Maybe talk about data integrity.
 
 With that in mind, I set out to dummify the object columns in my training set and if there were columns in the test set that did not match those in the training set, I created new columns within the test set and set their values to zero.
+
+## Selecting Features
+
+Because I was most interested in which features contribute the most to a home's price, I applied SelectKBest to the dataset.  Unsurprisingly, the top ten features that are most predictive of a home's sale price are: 'Overall Qual', 'Year Built', 'Total Bsmt SF', '1st Flr SF', 'Gr Liv Area', 'Garage Cars', 'Garage Area', 'Exter Qual_TA', 'Bsmt Qual_Ex', and 'Kitchen Qual_Ex'.  
+
+I then polynomialized those top ten features, suspecting that the correlations between features would also contribute to the price of a home.  For example, the combination of having a porch *and* a backyard would contribute to the price of a home in a slightly different way than just a porch or just a backyard.
