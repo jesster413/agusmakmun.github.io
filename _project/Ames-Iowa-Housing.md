@@ -2,6 +2,7 @@
 layout: project_single
 title:  "Ames, Iowa Housing Prices"
 slug: "Ames-Iowa-Housing"
+published: false
 ---
 Buying a house is a major milestone, and it also can be one of the most costly.  According to XYZ, x percent of Americans spend x amount of money towards purchasing their home.  But within that XYZ, there is a wide range of features that contribute to the price of a home.  But within the population, there is a wide range of what is considered desirable in a home, and that is unique to each home buyer.  Some might want more bedrooms to accommodate a larger family.  Others might want more garage space to fit their growing car collection.  And still others might want a wrap-around porch for those hot summer nights.  Regardless of individual preferences, however, everyone wants the most bang for their buck.  To that end, I analyzed a [dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) of homes located in Ames, Iowa to identify what features of a house contribute the most to its price.
 
