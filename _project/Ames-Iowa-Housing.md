@@ -19,4 +19,12 @@ With that in mind, I set out to dummify the object columns in my training set an
 
 Because I was most interested in which features contribute the most to a home's price, I applied SelectKBest to the dataset.  Unsurprisingly, the top ten features that are most predictive of a home's sale price are: 'Overall Qual', 'Year Built', 'Total Bsmt SF', '1st Flr SF', 'Gr Liv Area', 'Garage Cars', 'Garage Area', 'Exter Qual_TA', 'Bsmt Qual_Ex', and 'Kitchen Qual_Ex'.  
 
-I then polynomialized those top ten features, suspecting that the correlations between features would also contribute to the price of a home.  For example, the combination of having a porch *and* a backyard would contribute to the price of a home in a slightly different way than just a porch or just a backyard.
+I then polynomialized those top ten features, suspecting that the combinations of features would also contribute to the price of a home.  For example, the combination of having a porch *and* a backyard would contribute to the price of a home in a slightly different way than just a porch or just a backyard.
+
+Having scaled my data and conducted a train-test-split, I was ready to feed my data into a Linear Regression model.
+
+## Regularization
+
+Because I was using linear regression, I also wanted to regularize my data using several different regularizing techniques, namely, Ridge, Lasso, and Elastic Net.  
+
+Maybe reference a previous post in which I go more in depth on each regularizer.  

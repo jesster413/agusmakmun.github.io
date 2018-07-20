@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Review of General Assembly's Data Science Immersive
-published: True
+title: Review of GA's Data Science Immersive
+published: False
 ---
 
 Review of GA's Data Science Immersive here.

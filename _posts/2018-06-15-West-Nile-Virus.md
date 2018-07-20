@@ -1,8 +1,7 @@
 ---
 layout: post
 title: West Nile Virus
-published: True
-image: titanic.png
+published: False
 
 ---
 
@@ -16,7 +15,7 @@ While I was a little late to the competition, this dataset remains one of the mo
 
 ## Going in for a check-up
 
-As with many projects, the raw data was split across a several different dataframes, including a train.csv, a test.csv, a weather.csv, and a spray.csv.  The spray.csv was a collection of locations and timestamps where pesticides were sprayed - I initially set this aside given that it was not immediately obvious to me how I could incorporate it into my model.  
+As with many projects, the raw data was split across a several different dataframes, including a train.csv, a test.csv, a weather.csv, and a spray.csv.  The spray.csv was a collection of locations and timestamps where pesticides were sprayed - I initially set this aside and focused on analyzing the train and weather datasets.  
 
 There was also a file filled with location points that represented the city of Chicago.  I used this file to identify the traps where WNV was present.  These traps are represented by red 'x' marks in the map below.
 

@@ -2,6 +2,7 @@
 layout: project_single
 title:  "West Nile Virus"
 slug: "West-Nile-Virus"
+published: False
 ---
 West Nile Virus (WNV) was first discovered in Uganda in 1937 and persists through the present day in many disparate parts of the world, spreading primarily through female mosquitoes and affecting several types of bird species, as well as other mammals like horses and humans.  Infected victims can either be asymptomatic (75% of cases) or display symptoms like fever, rash, vomiting (20% of cases), encephalitis/meningitis (1% of cases), and in rare instances death (1 out of 1500).[^1]  While the first case of WNV in the US was reported in Queens, NYC in 1999, Chicago has been particularly plagued by the disease since it was first reported in the Windy City in 2001.  As of 2017, Chicago has reported 90 cases of WNV, eight of which resulted in death.[^2]  
 
