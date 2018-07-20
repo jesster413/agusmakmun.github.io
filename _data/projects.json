@@ -33,13 +33,5 @@
 		"image": "sec-resized.png",
 		"date": "July 2018",
 		"tags": ["Predictive Modeling","Web Scraping","Natural Language Processing","Imbalanced Classes","scikit-learn", "imblearn","Classification"]
-	},
-	{
-		"slug": "Salary-Predictions",
-		"name": "Salary Predictions",
-		"image": "salary.jpg",
-		"date": "June 2018",
-		"tags": ["Predictive Modeling","scikit-learn","Regression"]
-	},
-
+	}
 ]
