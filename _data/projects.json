@@ -1,17 +1,17 @@
 [
 	{
-		"slug": "Titanic-Survivability-Odds",
+		/* "slug": "Titanic-Survivability-Odds",
 		"name": "Titanic Survivability Odds",
 		"image": "titanic.jpeg",
 		"date": "May 2018",
 		"tags": ["Predictive Modeling","Classification","Kaggle competition"]
-	},
+	}, */
 	{
-		"slug": "Ames-Iowa-Housing",
+		/* "slug": "Ames-Iowa-Housing",
 		"name": "Ames, Iowa Housing Prices",
 		"image": "housing.jpeg",
 		"date": "May 2018",
-		"tags": ["Predictive Modeling","Regression","Kaggle competition"]
+		"tags": ["Predictive Modeling","Regression","Kaggle competition"] */
 	},
 	{
 		"slug": "Reddit-Hot-Posts",
@@ -21,25 +21,18 @@
 		"tags": ["Predictive Modeling","Web Scraping","Natural Language Processing","scikit-learn","Classification"]
 	},
 	{
-		"slug": "West-Nile-Virus",
+		/* "slug": "West-Nile-Virus",
 		"name": "West Nile Virus",
 		"image": "wnv.jpeg",
 		"date": "June 201",
 		"tags": ["Predictive Modeling","Geospatial Data","Imbalanced Classes","scikit-learn","imblearn","Kaggle competition","Classification"]
-	},
+	}, */
 	{
 		"slug": "SEC-Filings",
 		"name": "SEC Filings",
 		"image": "sec-resized.png",
 		"date": "July 2018",
 		"tags": ["Predictive Modeling","Web Scraping","Natural Language Processing","Imbalanced Classes","scikit-learn", "imblearn","Classification"]
-	},
-	{
-		"slug": "Salary-Predictions",
-		"name": "Salary Predictions",
-		"image": "salary.jpg",
-		"date": "June 2018",
-		"tags": ["Predictive Modeling","scikit-learn","Regression"]
-	},
+	}
 
 ]
