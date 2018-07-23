@@ -72,6 +72,8 @@ Put another way, I plotted the mean cross-validation scores of the three models 
 
 Having conducted this analysis, it appears that the overall quality of a house, the amount of space in the living area, the square footage of the basement, whether there is a fireplace, and the year the home was built and/or remodeled all contribute greatly to the sale price of a house.  In a future iteration of this project, I would be interested in analyzing which neighborhoods are considered most desirable based on their predictive values to the home's sale price.  Already, from the Lasso coefficients, we can see that the No Ridge and Stone Bridge neighbors have large coefficients, suggesting a statistical significance in their ability to predict a home's sale price.
 
+To view the code associated with this project, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Ames-Iowa-Housing-Prices/tree/master)
+
 ---
 
 [^1]:[https://www.census.gov/housing/hvs/files/currenthvspress.pdf](https://www.census.gov/housing/hvs/files/currenthvspress.pdf)
