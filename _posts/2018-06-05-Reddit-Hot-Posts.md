@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reddit Hot Posts
-categories: Classification, Web-scraping, Natural-Language-Processing
+categories: Classification Web-scraping Natural-Language-Processing
 published: True
 
 ---

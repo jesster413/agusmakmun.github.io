@@ -1,7 +1,7 @@
 ---
 layout: post
 title: West Nile Virus
-categories: Classification, Kaggle
+categories: Classification Kaggle
 published: False
 
 ---
