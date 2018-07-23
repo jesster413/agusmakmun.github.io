@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Reddit Hot Posts
+categories: Classification, Web-scraping, Natural-Language-Processing
 published: True
-image: titanic.png
-comments: true
 
 ---
 

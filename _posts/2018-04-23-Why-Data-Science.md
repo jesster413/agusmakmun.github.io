@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why Data Science?
+categories: General Assembly
 published: True
 ---
 

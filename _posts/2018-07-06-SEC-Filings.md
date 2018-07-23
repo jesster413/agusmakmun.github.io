@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SEC Filings
+categories: Classification, Web-scraping, Natural-Language-Processing
 published: True
 
 ---
