@@ -22,8 +22,11 @@ social:
     - icon: fa-github
       link: "https://github.com/thedatasleuth"
 
-    - icon: fa-file
-      link: "https://github.com/thedatasleuth"
+    - icon: fa-envelope
+      link: "mailto:chace.jessica@gmail.com"
+
+    - icon: fa-download
+      link: "{{ thedatasleuth.github.io }}/download/2018.07.17-Resume.pdf"
 
 share:
   twitter_username:
