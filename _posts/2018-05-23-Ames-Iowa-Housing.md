@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ames, Iowa Housing Prices
-published: False
+published: True
 
 ---
 
