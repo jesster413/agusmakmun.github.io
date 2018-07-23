@@ -42,11 +42,7 @@ One of the most difficult aspects of this project was the fact that the baseline
 
 Keeping this in mind, I installed the [imblearn](http://contrib.scikit-learn.org/imbalanced-learn/stable/api.html) package which contains a class balancer, SMOTEENN.  Imblearn's [SMOTEENN](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.combine.SMOTEENN.html) is a slight variation of [SMOTE](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Oversampling TEchnique which randomly selects data points in the minority class and creates copies of them that mimic the characteristics of the minority class based on a k nearest neighbors distance calculation.  SMOTEENN differs slightly from SMOTE by additionally using Edited Nearest Neighbors (ENN), which in essence "cleans" the data set of points that are not strong representatives of their class.  This allows the model to learn more deeply about what characteristics are inherent to the target class.
 
-I ran three models, Random Forest Classifier, XGBoost, and a Balanced Bagging Classifier.
-
-[XGBoost](https://github.com/dmlc/xgboost) is "an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples."[^3]  
-
-BalancedBaggingClassifier allows to resample each subset of data before to train each estimator of the ensemble. In short, it combines the output of an EasyEnsemble sampler with an ensemble of classifiers (i.e. BaggingClassifier). Therefore, BalancedBaggingClassifier takes the same parameters than the scikit-learn BaggingClassifier.
+After balancing the classes, I ran three models: a Random Forest Classifier, [XGBoost](https://github.com/dmlc/xgboost), and a Balanced Bagging Classifier.  I chose these models based on their powerful algorithms to extract information from features and, in the case of XGBoost, learn from mistakes made in the Decision Tree learning process and incorporate that information gain back into training process.
 
 ## What's the prognosis?
 

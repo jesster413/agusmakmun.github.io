@@ -2,7 +2,7 @@
 layout: post
 title: West Nile Virus
 categories: Classification Kaggle
-published: False
+published: True
 
 ---
 
@@ -16,7 +16,7 @@ While I was a little late to the competition, this dataset remains one of the mo
 
 ## Going in for a check-up
 
-As with many projects, the raw data was split across a several different dataframes, including a train.csv, a test.csv, a weather.csv, and a spray.csv.  The spray.csv was a collection of locations and timestamps where pesticides were sprayed - I initially set this aside and focused on analyzing the train and weather datasets.  
+As with many projects, the raw data was split across a several different dataframes, including a train.csv, a test.csv, a weather.csv, and a spray.csv.  The spray.csv was a collection of locations and timestamps where pesticides were sprayed - I initially set this aside given that it was not immediately obvious to me how I could incorporate it into my model.  
 
 There was also a file filled with location points that represented the city of Chicago.  I used this file to identify the traps where WNV was present.  These traps are represented by red 'x' marks in the map below.
 
@@ -42,19 +42,9 @@ Finally, I merged the weather set onto my train set in preparation of modeling.
 
 One of the most difficult aspects of this project was the fact that the baseline accuracy for the dataset was 95% accuracy.  This meant that if you were to guess that WNV was not present, you would be correct 95 out of 100 times.  While this may not seem like a big deal, it is very costly to the City to A. spray expensive pesticides where WNV is not present and run the risk of unnecessarily exposing residents to the toxins (a false negative) and B. not spray pesticides where WNV is present and run the risk of residents becoming ill with the virus and potentially being sued for negligence (a false positive).
 
-Keeping this in mind, I installed the [imblearn](http://contrib.scikit-learn.org/imbalanced-learn/stable/api.html) package which contains a class balancer, SMOTEENN.  
+Keeping this in mind, I installed the [imblearn](http://contrib.scikit-learn.org/imbalanced-learn/stable/api.html) package which contains a class balancer, SMOTEENN.  Imblearn's [SMOTEENN](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.combine.SMOTEENN.html) is a slight variation of [SMOTE](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Oversampling TEchnique which randomly selects data points in the minority class and creates copies of them that mimic the characteristics of the minority class based on a k nearest neighbors distance calculation.  SMOTEENN differs slightly from SMOTE by additionally using Edited Nearest Neighbors (ENN), which in essence "cleans" the data set of points that are not strong representatives of their class.  This allows the model to learn more deeply about what characteristics are inherent to the target class.
 
-Class to perform over-sampling using SMOTE and cleaning using ENN.
-
-Combine over- and under-sampling using SMOTE and Edited Nearest Neighbours.
-
-What does it stand for. Explain how SMOTEEN works here - it synthetically creates new data points that mirror the under-represented class in order that the majority and minority classes are balanced.  This allows the model to learn more deeply about what characteristics are inherent to the target class.
-
-I ran three models, Random Forest Classifier, XGBoost, and a Balanced Bagging Classifier.
-
-I installed the [XGBoost](https://github.com/dmlc/xgboost) package.  XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples.[^3]  
-
-BalancedBaggingClassifier allows to resample each subset of data before to train each estimator of the ensemble. In short, it combines the output of an EasyEnsemble sampler with an ensemble of classifiers (i.e. BaggingClassifier). Therefore, BalancedBaggingClassifier takes the same parameters than the scikit-learn BaggingClassifier.
+After balancing the classes, I ran three models: a Random Forest Classifier, [XGBoost](https://github.com/dmlc/xgboost), and a Balanced Bagging Classifier.  I chose these models based on their powerful algorithms to extract information from features and, in the case of XGBoost, learn from mistakes made in the Decision Tree learning process and incorporate that information gain back into training process.
 
 ## What's the prognosis?
 
