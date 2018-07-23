@@ -16,11 +16,13 @@ collections:
     permalink: /project/:path/
 
 social:
-
     - icon: fa-linkedin
       link: "https://www.linkedin.com/in/jessica-chace/"
 
     - icon: fa-github
+      link: "https://github.com/thedatasleuth"
+
+    - icon: fa-file
       link: "https://github.com/thedatasleuth"
 
 share:

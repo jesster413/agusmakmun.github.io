@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ames, Iowa Housing Prices
+categories: Kaggle
 published: True
 
 ---

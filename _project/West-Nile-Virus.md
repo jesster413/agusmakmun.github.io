@@ -2,7 +2,7 @@
 layout: project_single
 title:  "West Nile Virus"
 slug: "West-Nile-Virus"
-published: False
+published: True
 ---
 West Nile Virus (WNV) was first discovered in Uganda in 1937 and persists through the present day in many disparate parts of the world, spreading primarily through female mosquitoes and affecting several types of bird species, as well as other mammals like horses and humans.  Infected victims can either be asymptomatic (75% of cases) or display symptoms like fever, rash, vomiting (20% of cases), encephalitis/meningitis (1% of cases), and in rare instances death (1 out of 1500).[^1]  While the first case of WNV in the US was reported in Queens, NYC in 1999, Chicago has been particularly plagued by the disease since it was first reported in the Windy City in 2001.  As of 2017, Chicago has reported 90 cases of WNV, eight of which resulted in death.[^2]  
 
@@ -40,17 +40,11 @@ Finally, I merged the weather set onto my train set in preparation of modeling.
 
 One of the most difficult aspects of this project was the fact that the baseline accuracy for the dataset was 95% accuracy.  This meant that if you were to guess that WNV was not present, you would be correct 95 out of 100 times.  While this may not seem like a big deal, it is very costly to the City to A. spray expensive pesticides where WNV is not present and run the risk of unnecessarily exposing residents to the toxins (a false negative) and B. not spray pesticides where WNV is present and run the risk of residents becoming ill with the virus and potentially being sued for negligence (a false positive).
 
-Keeping this in mind, I installed the [imblearn](http://contrib.scikit-learn.org/imbalanced-learn/stable/api.html) package which contains a class balancer, SMOTEENN.  
-
-Class to perform over-sampling using SMOTE and cleaning using ENN.
-
-Combine over- and under-sampling using SMOTE and Edited Nearest Neighbours.
-
-What does it stand for. Explain how SMOTEEN works here - it synthetically creates new data points that mirror the under-represented class in order that the majority and minority classes are balanced.  This allows the model to learn more deeply about what characteristics are inherent to the target class.
+Keeping this in mind, I installed the [imblearn](http://contrib.scikit-learn.org/imbalanced-learn/stable/api.html) package which contains a class balancer, SMOTEENN.  Imblearn's [SMOTEENN](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.combine.SMOTEENN.html) is a slight variation of [SMOTE](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Oversampling TEchnique which randomly selects data points in the minority class and creates copies of them that mimic the characteristics of the minority class based on a k nearest neighbors distance calculation.  SMOTEENN differs slightly from SMOTE by additionally using Edited Nearest Neighbors (ENN), which in essence "cleans" the data set of points that are not strong representatives of their class.  This allows the model to learn more deeply about what characteristics are inherent to the target class.
 
 I ran three models, Random Forest Classifier, XGBoost, and a Balanced Bagging Classifier.
 
-I installed the [XGBoost](https://github.com/dmlc/xgboost) package.  XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples.[^3]  
+[XGBoost](https://github.com/dmlc/xgboost) is "an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples."[^3]  
 
 BalancedBaggingClassifier allows to resample each subset of data before to train each estimator of the ensemble. In short, it combines the output of an EasyEnsemble sampler with an ensemble of classifiers (i.e. BaggingClassifier). Therefore, BalancedBaggingClassifier takes the same parameters than the scikit-learn BaggingClassifier.
 
