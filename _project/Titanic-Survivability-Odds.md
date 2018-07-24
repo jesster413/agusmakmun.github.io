@@ -2,7 +2,7 @@
 layout: project_single
 title:  "Titanic Survivability Odds"
 slug: "Titanic-Survivability-Odds"
-published: false
+published: true
 ---
 While the infamous shipwreck happened over 100 years ago, its cultural significance is sunk deep into our collective memory as one of the most tragic manifestations of hubris, classism, and dumb luck.  To that end, I analyzed the data provided on Kaggle's website to determine more specifically how features such as age, gender, class, and wealth predetermined a passenger's fate on April 15, 1911 aboard the USS Titanic.
 
@@ -11,18 +11,17 @@ While the infamous shipwreck happened over 100 years ago, its cultural significa
 <iframe src="https://giphy.com/embed/ghvWn8S0jiI0M" width="480" height="203" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/movie-titanic-ghvWn8S0jiI0M">via GIPHY</a></p>
 
 
-For this project, I want to predict a passenger's fate using machine learning across several different types of models.  I am also interested in identifying which features had the greatest impact on a person's chances of survival.
+For this project, I wanted to predict a passenger's fate using machine learning across several different types of models.  I was also interested in identifying which features had the greatest impact on a person's chances of survival.
 
-This dataset is neatly packaged in a csv file that can be downloaded from Kaggle's [Titanic competition](https://www.kaggle.com/c/titanic/data) page.  Other projects are not as accessible, and I explore other methods of extracting data in other posts.  
-
-After I downloaded the 'train' set, I read the data into my Jupyter Notebook to begin my analysis.  You can see all of the code associated with this project in the corresponding [GitHub repo](https://github.com/jesster413/Titanic-Survival-Predictions).
+This dataset is neatly packaged in a .csv file that can be downloaded from Kaggle's [Titanic competition](https://www.kaggle.com/c/titanic/data) page.  In some of [my other projects](https://thedatasleuth.github.io/category/Web-scraping) where the data is not so readily accessible, I have used research and web-scraping techniques to assemble my datasets.
 
 ## "Remember, they love money, so pretend like you own a gold mine and you're in the club"
 
-
-Whenever I begin with a new dataset, I like to get an understanding of its shape, stats, and potential pitfalls (null values, outliers, categorical data).  I use descriptors like df.info(), df.shape(), df.describe() as well as a mask I wrote to slice on columns that specifically have null values.  There are many ways to do this, but masking makes the most sense to me.  
+Whenever I begin with a new dataset, I like to get an understanding of its shape, stats, and potential pitfalls (null values, outliers, categorical data).  I use descriptors like df.info(), df.shape(), df.describe() as well as a mask I wrote to slice on columns that specifically have null values.
 
 In sum, this dataset has 891 rows across 12 columns, five of which are categorical columns: 'Name',	'Sex',	'Ticket',	'Cabin',	'Embarked' and seven of which are numerical columns: 'PassengerId',	'Survived',	'Pclass',	'Age',	'SibSp',	'Parch',	'Fare'.
+
+Given that the 'Cabin' category was missing almost 80% of its data, I decided not to try to impute the missing values and instead relabeled them as "UI" (Unidentified).  The 'Age' feature, however, was only missing about 20% of its data, so it made sense to me to impute the missing values using MICE within the fancyimpute package.  I decided to drop the two rows in the 'Embarked' feature entirely.
 
 For illustrative purposes, I plotted some graphs to help visualize the dataset.  
 
@@ -87,4 +86,4 @@ In the end, though, while kNN=25 did perform well, I'm going to go with the LogR
 ##  "A woman's heart is a deep ocean of secrets."
 
 
-Head on over to the project's [GitHub repo](https://github.com/jesster413/Titanic-Survival-Predictions) to view all of the underlying code.
+You can see all of the code associated with this project in the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).

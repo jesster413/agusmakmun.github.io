@@ -15,9 +15,3 @@ Jess graduated with a Bachelor of Arts in Classics: Greek from Barnard College, 
     <a href="https://plot.ly/~jesster413/781/?share_key=IjABdGlcQOiJmHsWWgsivj" target="_blank" title="plot from API (16)" style="display: block; text-align: center;"><img src="https://plot.ly/~jesster413/781.png?share_key=IjABdGlcQOiJmHsWWgsivj" alt="plot from API (16)" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="jesster413:781" sharekey-plotly="IjABdGlcQOiJmHsWWgsivj" src="https://plot.ly/embed.js" async></script>
 </div>
-
-
-
-### Contact me
-
-[chace.jessica@gmail.com](mailto:chace.jessica@gmail.com)
