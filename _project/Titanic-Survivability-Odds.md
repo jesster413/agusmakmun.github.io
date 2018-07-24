@@ -52,36 +52,28 @@ I was also interested in analyzing whether a person's wealth played a role in th
 
 Here's where I engineered my features, whether it was dropping columns entirely or creating new columns.  For this dataset, I decided to drop the PassengerId, Name, and Ticket columns since their values do not contribute to predicting whether someone survived or not.  Whether someone was male or female, however, did so I encoded those columns: 0 for male and 1 for female.  I also dummified the Embarked and Cabin_category columns to determine whether those features played a role in survivability.  Finally, I added columns like 'IsReverend' which encoded whether someone was a Reverend or not and 'FamilyCount' which combined the values of 'SibSp' and 'Parch' to give further detail to the model.  
 
-In order to get the most of the dataset, I polynomialized all of my features after enigneering them.  Every feature was multiplied by every other feature in order to build out and identify the features that are most highly correlated to each other.  231 features were built out.
-
-
-After polynomializing, I scaled my data using StandardScaler.
-
-
-
 <iframe src="https://giphy.com/embed/Y4aRyFaavT9ss" width="460" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Y4aRyFaavT9ss">via GIPHY</a></p>
 
 
 ## "It is a mathematical certainty."
 
 
-Because this is a binary prediction, I chose to build two types of models: one using Logistic Regression and the other using k-Nearest Neighbor Classifier.  Within my LogReg model I tried using both Ridge and Lasso penalties each with an alpha of 1 and 10.  For my kNN models, I tried k=3, k=5, k=15, and k=25.  All seemed to perform pretty well, but which one should I choose to make my predictions?
+Because this is a binary prediction, I used Classifier models to predict whether a passenger survived or not, specifically, Logistic Regression, an SGD Classifier, a kNN Classifier, a Bernoulli Naive Bayes Classifier, a Random Forest, and XGBoost.
 
-To more easily compare my R^2 scores, I generated a table to catalogue my training and test scores across all of my models.  As expected, my training scores were higher than my test scores given that I fit my models to my training data.  It looks like the models all fared pretty well, however, it looks like kNN=3 is overfit given the discrepancy in the training v. test data.  On the other hand, kNN=25 looks like a great model given how close the training and test scores are.  This means that if more data were to become available in other test dataset, the kNN=25 model would account for about 80% variance of the variance from the test dataset.
+To more easily compare my R^2 scores, I generated a table to catalogue my training and test scores across all of my models.  As expected, my training scores were higher than my test scores given that I fit my models to my training data.  It looks like the models all fared pretty well, however, it looks like
+
+kNN=3 is overfit given the discrepancy in the training v. test data.  On the other hand, kNN=25 looks like a great model given how close the training and test scores are.  This means that if more data were to become available in other test dataset, the kNN=25 model would account for about 80% variance of the variance from the test dataset.
 
 | Model  | Penalty | Alpha | Train Score | Test Score |
 |--------|---------|-------|-------------|------------|
-| LogReg | Lasso   | 1     | 0.863       | 0.816      |
-| LogReg | Lasso   | 10    | 0.759       | 0.757      |
-| LogReg | Ridge   | 1     | 0.740       | 0.730      |
-| LogReg | Ridge   | 10    | 0.762       | 0.762      |
-| kNN    |         | 3     | 0.873       | 0.757      |
-| kNN    |         | 5     | 0.855       | 0.771      |
-| kNN    |         | 15    | 0.845       | 0.798      |
-| kNN    |         | 25    | 0.803       | 0.802      |
+| LogReg | Lasso   | 0.077 | 0.844       | 0.816      |
+| SGD    | N/A     | N/A   | 0.830       | 0.816      |
+| kNN    | N/A     | N/A   | 1.000       | 0.794      |
+| BNB    | N/A     | N/A   | 0.757       | 0.757      |
+| RF     | N/A     | N/A   | 0.992       | 0.785      |
+| XGBoost| N/A     | N/A   | 0.830       | 0.821      |
 
 
-In the end, though, while kNN=25 did perform well, I'm going to go with the LogReg model with penalty Lasso and alpha = 1 given that it performed the best overall.
 
 ##  "A woman's heart is a deep ocean of secrets."
 
