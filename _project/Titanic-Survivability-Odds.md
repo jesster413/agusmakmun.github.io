@@ -21,9 +21,9 @@ Whenever I begin with a new dataset, I like to get an understanding of its shape
 
 In sum, this dataset has 891 rows across 12 columns, five of which are categorical columns: 'Name',	'Sex',	'Ticket',	'Cabin',	'Embarked' and seven of which are numerical columns: 'PassengerId',	'Survived',	'Pclass',	'Age',	'SibSp',	'Parch',	'Fare'.
 
-Given that the 'Cabin' category was missing almost 80% of its data, I decided not to try to impute the missing values and instead relabeled them as "UI" (Unidentified).  The 'Age' feature, however, was only missing about 20% of its data, so it made sense to me to impute the missing values using MICE within the fancyimpute package.  I decided to drop the two rows in the 'Embarked' feature entirely.
+Given that the 'Cabin' category was missing almost 80% of its data, I decided not to try to impute the missing values and instead relabeled them as "UI" (Unidentified) from which I then stripped just the first letter from all the cabins in order to make a dummy column called Cabin_category.  This column organized the cabins in this neat array: 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'T', 'U'.  The 'Age' feature, however, was only missing about 20% of its data, so it made sense to me to impute the missing values using MICE within the fancyimpute package.  I decided to drop the two rows in the 'Embarked' feature entirely.
 
-For illustrative purposes, I plotted some graphs to help visualize the dataset.  
+For illustrative purposes, I plotted some graphs with Plotly to help visualize the dataset.  In the 'Age' plot, we can see that the majority of people who died were in the 20-39 bins, whereas the majority of people who lived were in the 0-9 bin.  It makes sense that children would have been prioritized both in terms of what was considered the moral thing to do as well as how much space they took up on the life rafts.  
 
 
 <div>
@@ -31,20 +31,20 @@ For illustrative purposes, I plotted some graphs to help visualize the dataset.
     <script data-plotly="jesster413:787" sharekey-plotly="dGWKE4WznFehAsCcV0SKD0" src="https://plot.ly/embed.js" async></script>
 </div>
 
+We can also see in the plot below that analyzes the gender breakdown of the people who died that the majority of those who perished were men - over four times as many as those who survived.  On the other hand, the women who survived outnumbered those who perished by nearly 3:1.
 
 <div>
     <a href="https://plot.ly/~jesster413/791/?share_key=HIZYGI52HOgQjqEKizOPPF" target="_blank" title="plot from API (21)" style="display: block; text-align: center;"><img src="https://plot.ly/~jesster413/791.png?share_key=HIZYGI52HOgQjqEKizOPPF" alt="plot from API (21)" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="jesster413:791" sharekey-plotly="HIZYGI52HOgQjqEKizOPPF" src="https://plot.ly/embed.js" async></script>
 </div>
 
+I was also interested in analyzing whether a person's wealth played a role in their chances of survival, so I plotted a graph that analyzed the price of a passenger's ticket as well as their class and cabin.  The size of the bubble corresponds to the price of the ticket (the bigger the bubble, the more expensive the ticket.)  From this plot, it looks like the passengers who were located in Passenger Class 1, Cabin B and held an expensive ticket were more likely to survive.
+
 
 <div>
     <a href="https://plot.ly/~jesster413/554/?share_key=uPkCoBfkZF2cpBiDxKE2rj" target="_blank" title="plot from API (12)" style="display: block; text-align: center;"><img src="https://plot.ly/~jesster413/554.png?share_key=uPkCoBfkZF2cpBiDxKE2rj" alt="plot from API (12)" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="jesster413:554" sharekey-plotly="uPkCoBfkZF2cpBiDxKE2rj" src="https://plot.ly/embed.js" async></script>
 </div>
-
-
-There are three columns with null values: 2 in Embarked, 177 in Ages, and 687 in Cabin.  I dropped the two rows with missing values in Embarked since 2 rows out of 891 did not seem like it would make a huge difference in my model.  I then filled the 177 missing values in Ages with the mean age of all the passengers.  Finally, I relabeled the NaN values in Cabin to "Unidentified" from which I then stripped just the first letter from all the cabins in order to make a dummy column called Cabin_category.  This column organized the cabins in this neat array: 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'T', 'U'.  
 
 
 ## "You don't know what hand you're gonna get dealt next"
