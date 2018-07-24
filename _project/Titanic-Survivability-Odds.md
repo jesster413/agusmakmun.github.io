@@ -60,9 +60,7 @@ Here's where I engineered my features, whether it was dropping columns entirely 
 
 Because this is a binary prediction, I used Classifier models to predict whether a passenger survived or not, specifically, Logistic Regression, an SGD Classifier, a kNN Classifier, a Bernoulli Naive Bayes Classifier, a Random Forest, and XGBoost.
 
-To more easily compare my R^2 scores, I generated a table to catalogue my training and test scores across all of my models.  As expected, my training scores were higher than my test scores given that I fit my models to my training data.  It looks like the models all fared pretty well, however, it looks like
-
-kNN=3 is overfit given the discrepancy in the training v. test data.  On the other hand, kNN=25 looks like a great model given how close the training and test scores are.  This means that if more data were to become available in other test dataset, the kNN=25 model would account for about 80% variance of the variance from the test dataset.
+To more easily compare my R^2 scores, I generated a table to catalogue my training and test scores across all of my models.  As expected, my training scores were higher than my test scores given that I fit my models to my training data.  It looks like the models all fared pretty well, however, it looks like the kNN and Random Forest models were overfit, given the discrepancy between their training and test scores.  Logistic Regression, SGD Classifier, and XGBoost all looked like they performed well in both the training as well as the test sets.  
 
 | Model  | Penalty | Alpha | Train Score | Test Score |
 |--------|---------|-------|-------------|------------|
@@ -76,6 +74,8 @@ kNN=3 is overfit given the discrepancy in the training v. test data.  On the oth
 
 
 ##  "A woman's heart is a deep ocean of secrets."
+
+Summary of project here
 
 
 You can see all of the code associated with this project in the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).
