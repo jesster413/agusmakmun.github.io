@@ -52,6 +52,7 @@ I was also interested in analyzing whether a person's wealth played a role in th
 
 Here's where I engineered my features, whether it was dropping columns entirely or creating new columns.  For this dataset, I decided to drop the PassengerId, Name, and Ticket columns since their values do not contribute to predicting whether someone survived or not.  Whether someone was male or female, however, did so I encoded those columns: 0 for male and 1 for female.  I also dummified the Embarked and Cabin_category columns to determine whether those features played a role in survivability.  Finally, I added columns like 'IsReverend' which encoded whether someone was a Reverend or not and 'FamilyCount' which combined the values of 'SibSp' and 'Parch' to give further detail to the model.  
 
+
 <iframe src="https://giphy.com/embed/Y4aRyFaavT9ss" width="460" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Y4aRyFaavT9ss">via GIPHY</a></p>
 
 
@@ -75,7 +76,7 @@ To more easily compare my R^2 scores, I generated a table to catalogue my traini
 
 ##  "A woman's heart is a deep ocean of secrets."
 
-Based on the analysis performed in this post, it appears that men between the ages of 20 and 39 were the most likely to die while on board the RMS Titanic.  Women, children, and those with higher priced tickets fared better.  To illustrate this point even further, I applied the LIME package to the XGBoost model predictions to get a statistical likelihood of a passenger's survivability based on the 'Age', 'Sex', and 'Pclass' features.  For example, a 28 year old male passenger in third class had an 81% likelihood of dying whereas a three year old female in first class had a 75% chance of survival.
+Based on the analysis performed in this post, it appears that men between the ages of 20 and 39 were the most likely to die while on board the RMS Titanic.  Women, children, and those with higher priced tickets fared better.  To illustrate this point even further, I applied the [LIME](http://lime-ml.readthedocs.io/en/latest/lime.html) package to the XGBoost model predictions to get a statistical likelihood of a passenger's survivability based on the 'Age', 'Sex', and 'Pclass' features.  For example, a 28 year old male passenger in third class had an 81% likelihood of dying whereas a three year old female in first class had a 75% chance of survival.
 
 
 To see all of the code associated with this project, check out the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).
