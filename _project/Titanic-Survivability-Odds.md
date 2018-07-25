@@ -4,7 +4,7 @@ title:  "Titanic Survivability Odds"
 slug: "Titanic-Survivability-Odds"
 published: true
 ---
-While the infamous shipwreck happened over 100 years ago, its cultural significance is sunk deep into our collective memory as one of the most tragic manifestations of hubris, classism, and dumb luck.  To that end, I analyzed the data provided on Kaggle's website to determine more specifically how features such as age, gender, class, and wealth predetermined a passenger's fate on April 15, 1911 aboard the USS Titanic.
+While the infamous shipwreck happened over 100 years ago, its cultural significance is sunk deep into our collective memory as one of the most tragic manifestations of hubris, classism, and dumb luck.  To that end, I analyzed the data provided on Kaggle's website to determine more specifically how features such as age, gender, class, and wealth predetermined a passenger's fate on April 15, 1911 aboard the RMS Titanic.
 
 ## "Where to, Miss?"
 
@@ -75,7 +75,7 @@ To more easily compare my R^2 scores, I generated a table to catalogue my traini
 
 ##  "A woman's heart is a deep ocean of secrets."
 
-Summary of project here
+Based on the analysis performed in this post, it appears that men between the ages of 20 and 39 were the most likely to die while on board the RMS Titanic.  Women, children, and those with higher priced tickets fared better.  To illustrate this point even further, I applied the LIME package to the XGBoost model predictions to get a statistical likelihood of a passenger's survivability based on the 'Age', 'Sex', and 'Pclass' features.  For example, a 28 year old male passenger in third class had an 81% likelihood of dying whereas a three year old female in first class had a 75% chance of survival.
 
 
-You can see all of the code associated with this project in the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).
+To see all of the code associated with this project, check out the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).
