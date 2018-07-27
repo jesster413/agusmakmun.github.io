@@ -1,7 +1,11 @@
 ---
 layout: post
-title: Review of GA's Data Science Immersive
+title: New Blog Ideas
 published: False
 ---
 
-Review of GA's Data Science Immersive here.
+Data imputation
+
+regularization
+
+salary preds (Intro to XGBoost)
