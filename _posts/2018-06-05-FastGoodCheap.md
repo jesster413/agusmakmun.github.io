@@ -46,6 +46,8 @@ Having fit the model and verified that it wasn't overfit, we then applied our fi
 
 This was a really fun afternoon project and a great introduction to what Data Science might be like in a professional setting - I suspect that as a Data Scientist, I will have to make (and defend) all sorts of decisions when faced with client deadlines, budget constraints, and incomplete or limited datasets.  Plus, it challenged me to learn a new and powerful model that I later applied to larger-scale projects.
 
+To view the underlying code for this post, check out the corresponding [GitHub repo](https://github.com/thedatasleuth/Fast-Good-Cheap).
+
 ![peach.gif](/static/img/peach.gif)
 
 ---
