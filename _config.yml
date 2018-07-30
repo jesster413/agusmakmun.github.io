@@ -49,7 +49,7 @@ urls:
 url: "https://thedatasleuth.github.io"
 baseurl: ""
 paginate: 20
-per_page: 20
+per_page: 5
 paginate_path: "/page/:num/"
 markdown: kramdown
 kramdown:

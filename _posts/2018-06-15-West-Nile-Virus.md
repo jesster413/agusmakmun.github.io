@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 published: True
 ---
 
-In June 2015, the City of Chicago released data to Kaggle and asked competitors to predict which areas of the city would be more prone to West Nile Virus outbreaks.
+*In June 2015, the City of Chicago released data to Kaggle and asked competitors to predict which areas of the city would be more prone to West Nile Virus outbreaks.*
 
 <!--more-->
 
