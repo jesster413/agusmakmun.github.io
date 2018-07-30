@@ -5,7 +5,7 @@ categories: Classification Web-scraping Natural-Language-Processing
 excerpt_separator: <!--more-->
 published: True
 ---
-Making a new excerpt
+With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) lines of code, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.
 
 <!--more-->
 
@@ -13,7 +13,7 @@ Reddit claims to be the front page of the internet, and that's because they are.
 
 For this project, I was tasked with analyzing a subset of Reddit's "Hot Posts" section to identify what, if any, features of a post determine its popularity.  Using data science techniques like exploratory data analysis, predictive modeling, and natural language processing allowed me to efficiently search through a sample of 5,000 posts faster than I ever could have if I had just read through the posts manually.
 
-With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) keystrokes, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.
+With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) lines of code, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.
 
 ## Let's give 'em something to talk about
 

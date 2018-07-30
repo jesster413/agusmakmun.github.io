@@ -5,7 +5,7 @@ categories: XGBoost Hackathon
 excerpt_separator: <!--more-->
 published: True
 ---
-Making a new excerpt
+Sometimes you can't get everything you want.  Here's an afternoon hackathon project that challenged me to make the most of what I had.
 
 <!--more-->
 

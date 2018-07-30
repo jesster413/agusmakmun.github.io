@@ -5,7 +5,7 @@ categories: Classification Web-scraping Natural-Language-Processing
 excerpt_separator: <!--more-->
 published: True
 ---
-Making a new excerpt
+Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?
 
 <!--more-->
 

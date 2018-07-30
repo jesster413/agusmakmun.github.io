@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 published: True
 ---
 
-Making a new excerpt
+*On April 23, 2018, I enrolled in General Assembly's Data Science course, a full-time immersion program designed to teach programming languages, data analysis techniques, and machine learning skills in 12 weeks.*
 
 <!--more-->
 

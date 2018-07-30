@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 published: True
 ---
 
-Making a new excerpt
+When buying a new home, everyone wants the most bang for the buck.  To that end, I analyzed homes in Ames, Iowa to identify what features of a house contribute the most to its sale price.
 
 <!--more-->
 
