@@ -6,8 +6,11 @@ excerpt_separator: <!--more-->
 published: True
 ---
 
-On April 23, 2018, I enrolled in General Assembly's Data Science course, a full-time immersion program designed to teach programming languages, data analysis techniques, and machine learning skills in 12 weeks.  On the first day, I was writing code in Python, parsing out a dictionary full of Pokemon characteristics, and wondering if I had made a huge mistake.
+Making a new excerpt
+
 <!--more-->
+
+On April 23, 2018, I enrolled in General Assembly's Data Science course, a full-time immersion program designed to teach programming languages, data analysis techniques, and machine learning skills in 12 weeks.  On the first day, I was writing code in Python, parsing out a dictionary full of Pokemon characteristics, and wondering if I had made a huge mistake.
 
 I started off my career as a Paralegal for the Violent and Organized Crime Unit of the U.S. Attorney's Office for the Southern District of New York.  I knew from the first day I stepped inside of that dilapitated office, I had found my people and my purpose.  For the next three and a half years, I worked on a wide range of cases related to gang violence, drug trafficking, human trafficking, and securities fraud, helping Assistant U.S. Attorneys (AUSAs) prepare for trial.  I later left that office to join the New Jersey Attorney General's Office where I continued my investigative work as a Detective for the Public Corruption Unit.
 

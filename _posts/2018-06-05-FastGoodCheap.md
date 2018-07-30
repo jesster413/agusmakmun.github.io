@@ -2,8 +2,12 @@
 layout: post
 title: Fast, Good, Cheap (Intro to XGBoost)
 categories: XGBoost Hackathon
+excerpt_separator: <!--more-->
 published: True
 ---
+Making a new excerpt
+
+<!--more-->
 
 We've all heard it before - you can get something fast and cheap, but it probably won't be very good; you could get something good and cheap, but it will take a long time; or you can get something good and fast, but it's going to cost you.  In that vein, I participated in an afternoon hacking challenge that prompted us to predict whether a person's salary was above $50,000.
 

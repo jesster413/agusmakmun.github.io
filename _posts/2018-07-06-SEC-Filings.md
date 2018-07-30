@@ -2,15 +2,14 @@
 layout: post
 title: SEC Filings
 categories: Classification Web-scraping Natural-Language-Processing
+excerpt_separator: <!--more-->
 published: True
-
 ---
+Making a new excerpt
+
+<!--more-->
 
 The FBI and the American Association of Certified Fraud Examiners estimate that white collar crime costs 300 to 600 billion dollars a year.  That’s the equivalent of Warren Buffet’s net worth 3.5 times over, or buying out the debt of New York City's MTA 9 times over, or purchasing the New York Knicks 90 times over.  It’s incredible amount of money and also a very wide range, suggesting that enforcement agencies don't actually know the extent of the damage cause by white collar crime.
-
-{{ post.excerpt }}
-{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
-{{ post.excerpt | strip_html }}
 
 And that damage is not just limited to the crime itself - the ripple effects of financial crime are even wider, more opaque, but undoubtedly affect every single one of us.  Companies that are defrauded will raise prices on consumer goods to recoup losses.  Scammed insurance companies will demand higher premiums on their policies. Hedge fund schemes that manipulate equity markets can decrease stock prices. And if the government gets taken for a ride, we all know what happens then - more government taxes.
 
