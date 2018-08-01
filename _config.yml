@@ -57,7 +57,6 @@ kramdown:
 gems:
   - jekyll-paginate
   - jekyll-gist
-  - jekyll-time-to-read
 
 compress_html:
   clippings: all
