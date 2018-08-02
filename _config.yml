@@ -22,10 +22,11 @@ social:
     - icon: fa-github
       link: "https://github.com/thedatasleuth"
 
+    - icon: fa-address-card
+      link: "https://resume.github.io/?thedatasleuth"
+
     - icon: fa-envelope
       link: "mailto:chace.jessica@gmail.com"
-
-
 
 share:
   twitter_username:
