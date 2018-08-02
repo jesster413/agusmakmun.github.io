@@ -2,10 +2,11 @@
 layout: post
 title: The Writing's on the Wall, Part 1 (Intro to Keras)
 categories: Neural-Network Keras Kaggle
+highlight_code: true
 published: False
 ---
 
-*Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used when predicting handwritten numbers.*
+*Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used to predict handwritten numbers.*
 
 <!--more-->
 
@@ -74,6 +75,6 @@ To illustrate this point, I plotted a summary chart of the four runs I conducted
 
 ![keras-summary.png](/static/img/keras-summary.png)
 
-## Submitting to kaggle
+The top left plot shows the loss from both the training and the cross-validation (test) during which I trained 50 epochs without a dropout layer.  Notice how the training loss dramatically reduces within the first ten epochs but continues to improve only slightly as the training continues to the 50th epoch.  The loss from the test set, however, increases with the number of epochs with a wider amount of variance - a clear sign of overfitting.  The top right plot shows a similar training run but with an added dropout layer of 50%.  Both the training and test sets appear to be more stable and the loss from the test set is reduced.  In my third run, illustrated by the bottom left plot, I increased the dropout percentage to 75% while still running 50 epochs.  Again, the test loss amount is reduced.  Finally, in the fourth run, noticing that in the last three runs there was a shift in performance between the tenth and twentieth epoch, I decided to set my training epochs to 15 while keeping the dropout rate at 75%.  In this run, the test set loss hued closely to the loss of the training set.  Now I had a model that was trained up on the dataset while remaining flexible enough to predict on unseen data.
 
-Maybe talk about score here?
+## Next Steps
