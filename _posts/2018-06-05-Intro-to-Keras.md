@@ -2,7 +2,7 @@
 layout: post
 title: The Writing's on the Wall, Part 1 (Intro to Keras)
 categories: Neural-Network Keras Kaggle
-published: False
+published: True
 ---
 
 *Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used when predicting handwritten numbers.*
