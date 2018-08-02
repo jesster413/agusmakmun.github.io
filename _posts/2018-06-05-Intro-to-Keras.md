@@ -2,7 +2,7 @@
 layout: post
 title: The Writing's on the Wall, Part 1 (Intro to Keras)
 categories: Neural-Network Keras Kaggle
-published: True
+published: False
 ---
 
 *Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used when predicting handwritten numbers.*
@@ -70,14 +70,10 @@ For this particular muticlassification problem, I set the loss metric to 'catego
 
 When training the model, a user can specify how many epochs used to train the model.  An epoch is a "roundtrip" for information to be passed forwards and backwards through the network.  During forward propagation, data is passed from the initial input layer through the hidden layers and finally to the output layer during which weights, biases, and activation functions are applied to the neurons.  During back propagation, the data is then passed back from the output towards the input layer, measuring the loss produced from the weights assigned to the neurons and, using gradient descent, changes the weights accordingly in order to make more accurate predictions over a user-defined number of iterations.  The amount of epochs to use during training can be identified when either the accuracy or the loss of the predictions stabilizes at an acceptable value.
 
-## How to Prevent Overfitting
+To illustrate this point, I plotted a summary chart of the four runs I conducted, tweaking the number of epochs and the dropout percentage with each new run.  
 
-1.2.3.1  Regularization
-Just like with linear models earlier in this course, we can also do regularization to make sure our weights are more generalizable. Because we're using our loss function to determine how we should change our weights, if we penalize the loss function to avoid larger weights, we will see the same behavior as we did with linear models -- weights will be large or impactful only if they contribute sufficiently to how well the model fits as a whole.
+![keras-summary.png](/static/img/keras-summary.png)
 
 ## Submitting to kaggle
 
 Maybe talk about score here?
-
-
-[TensorFlow playground](http://playground.tensorflow.org/#activation=relu&regularization=L1&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=2,1&seed=0.65075&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
