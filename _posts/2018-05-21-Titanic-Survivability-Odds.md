@@ -87,7 +87,7 @@ Based on the analysis performed in this post, it appears that men between the ag
 For example, a 28 year old male passenger in third class had an 81% likelihood of dying.
 
 ![titanic-lime-dead.png](/static/img/titanic-lime-dead.png)
-
+<br>
 In contrast, a three year old female in first class had a 75% chance of survival.  
 
 ![titanic-lime-survived.png](/static/img/titanic-lime-survived.png)
