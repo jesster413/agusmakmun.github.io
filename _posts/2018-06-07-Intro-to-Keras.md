@@ -3,7 +3,7 @@ layout: post
 title: The Writing's on the Wall, Part 1 (Intro to Keras)
 categories: Neural-Network Keras Kaggle
 highlight_code: true
-published: False
+published: True
 ---
 
 *Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used to predict handwritten numbers.*
@@ -22,13 +22,13 @@ For my first neural network project, I applied Keras to the MNIST ("Modified Nat
 
 ## Prepping the Canvas
 
-Neural networks, in a single line, attempt to iteratively train a set (or sets) of weights that, when used together, return the most accurate predictions for a set of inputs. Just like many of our past models, the model is trained using a loss function, which our model will attempt to minimize over iterations. Remember that a loss function is some function that takes in our predictions and the actual values and returns some sort of aggregate value that shows how accurate (or not) we were.
+<!-- Neural networks, in a single line, attempt to iteratively train a set (or sets) of weights that, when used together, return the most accurate predictions for a set of inputs. Just like many of our past models, the model is trained using a loss function, which our model will attempt to minimize over iterations. Remember that a loss function is some function that takes in our predictions and the actual values and returns some sort of aggregate value that shows how accurate (or not) we were.
 
-Neural networks do this by establishing sets of neurons (known as hidden layers) that take in some sort of input(s), apply a weight, and pass that output onward. As we feed more data into the network, it adjusts those weights based on the output of the loss function, until we have highly trained and specific weights.
+Neural networks do this by establishing sets of neurons (known as hidden layers) that take in some sort of input(s), apply a weight, and pass that output onward. As we feed more data into the network, it adjusts those weights based on the output of the loss function, until we have highly trained and specific weights. -->
 
 To start, I read the training set into pandas, identifying 42,000 rows and 785 columns of data, inclusive of the target column, 'label.'  With the exception of the target column, all of the rest of the columns were pixel features of the images.  
 
-Should I maybe talk about how to convert images to pixels here?
+<!-- Should I maybe talk about how to convert images to pixels here? -->
 
 
 Because Keras requires a numpy array (as opposed to a pandas dataframe), I transformed the X set into a numpy matrix and then normalized the dataset by dividing each value by the maximum number of pixels (255).  I also transformed the target (y) values into a one-hot encoded matrix given that this dataset is a multi-classification problem.
@@ -56,7 +56,7 @@ Next, I activated the training set with 'relu' (Rectified Linear Unit) which onl
 
 ## Knowing Your Audience
 
-The next step to modeling a neural network is to compile the model.  I chose the 'adam' optimizer.  (NEED TO EXPLAIN MORE HERE)  
+The next step to modeling a neural network is to compile the model.  I chose the 'adam' optimizer.
 
 For this particular muticlassification problem, I set the loss metric to 'categorical_crossentropy.'
 
@@ -70,6 +70,6 @@ To illustrate this point, I plotted a summary chart of the four runs I conducted
 
 The top left plot shows the loss from both the training and the cross-validation (test) during which I trained 50 epochs without a dropout layer.  Notice how the training loss dramatically reduces within the first ten epochs but continues to improve only slightly as the training continues to the 50th epoch.  The loss from the test set, however, increases with the number of epochs with a wider amount of variance - a clear sign of overfitting.  The top right plot shows a similar training run but with an added dropout layer of 50%.  Both the training and test sets appear to be more stable and the loss from the test set is reduced.  In my third run, illustrated by the bottom left plot, I increased the dropout percentage to 75% while still running 50 epochs.  Again, the test loss amount is reduced.  Finally, in the fourth run, noticing that in the last three runs there was a shift in performance between the tenth and twentieth epoch, I decided to set my training epochs to 15 while keeping the dropout rate at 75%.  In this run, the test set loss hued closely to the loss of the training set.  Now I had a model that was trained up on the dataset while remaining flexible enough to predict on unseen data.
 
-## Next Steps
+## Art is a Lie that makes us Realize Truth
 
-As artificial intelligence continues to be researched and integrated into our daily lives, we should be as concerned as Penelope was when analyzing which visions of the future are true and which are false.
+As artificial intelligence continues to be researched and integrated into our daily lives, we should be as discerning as Penelope was when determining which visions of the future are true and which are false.
