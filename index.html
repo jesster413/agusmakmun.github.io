@@ -43,7 +43,7 @@ layout: default
 
       <li><a href="/">First</a></li>
 
-      {% for page in (1..paginator.total_pages) %}
+      {% for page in paginator.total_pages %}
         {% if page == paginator.page %}
           <li class="active"><a>{{ page }}<span class="sr-only">(current)</span></a></li>
         {% elsif page == 1 %}

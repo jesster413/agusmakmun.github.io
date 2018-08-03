@@ -10,28 +10,21 @@ published: False
 
 <!--more-->
 
->*"Oneiroi are beyond our unravelling --who can be sure what tale they tell? Not all that men look for comes to pass. Two gates there are that give passage to fleeting Oneiroi; one is made of horn, one of ivory. The Oneiroi that pass through sawn ivory are deceitful, bearing a message that will not be fulfilled; those that come out through polished horn have truth behind them, to be accomplished for men who see them." Homer, Odyssey 19. 562 ff (Shewring translation).*
+When dreaming of the day her husband, Odysseus, would return from war, Penelope describes a vision she had that portends his return.  Having waited twenty years already, she is wary of the dream's validity, saying:
 
-For thousands of years, we've tried to prophesize what the future will hold.  We hope that whatever visions come to us are truthful, but those are only confirmed when the significance of the event has already passed.  As in the passage above, Odysseus' men were similarly concerned with false visions of the future.  
+>*"Stranger, dreams verily are baffling and unclear of meaning, and in no wise do they find fulfilment in all things for men. For two are the gates of shadowy dreams, and one is fashioned of horn and one of ivory. Those dreams that pass through the gate of sawn ivory deceive men, bringing words that find no fulfilment. But those that come forth through the gate of polished horn bring true issues to pass, when any mortal sees them." Homer, Odyssey 19. 560–569 ff (Murray translation)*
 
-As artificial intelligence continues to be researched and integrated into our daily lives, we should be as concerned as Odysseus' men with which visions of the future are true and which are false.
+Penelope describes dreams that pass through the ivory gates as deceitful whereas those that pass through gates of horn can be trusted.  As Arthur Murray notes, the Greek word for horn, κέρας, recalls a similar sounding word κραίνω meaning "fulfill" whereas ἐλέφας, the Greek word for ivory, similarly recalls the word ἐλεφαίρομαι meaning "deceive."  Finally, [my degree in Ancient Greek](https://thedatasleuth.github.io/about/) paid off.
 
-A neural network model approximates the way our actual brains work.  Information passes from one layer of neurons to the next, and the information gained from those interactions informs the final prediction.  Keras is a deep neural network library that makes use of TensorFlow on the backend to allow for easier and faster implementation.  Credited as its primary author, François Chollet, a Google enigeer, explained that the origin of the Keras name comes from the Greek word κέρας for horn.  It references imagery from the Odyssey where men are deceived by dream spirits who arrive through gates of ivory but are led to truth by spirits who arrive through gates of horn.  
+François Chollet, a Google enigeer, drew inspiration from this imagery which was first referenced in the Odyssey nearly three thousand years ago when naming his popular neural network library, Keras.  Designed explicitly for ease of use and speed, Keras is a deep neural network library that makes use of TensorFlow on the backend.
+
+For my first neural network project, I applied Keras to the MNIST ("Modified National Institute of Standards and Technology") handwriting database [made available by Kaggle](https://www.kaggle.com/c/digit-recognizer/data) to predict numbers based on their handwritten equivalent.  Below is a walkthrough of the steps I took to make predictions.
+
+## Prepping the Canvas
 
 Neural networks, in a single line, attempt to iteratively train a set (or sets) of weights that, when used together, return the most accurate predictions for a set of inputs. Just like many of our past models, the model is trained using a loss function, which our model will attempt to minimize over iterations. Remember that a loss function is some function that takes in our predictions and the actual values and returns some sort of aggregate value that shows how accurate (or not) we were.
 
 Neural networks do this by establishing sets of neurons (known as hidden layers) that take in some sort of input(s), apply a weight, and pass that output onward. As we feed more data into the network, it adjusts those weights based on the output of the loss function, until we have highly trained and specific weights.
-
-
-
-
-
-
-
-I applied Keras to the MSINT handwriting database made available by Kaggle to predict numbers based on their handwritten equivalent.  Below is a walkthrough of the steps I took to make predictions.
-
-
-## Prepping the Canvas
 
 To start, I read the training set into pandas, identifying 42,000 rows and 785 columns of data, inclusive of the target column, 'label.'  With the exception of the target column, all of the rest of the columns were pixel features of the images.  
 
@@ -78,3 +71,5 @@ To illustrate this point, I plotted a summary chart of the four runs I conducted
 The top left plot shows the loss from both the training and the cross-validation (test) during which I trained 50 epochs without a dropout layer.  Notice how the training loss dramatically reduces within the first ten epochs but continues to improve only slightly as the training continues to the 50th epoch.  The loss from the test set, however, increases with the number of epochs with a wider amount of variance - a clear sign of overfitting.  The top right plot shows a similar training run but with an added dropout layer of 50%.  Both the training and test sets appear to be more stable and the loss from the test set is reduced.  In my third run, illustrated by the bottom left plot, I increased the dropout percentage to 75% while still running 50 epochs.  Again, the test loss amount is reduced.  Finally, in the fourth run, noticing that in the last three runs there was a shift in performance between the tenth and twentieth epoch, I decided to set my training epochs to 15 while keeping the dropout rate at 75%.  In this run, the test set loss hued closely to the loss of the training set.  Now I had a model that was trained up on the dataset while remaining flexible enough to predict on unseen data.
 
 ## Next Steps
+
+As artificial intelligence continues to be researched and integrated into our daily lives, we should be as concerned as Penelope was when analyzing which visions of the future are true and which are false.
