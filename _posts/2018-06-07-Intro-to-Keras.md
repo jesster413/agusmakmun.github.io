@@ -68,7 +68,15 @@ To illustrate this point, I plotted a summary chart of the four runs I conducted
 
 ![keras-summary.png](/static/img/keras-summary.png)
 
-The top left plot shows the loss from both the training and the cross-validation (test) during which I trained 50 epochs without a dropout layer.  Notice how the training loss dramatically reduces within the first ten epochs but continues to improve only slightly as the training continues to the 50th epoch.  The loss from the test set, however, increases with the number of epochs with a wider amount of variance - a clear sign of overfitting.  The top right plot shows a similar training run but with an added dropout layer of 50%.  Both the training and test sets appear to be more stable and the loss from the test set is reduced.  In my third run, illustrated by the bottom left plot, I increased the dropout percentage to 75% while still running 50 epochs.  Again, the test loss amount is reduced.  Finally, in the fourth run, noticing that in the last three runs there was a shift in performance between the tenth and twentieth epoch, I decided to set my training epochs to 15 while keeping the dropout rate at 75%.  In this run, the test set loss hued closely to the loss of the training set.  Now I had a model that was trained up on the dataset while remaining flexible enough to predict on unseen data.
+The top left plot shows the loss from both the training and the cross-validation (test) during which I trained 50 epochs without a dropout layer.  Notice how the training loss dramatically reduces within the first ten epochs but continues to improve only slightly as the training continues to the 50th epoch.  The loss from the test set, however, increases with the number of epochs with a wider amount of variance - a clear sign of overfitting.  The top right plot shows a similar training run but with an added dropout layer of 50%.  Both the training and test sets appear to be more stable and the loss from the test set is reduced.  In my third run, illustrated by the bottom left plot, I increased the dropout percentage to 75% while still running 50 epochs.  Again, the test loss amount is reduced.  Finally, in the fourth run, noticing that in the last three runs there was a shift in performance between the tenth and twentieth epoch, I decided to set my training epochs to 15 while keeping the dropout rate at 75%.  In this run, the test set loss hued closely to the loss of the training set.  Now I had a model that was trained up on the dataset while remaining flexible enough to predict on unseen data.  To further illustrate this point, I input the training and test loss values into a table for easier comparison.
+
+| Run    | Epochs  | Dropout | Train Loss  | Test Loss  |
+|:------:|:-------:|:-------:|:-----------:|:----------:|
+| 1      | 50      | 0%      | 0.002       | 0.178      |
+| 2      | 50      | 50%     | 0.019       | 0.140      |
+| 3      | 50      | 75%     | 0.073       | 0.117      |
+| 4      | 15      | 75%     | 0.104       | 0.093      |
+
 
 ## Art is a Lie that makes us Realize Truth
 
