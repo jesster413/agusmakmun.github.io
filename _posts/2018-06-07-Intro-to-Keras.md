@@ -81,3 +81,5 @@ The top left plot shows the loss from both the training and the cross-validation
 ## Art is a Lie that makes us Realize Truth
 
 As artificial intelligence continues to be researched and integrated into our daily lives, we should be as discerning as Penelope was when determining which visions of the future are true and which are false.
+
+To see all of the code associated with this post, check out the associated [GitHub repo](https://github.com/thedatasleuth/Digit-Recognizer-Keras).
