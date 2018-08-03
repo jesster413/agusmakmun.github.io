@@ -82,7 +82,10 @@ To more easily compare my R^2 scores, I generated a table to catalogue my traini
 
 ##  "A woman's heart is a deep ocean of secrets."
 
-Based on the analysis performed in this post, it appears that men between the ages of 20 and 39 were the most likely to die while on board the RMS Titanic.  Women, children, and those with higher priced tickets fared better.  To illustrate this point even further, I applied the [LIME](http://lime-ml.readthedocs.io/en/latest/lime.html) package to the XGBoost model predictions to get a statistical likelihood of a passenger's survivability based on the 'Age', 'Sex', and 'Pclass' features.  For example, a 28 year old male passenger in third class had an 81% likelihood of dying whereas a three year old female in first class had a 75% chance of survival.
+Based on the analysis performed in this post, it appears that men between the ages of 20 and 39 were the most likely to die while on board the RMS Titanic.  Women, children, and those with higher priced tickets fared better.  To illustrate this point even further, I applied the [LIME](http://lime-ml.readthedocs.io/en/latest/lime.html) package to the XGBoost model predictions to get a statistical likelihood of a passenger's survivability based on the 'Age', 'Sex', and 'Pclass' features.  For example, a 28 year old male passenger in third class had an 81% likelihood of dying whereas a three year old female in first class had a 75% chance of survival.  I included the output of the LIME analysis below.
 
+![titanic-lime-dead.png](/static/img/titanic-lime-dead.png)
+
+![titanic-lime-survived.png](/static/img/titanic-lime-survived.png)
 
 To see all of the code associated with this project, check out the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).
