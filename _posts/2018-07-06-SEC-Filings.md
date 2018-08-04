@@ -2,6 +2,7 @@
 layout: post
 title: SEC Filings
 categories: Classification Web-scraping Natural-Language-Processing
+description: Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?
 excerpt_separator: <!--more-->
 published: True
 ---
