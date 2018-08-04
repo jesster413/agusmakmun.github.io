@@ -56,13 +56,17 @@ Next, I activated the training set with 'relu' (Rectified Linear Unit) which onl
 
 ## Knowing Your Audience
 
-The next step to modeling a neural network is to compile the model.  I chose the 'adam' optimizer.
+The next step to modeling a neural network is to compile the model.  I chose the 'adam' optimizer given its ease of use, computational efficiency, and ability to handle large sets of data.  While there is [much more complex math](https://arxiv.org/pdf/1412.6980.pdf) behind how 'adam' is derived, essentially it works similar to (but different from) stochastic gradient descent in which the loss function is computed during each epoch and, as a result, neurons are re-weighted until the loss is sufficiently minimized.  'Adam' differs slightly from stochastic gradient descent by incorporating a dynamic and adaptive learning rate determined by the magnitude of change to the gradients.[^1]
 
-For this particular muticlassification problem, I set the loss metric to 'categorical_crossentropy.'
+Because this was a muticlassification problem, I set the loss metric to 'categorical_crossentropy' as suggested by the [Keras documentation](https://keras.io/losses/#categorical_crossentropy).
 
 ## Failing Better
 
-When training the model, a user can specify how many epochs used to train the model.  An epoch is a "roundtrip" for information to be passed forwards and backwards through the network.  During forward propagation, data is passed from the initial input layer through the hidden layers and finally to the output layer during which weights, biases, and activation functions are applied to the neurons.  During back propagation, the data is then passed back from the output towards the input layer, measuring the loss produced from the weights assigned to the neurons and, using gradient descent, changes the weights accordingly in order to make more accurate predictions over a user-defined number of iterations.  The amount of epochs to use during training can be identified when either the accuracy or the loss of the predictions stabilizes at an acceptable value.
+When training the model, a user can specify how many epochs used to train the model.  An epoch is a "roundtrip" for information to be passed forwards and backwards through the network.  
+
+During forward propagation, data is passed from the initial input layer, through the hidden layers, and finally to the output layer during which weights, biases, and activation functions are applied to the neurons.  
+
+During back propagation, the data is then passed back from the output towards the input layer, measuring the loss produced from the weights assigned to the neurons and, using gradient descent, changes the weights accordingly in order to make more accurate predictions over a user-defined number of iterations.  The amount of epochs to use during training can be identified when either the accuracy or the loss of the predictions stabilizes at an acceptable value.
 
 To illustrate this point, I plotted a summary chart of the four runs I conducted, tweaking the number of epochs and the dropout percentage with each new run.  
 
@@ -80,6 +84,9 @@ The top left plot shows the loss from both the training and the cross-validation
 
 ## Art is a Lie that makes us Realize Truth
 
-As artificial intelligence continues to be researched and integrated into our daily lives, we should be as discerning as Penelope was when determining which visions of the future are true and which are false.
+As machine learning continues to be integrated into our daily lives, we should be as discerning as Penelope was when determining which visions of the future are true and which are false.
 
 To see all of the code associated with this post, check out the associated [GitHub repo](https://github.com/thedatasleuth/Digit-Recognizer-Keras).
+
+---
+[^1]:[https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
