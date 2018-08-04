@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Review of GA's Data Science Immersive
-published: False
+published: True
 ---
 
 Review of GA's Data Science Immersive here.
