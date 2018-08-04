@@ -187,25 +187,6 @@ layout: compress
           <div class="fixed-condition">
             <ul class="sidebar-right">
               <p><font size="4">Hot Tips</font></p><br>
-              <!-- <p align="center">Hot Tips</p> -->
-                <!-- <a<ul class="fact-list smaller"></a></font> -->
-                  <!-- &raquo;
-                  If your model generates warnings during training, silence them with:<br>
-                  import warnings<br>
-                  warnings.simplefilter("ignore")
-                  <br>
-                  <br>
-                  &raquo;
-                  If you'd like to see more than the default number of rows and/or columns within a pandas dataframe, just change the display options like this:<br>
-                  import pandas as pd<br>
-                  pd.options.display.max_rows=999<br>
-                  pd.options.display.max_columns=999
-                  <br>
-                  <br>
-                  &raquo;
-                  To suppress the index column when reading in a new .csv, try setting the index_col parameter to 0, like this:<br>
-                  pd.read_csv('./file.csv', index_col=0) -->
-
                   {% for fact in site.quick_facts %}
                     <li{% if forloop.last %} class="last"{% endif %}>{{ fact.output }}</li>
                   {% endfor %}
