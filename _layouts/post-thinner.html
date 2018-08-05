@@ -186,7 +186,7 @@ layout: compress
         <div class="col-sm-3">
           <div class="fixed-condition">
             <ul class="sidebar-related">
-              <i><p><font size="4">Related Posts</font></p>
+              <p><font size="4">Related Posts</font></p>
 {% assign hasSimilar = '' %}
   {% for post in site.posts  %}
     {% assign postHasSimilar = false %}
@@ -196,10 +196,10 @@ layout: compress
             {% if hasSimilar.size == 0 %}
             <div class="panel-body">
               <!-- <h4>Related Posts</h4> -->
-              <ul>
+              <!-- <ul> -->
             {% endif %}
                 <li class="relatedPost">
-                  <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                  <a href="{{ site.url }}{{ post.url }}"><font size="3">{{ post.title }}</font></a><br>
                   {% if post.categories %}
                     (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
                   {% endif %}
