@@ -168,7 +168,7 @@ layout: compress
         </div>
         <!-- end /.fixed-condition -->
       </div>
-      <div class="col-sm-8 col-offset-1 main-layout">
+      <div class="col-sm-6 col-offset-1 main-layout">
         {{ content }}
         <footer>
           &copy; {{ site.author }}
@@ -182,18 +182,39 @@ layout: compress
         </footer> -->
       </div>
       <!-- end /.col-sm-8 -->
-      <!-- <div class="container">
+      <div class="container">
         <div class="col-sm-3">
           <div class="fixed-condition">
-            <ul class="sidebar-right">
-              <i><p><font size="4">Did you know...</font></p><br>
-                  {% for fact in site.quick_facts %}
-                    <li{% if forloop.last %} class="last"{% endif %}> {{ fact.output }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-      </div> -->
+            <ul class="sidebar-related">
+              <i><p><font size="4">Related Posts</font></p>
+{% assign hasSimilar = '' %}
+  {% for post in site.posts  %}
+    {% assign postHasSimilar = false %}
+      {% for tag in post.categories %}
+        {% for thisTag in page.categories %}
+          {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
+            {% if hasSimilar.size == 0 %}
+            <div class="panel-body">
+              <!-- <h4>Related Posts</h4> -->
+              <ul>
+            {% endif %}
+                <li class="relatedPost">
+                  <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                  {% if post.categories %}
+                    (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
+                  {% endif %}
+                </li>
+          {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+          {% assign postHasSimilar = true %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+  {% if hasSimilar.size > 0 %}
+  </ul>
+</div>
+{% endif %}
+
     <!-- end /.container -->
 
     <!-- Bootstrap core JavaScript -->

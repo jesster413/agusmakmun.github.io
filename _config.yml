@@ -15,6 +15,7 @@ collections:
     output: true
     permalink: /project/:path/
   quick_facts:
+  related:
 
 social:
     - icon: fa-linkedin

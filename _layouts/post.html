@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post-thinner
 ---
 <header class="post-header">
   <h1 class="post-title">{{ page.title }}</h1>
@@ -17,7 +17,7 @@ layout: default
   {% include share-page.html %}
 </div>
 
-{% assign hasSimilar = '' %}
+<!-- {% assign hasSimilar = '' %}
   {% for post in site.posts  %}
     {% assign postHasSimilar = false %}
       {% for tag in post.categories %}
@@ -43,7 +43,7 @@ layout: default
   {% if hasSimilar.size > 0 %}
   </ul>
 </div>
-{% endif %}
+{% endif %} -->
 
 <div class="PageNavigation">
   {% if page.previous.url %}
