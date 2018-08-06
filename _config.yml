@@ -41,8 +41,8 @@ urls:
       url: /projects/
     - text: Resources
       url: /resources/
-    - text: Events
-      url: /events/
+    # - text: Events
+    #   url: /events/
     - text: Contact
       url: /contact/
     - text: XML Feed
