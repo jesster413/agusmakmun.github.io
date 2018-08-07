@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css">
+        <script src="{{ site.baseurl }}/js/scripts.js"></script>
+        <img src="{{ site.baseurl }}/path/to/img/toto.jpg">
+    </head>
+    <body>
+        <header role="banner">
+        </header>
+
+        <div role="main">
+            <div class="container">
+              <div class="col-sm-3">
+                {{ content }}
+            </div>
+        </div>
+
+        <footer role="contentinfo">
+            ...
+        </footer>
+    </body>
+</html>

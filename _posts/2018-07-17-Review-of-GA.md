@@ -80,11 +80,21 @@ In addition to our weekly homework assignments and bi-weekly projects, we were a
 
 ## A little Commencement Speech
 
-Matriculating through this bootcamp was one of the harder things I've ever done.  Unlike University where I had at most three hour and a quarter long lectures every day, we consistently had about four hours of lecture followed by about two hours of review, in addition to another two hours or so of workshop time.  We had to complete 20 out of 25 (80%) labs in addition to four projects *and* a capstone in 12 weeks, which averages to about two assignments due per week. It was a pretty grueling pace made more difficult by the fact that these were topics I had never even thought about before.
+Matriculating through this bootcamp was one of the harder things I've ever done.  Unlike college where I had at most three one hour long lectures every day, in the bootcamp we consistently had about four hours of lecture followed by about two hours of review, in addition to another two hours or so of workshop time.  In 12 weeks, we had to complete 20 out of 25 (80%) labs in addition to four projects *and* a capstone, which averages to about two assignments due per week. It was a pretty grueling pace made more difficult by the fact that these were topics I had never been exposed to before.
 
-There are also personal and financial considerations.  I don't think I saw my friends more than once during the entire three months I was in the course because I spent my nights and weekends working on labs and/or projects.  I had to hire a dog walker for my big girl and ended up enrolling in MealPal because I just didn't have time to cook.  By Week 8, I was exhausted struggling to keep up with assignments, and looking down the barrel of a whole other month.
+There are also personal and financial considerations.  I don't think I saw my friends more than once during the entire three months I was in the course because I spent my nights and weekends working on labs and/or projects.  I hired a dog walker to help out with my big girl and ended up enrolling in MealPal because I just didn't have time to cook.  By Week 8, I was exhausted struggling to keep up with assignments, and looking down the barrel of a whole other month.  In Week 9, my 10-year old computer broke.  (Fortunately, I had my work backed up.)
 
-  
+With all of that being said though, if you are thinking of enrolling in a bootcamp, I would recommend it.  While I am still learning and improving my Data Science skills everyday, I would absolutely say that the bootcamp gave me a foundation in programming that I previously thought unattainable.  Before GA, I had never coded in my life.  In 12 weeks, I was able to build predictive models, scrape the web, apply natural language processing, analyze complex datasets, and probably most importantly, gain confidence that I *could* learn programming techniques.  My unsolicited advice to anyone considering one of these programs is:
+
+1. **Get help** with the household (kids, dog, cleaning, meal prep),
+
+2. **Prepare financially** to cover living expenses for the three months while in bootcamp *and* the three months after while job searching.  (My experience thus far has been that jobs worth getting move slowly.)  General Assembly (and maybe other bootcamps) offers loans for tuition as well as living expenses, if, like me, you don't have about 25k cash lying around while living in NYC.  
+
+3. And finally, **find your grit**.  Unless you are a data ninja before enrolling in the course (to which I would then wonder why you would feel the need for such a course to being with) it's going to be hard.  You will feel pressed for time, constantly.  There will be concepts that you just might not get right away.  You will get stuck in your code.  You may even fail a quiz, or five.  This is a high-stakes environment given the cost of the class, the pace of the syllabus, the difficult of the concepts, and the pressure to secure employment after.  Knowing in your gut why you are doing this and what it will mean for you after - higher income, greater job stability, maybe even a better work/life balance - will carry you through.  
+
+If I can answer any more questions specifically about my own experience as a now alum of GA's Data Science Immersive course, feel free to reach out to me via my [contact form](https://thedatasleuth.github.io/contact/).
+
+Here's a picture of my cohort on our (very long) last day of class after 20 capstone presentations!
 
 ![dsi-pic.jpg](/static/img/dsi-pic.jpg)
 
