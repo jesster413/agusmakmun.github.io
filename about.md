@@ -1,5 +1,5 @@
 ---
-layout: page-thinner
+layout: about
 title: About
 permalink: /about/
 ---

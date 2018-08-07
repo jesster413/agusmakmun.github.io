@@ -1,9 +1,0 @@
-<div class="sidebar-related sidebar right column-4 widescreen-only">
-  <p>Related Posts</p>
-  <ul class="fact-list smaller">
-    {% assign related = site.related | sort: 'weight' %}
-    {% for post in related %}
-      <li{% if forloop.last %} class="last"{% endif %}>{{ post.output }}</li>
-    {% endfor %}
-  </ul>
-</div>

@@ -16,6 +16,7 @@ collections:
     output: true
     permalink: /project/:path/
   quick_facts:
+  fun_facts:
   related:
 
 social:

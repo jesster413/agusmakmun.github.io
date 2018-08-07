@@ -1,0 +1,9 @@
+<div class="sidebar-fun sidebar right column-4 widescreen-only">
+  <p>Q&A</p>
+  <ul class="fact-list smaller">
+    {% assign fun_facts = site.fun_facts | sort: 'weight' %}
+    {% for fact in fun_facts %}
+      <li{% if forloop.last %} class="last"{% endif %}>{{ fact.output }}</li>
+    {% endfor %}
+  </ul>
+</div>
