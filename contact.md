@@ -1,9 +1,10 @@
 ---
-layout: page
+layout: index
 title: Contact
 permalink: /contact/
 ---
-
+### Contact
+---
 Jess is available for full-time and contract data science work in the consulting, enterprise, finance, and banking & compliance industries.  She is also open to collaborating on data science projects for Kaggle and Hackathon competitions.  She welcomes constructive feedback on any of the code associated with the projects posted in this blog as well as good vibes.  Feel free to drop her a line using the contact form below.  
 
 <form class="wj-contact" action="https://formspree.io/{{site.email}}" method="POST">
