@@ -4,6 +4,8 @@ title: Resources
 permalink: /resources/
 comments: true
 ---
+### Resources
+---
 
 Here's a list of data science related resources that I've collected so far.  I would love to hear new suggestions and expand this list.
 
