@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: default
 title: Resources
 permalink: /resources/
 comments: true

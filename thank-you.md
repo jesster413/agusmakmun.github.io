@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page-thinner
 title: Thank You
 permalink: /thank-you/
 ---
