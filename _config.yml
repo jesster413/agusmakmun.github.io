@@ -16,7 +16,11 @@ collections:
     output: true
     permalink: /project/:path/
   quick_facts:
+    kramdown:
+        highlighter: rouge
   fun_facts:
+    kramdown:
+        highlighter: rouge
   related:
 
 social:

@@ -4,7 +4,7 @@ title: Review of General Assembly's Data Science Immersive Course
 categories: General-Assembly
 description: An honest, post-graduation review of General Assembly's 12-week Data Science Immersive course
 excerpt_separator: <!--more-->
-published: False
+published: True
 ---
 *An honest, post-graduation review of the course's layout, syllabus, and instructors.*
 
@@ -36,8 +36,7 @@ I included a diagram of the schedule (seen below) from GA's website because it m
 
 I would caveat that while the post-lecture reviews are *technically* optional, they really aren't in practice.  This is time that the local instructor uses to go over questions related to the lecture material or work with students individually to answer questions related to labs or projects.  Trust me, you won't want to skip out on this.  In New York, there wasn't a "Community Meetup" that I can recall.  We basically just ended lecture around 4 PM, took a ten minute break, and then had our afternoon lab/review time right up until the end of the day at 6 PM when our local instructor congratulated us for surviving another day.  
 
-
-
+While I'm sure the material changes slightly with each cohort, this is a summary of the topics we covered each week:
 
 Week 1: Intro to Python
 
@@ -69,20 +68,23 @@ There is, however, one change I would make to the syllabus: Week 9.  We spent a 
 
 ## Meet the Instructors
 
-There were four global instructors, all with impressive credentials in statistics, machine learning, and development.  Three out of the four lecturers were excellent.  They were able to explain difficult concepts in an organized and coherent way, often with supplemental powerpoint materials that enhanced my ability to grasp new concepts, especially ones that were more math and theory-based, like Bayesian Regression.  There were also many in-class "code-alongs" during which we practiced actual execution and wrote code in tandem with the instructor to reinforce programming skills.  This technique was particularly useful when we were first learning how to use the neural network libraries, [Keras](https://thedatasleuth.github.io/neural-network/keras/kaggle/2018/06/07/Intro-to-Keras.html) and TensorFlow.  
+There were four global instructors, all with impressive credentials in statistics, machine learning, and development.  Three out of the four lecturers were excellent.  They were able to explain difficult concepts in an organized and coherent way, often with supplemental powerpoint materials that enhanced my ability to grasp new concepts, especially ones that were more math and theory-based.  There were also many in-class "code-alongs" during which we practiced actual execution and wrote code in tandem with the instructor to reinforce programming skills.  This technique was particularly useful when we were first learning how to use the neural network libraries, [Keras](https://thedatasleuth.github.io/neural-network/keras/kaggle/2018/06/07/Intro-to-Keras.html) and TensorFlow.  
 
-A review of the local instructor here.
-
-
-Need to talk about the connected classrooms concept.
-
-talk about multiple Slack channels.
+We also had a local instructor and a TA in class with us.  I cannot say enough good things about my local instructor.  He had the impossible task of raising 20 baby Data Scientists and did it with the patience of a demi-god.  He explained and reviewed difficult concepts multiple times until things began to stick.  He debugged coding errors like a ninja.  He supported my ideas for projects and my capstone and he helped me achieve my overall goals for the course.  He was approachable, likable, and compassionate and one of the main reasons I was able to make it through 12 weeks of Data Science.
 
 ## Graduation Day
 
 We also had a weekly Outcomes meeting every Thursday afternoon during which we discussed topics related to our pending job searches.
 
 In addition to our weekly homework assignments and bi-weekly projects, we were also required to hand-in weekly "Outcomes" assignments, including Brand Statements, updated resumes, LinkedIn profiles, and written responses to questions like, "Tell me about yourself."  
+
+## A little Commencement Speech
+
+Matriculating through this bootcamp was one of the harder things I've ever done.  Unlike University where I had at most three hour and a quarter long lectures every day, we consistently had about four hours of lecture followed by about two hours of review, in addition to another two hours or so of workshop time.  We had to complete 20 out of 25 (80%) labs in addition to four projects *and* a capstone in 12 weeks, which averages to about two assignments due per week. It was a pretty grueling pace made more difficult by the fact that these were topics I had never even thought about before.
+
+There are also personal and financial considerations.  I don't think I saw my friends more than once during the entire three months I was in the course because I spent my nights and weekends working on labs and/or projects.  I had to hire a dog walker for my big girl and ended up enrolling in MealPal because I just didn't have time to cook.  By Week 8, I was exhausted struggling to keep up with assignments, and looking down the barrel of a whole other month.
+
+  
 
 ![dsi-pic.jpg](/static/img/dsi-pic.jpg)
 
