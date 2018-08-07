@@ -4,7 +4,7 @@ title: Review of General Assembly's Data Science Immersive Course
 categories: General-Assembly
 description: An honest, post-graduation review of General Assembly's 12-week Data Science Immersive course
 excerpt_separator: <!--more-->
-published: True
+published: False
 ---
 *An honest, post-graduation review of the course's layout, syllabus, and instructors.*
 
