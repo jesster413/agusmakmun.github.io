@@ -12,7 +12,7 @@ pd.options.display.max_columns=999
 ```
 
 
-If you'd like to see more than the default number of rows and/or columns within a pandas dataframe, just change the display options like this:
+<!-- If you'd like to see more than the default number of rows and/or columns within a pandas dataframe, just change the display options like this:
 
 <pre>
   <code class="ruby">
@@ -43,4 +43,4 @@ pre {
         padding-right: 0;
         padding-left: 0;
     }
-}
+} -->
