@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page-thinner
 title: Contact
 permalink: /contact/
 ---
