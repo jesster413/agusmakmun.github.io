@@ -46,12 +46,12 @@ A neural network can have any number of hidden layers with any number of neurons
 
 I decided to set my dropout layer to 0.5, which means that 50% of the neurons would be randomly "turned off" from training.  I did this to prevent the model from being overfit to the training set and to allow for some flexibility when faced with new data.
 
-{% highlight ruby %}
+```
 model = Sequential()
 model.add(Dense(X_train.shape[1], input_shape=(784,), activation='relu'))
 model.add(Dropout(.5))
 model.add(Dense(y_train.shape[1], activation='softmax'))
-{% endhighlight %}
+```
 
 Next, I activated the training set with 'relu' (Rectified Linear Unit) which only activates neurons whose output will be positive.  For the target, I activated with 'softmax' to essentially normalize the inputs within a scale of 0 to 1 to create a probability for an input falling within one of the target classes.
 
