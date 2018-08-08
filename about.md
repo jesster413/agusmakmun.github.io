@@ -11,6 +11,7 @@ When Jess isn't modeling or visualizing her data, she likes to spend time with h
 
 Jess graduated with a Bachelor of Arts in Classics: Greek from Barnard College, Columbia University.  She boosted her career with a [12-week Data Science Immersive Course from General Assembly](https://generalassemb.ly/education/data-science-immersive).
 
+To see where my life and work have taken me, zoom, drag, and hover over the marks.
 
 <div>
     <a href="https://plot.ly/~jesster413/781/?share_key=IjABdGlcQOiJmHsWWgsivj" target="_blank" title="plot from API (16)" style="display: block; text-align: center;"><img src="https://plot.ly/~jesster413/781.png?share_key=IjABdGlcQOiJmHsWWgsivj" alt="plot from API (16)" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
