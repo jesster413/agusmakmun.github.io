@@ -60,7 +60,12 @@ paginate_path: "/page/:num/"
 markdown: kramdown
 kramdown:
     math_engine: mathjax
-    highlighter: rouge
+    syntax_highlighter: rouge
+      css_class: 'highlight'
+
+sass:
+    style: :expanded
+
 gems:
   - jekyll-paginate
   - jekyll-gist
