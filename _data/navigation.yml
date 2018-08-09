@@ -6,7 +6,7 @@
   url: /projects/
   sublinks:
     - title: Posts by Date
-      url: /resources/
+      url: "https://thedatasleuth.github.io"
     - title: separator
     - title: Posts by Category
       url: /category/General-Assembly

@@ -171,7 +171,7 @@ layout: compress
             {% endif %}
         {% endfor %}
     </ul>
-    </nav>
+</nav>
 
     <div class="container">
       <div class="col-sm-3">
@@ -209,59 +209,48 @@ layout: compress
       </div>
       <div class="col-sm-7 col-offset-1 main-layout">
         {{ content }}
-        <footer>
-          &copy; {{ site.author }}
-          {% if site.github %}
-            - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
-          {% endif %}
-          <!-- <div class="btn-github" style="float:right;">
-            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-          </div>
-        </footer> -->
-      </div>
-      <!-- end /.col-sm-8 -->
-      <div class="container">
-        <div class="col-sm-3">
-          <div class="fixed-condition">
-            <ul class="sidebar-related">
-              <p><font size="4">Archives</font></p>
-  {% assign currentYear = site.time | date: "%Y" %}
-  {% assign currentMonth = site.time | date: "%B" %}
-  {% for post in site.posts %}
+        {% assign currentYear = site.time | date: "%Y" %}
+        {% assign currentMonth = site.time | date: "%B" %}
+        {% for post in site.posts %}
 
-      {% assign postYear = post.date | date: "%Y" %}
-      {% assign postMonth = post.date  | date: "%B" %}
+            {% assign postYear = post.date | date: "%Y" %}
+            {% assign postMonth = post.date  | date: "%B" %}
 
-      {% if forloop.first %}
-      <li> {{ postYear}}
-          <ul>
-              <li> {{ postMonth }}
-                  <ul>
-      {% endif %}
+            {% if forloop.first %}
+            <li> {{ postYear}}
+                <ul>
+                    <li> {{ postMonth }}
+                        <ul>
+            {% endif %}
 
-      {% if (postYear == currentYear and postMonth == currentMonth) or forloop.first %}
-          <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-      {% endif %}
+            {% if (postYear == currentYear and postMonth == currentMonth) or forloop.first %}
+                <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {% endif %}
 
-      {% if postYear == currentYear and postMonth != currentMonth %}
-          </ul></li>
-          <li> {{ postMonth }}
-              <ul>
-                  <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-      {% endif %}
+            {% if postYear == currentYear and postMonth != currentMonth %}
+                </ul></li>
+                <li> {{ postMonth }}
+                    <ul>
+                        <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {% endif %}
 
-      {% if postYear != currentYear %}
-          </ul></li></ul></li>
-              <li> {{ postYear}}
-                  <ul>
-                      <li> {{ postMonth }}
-                          <ul>
-                              <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-      {% endif %}
-      {% assign currentYear = postYear %}
-      {% assign currentMonth = postMonth %}
-  {% endfor %}
+            {% if postYear != currentYear %}
+                </ul></li></ul></li>
+                    <li> {{ postYear}}
+                        <ul>
+                            <li> {{ postMonth }}
+                                <ul>
+                                    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {% endif %}
+            {% assign currentYear = postYear %}
+            {% assign currentMonth = postMonth %}
+        {% endfor %}
+    <!-- <footer>
+      &copy; {{ site.author }}
+      {% if site.github %}
+        - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
+      {% endif %} -->
+
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
