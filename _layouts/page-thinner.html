@@ -138,6 +138,11 @@ layout: compress
 
     <nav id="navbar" class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
+      <li><font size="4"><a href="/"></a></font></li>
+      {% for i in site.urls %}
+        <li><font size="4"><a class="about" href="{{ i.url }}">{{ i.text }}</a></font></li>
+      {% endfor %}
+
         {% assign links = site.data.navigation %}
         {% for link in links %}
             {% assign class = nil %}
@@ -166,7 +171,7 @@ layout: compress
             {% endif %}
         {% endfor %}
     </ul>
-</nav>
+    </nav>
 
     <div class="container">
       <div class="col-sm-3">
@@ -192,12 +197,13 @@ layout: compress
           </div>
           <hr />
           <ul class="sidebar-nav">
-            <strong>Navigation</strong>
+            Jess Chace is an experienced investigator <br> in both public and private spheres with updated <br> tech skills in Python, Exploratory Data Analysis, <br> Machine Learning, Natural Language Processing, <br> and Data Visualization.
+            <!-- <strong>Navigation</strong>
             <li><font size="4"><a href="/">Home</a></font></li>
             {% for i in site.urls %}
               <li><font size="4"><a class="about" href="{{ i.url }}">{{ i.text }}</a></font></li>
             {% endfor %}
-          </ul>
+          </ul> -->
         </div>
         <!-- end /.fixed-condition -->
       </div>

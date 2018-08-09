@@ -135,6 +135,43 @@ layout: compress
 
   </head>
   <body>
+    <nav id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><font size="4"><a href="/"></a></font></li>
+      {% for i in site.urls %}
+        <li><font size="4"><a class="about" href="{{ i.url }}">{{ i.text }}</a></font></li>
+      {% endfor %}
+
+        {% assign links = site.data.navigation %}
+        {% for link in links %}
+            {% assign class = nil %}
+            {% if page.url contains link.url %}
+                {% assign class = 'active' %}
+            {% endif %}
+            {% if link.sublinks %}
+                <li class="dropdown {{ class }}">
+                    <a href="{{ site.baseurl }}{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% for sublink in link.sublinks %}
+                            {% if sublink.title == 'separator' %}
+                                <li role="separator" class="divider"></li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% else %}
+                <li class="{{ class }}">
+                    <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+
     <div class="container">
       <div class="col-sm-3">
         <div class="fixed-condition">
@@ -159,30 +196,17 @@ layout: compress
           </div>
           <hr />
           <ul class="sidebar-nav">
-            <strong>Navigation</strong>
+            Jess Chace is an experienced investigator <br> in both public and private spheres with updated <br> tech skills in Python, Exploratory Data Analysis, <br> Machine Learning, Natural Language Processing, <br> and Data Visualization.
+            <!-- <strong>Navigation</strong>
             <li><font size="4"><a href="/">Home</a></font></li>
             {% for i in site.urls %}
               <li><font size="4"><a class="about" href="{{ i.url }}">{{ i.text }}</a></font></li>
             {% endfor %}
-          </ul>
+          </ul> -->
         </div>
         <!-- end /.fixed-condition -->
       </div>
-      <div class="col-sm-7 col-offset-1 main-layout">
-        {{ content }}
-        <footer>
-          &copy; {{ site.author }}
-          {% if site.github %}
-            - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
-          {% endif %}
-          <!-- <div class="btn-github" style="float:right;">
-            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-            <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-          </div>
-        </footer> -->
-      <!-- </div> -->
-      <!-- end /.col-sm-8 -->
-
+    
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
