@@ -12,7 +12,7 @@
       url: /category/General-Assembly
     - title: separator
     - title: Archives
-      url:  /thank-you/
+      url:  /archives/
 - title: Portfolio
   url: /projects/
 - title: Resources
@@ -26,9 +26,8 @@
     - title: separator
     - title: Podcasts
       url: /resources/
-    # - title: separator
-  - title: Contact
-    url:  /contact/
+- title: Contact
+  url:  /contact/
 
 # - title: Contact
 #   url: /contact/
