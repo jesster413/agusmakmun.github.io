@@ -1,0 +1,54 @@
+- title: Home
+  url: "https://thedatasleuth.github.io"
+- title: About
+  url: /about/
+- title: Blog
+  url: /projects/
+  sublinks:
+    - title: Posts by Date
+      url: /resources/
+    - title: separator
+    - title: Posts by Category
+      url: /category/General-Assembly
+    - title: separator
+    - title: Archives
+      url:  /thank-you/
+- title: Portfolio
+  url: /projects/
+- title: Resources
+  url: /resources/
+  sublinks:
+    - title: Books
+      url: /resources/
+    - title: separator
+    - title: Blogs
+      url: /resources/
+    - title: separator
+    - title: Podcasts
+      url: /resources/
+    # - title: separator
+
+# - title: Contact
+#   url: /contact/
+#   sublinks:
+#     - title: FAQ
+#       url: /faq.html
+#     - title: Documentation
+#       url: /documentation.html
+#     - title: separator
+#     - title: Customer Support
+#       url: /customer-support.html
+#
+#
+#     - text: About Me
+#       url: /about/
+#     - text: Projects
+#       url: /projects/
+#     - text: Resources
+#       url: /resources/
+#     # - text: Events
+#     #   url: /events/
+#     - text: Contact
+#       url: /contact/
+#     - text: XML Feed
+#       url: /feed.xml
