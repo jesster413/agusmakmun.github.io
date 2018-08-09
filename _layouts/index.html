@@ -131,13 +131,35 @@ layout: compress
         table.dataframe tr:hover {
           background: #b8d1f3;
         }
+
+        .nav{
+          /* border:1px solid #ccc;
+          border-width:1px 0; */
+          list-style:none;
+          margin:0;
+          padding:10;
+          text-align:center;
+          float: right;
+          margin-top: 10px;
+          margin-right: 44rem;
+          width: 500px;
+          /* padding: 10px; */
+        }
+      .nav li{
+        display:inline;
+      }
+      .nav a{
+        display:inline-block;
+        padding:10px;
+      }
+
         </style>
 
   </head>
   <body>
 
     <nav id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
+    <center><ul class="nav navbar-nav">
       <li><font size="4"><a href="/"></a></font></li>
       {% for i in site.urls %}
         <li><font size="4"><a class="about" href="{{ i.url }}">{{ i.text }}</a></font></li>
