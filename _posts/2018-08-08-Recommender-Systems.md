@@ -1,21 +1,20 @@
 ---
 layout: post
-title: What Should We Watch Tonight?
+title: What's for Dinner Tonight?
 categories: Recommender-Systems
-description: A walk-through of how a recommender system works
+description: A walk-through of how to build a simple recommender system
 excerpt_separator: <!--more-->
 published: False
 ---
-*A recommender system walk-through.*
+*A walk-through of how to build a simple recommender system using MovieLens.*
 
 <!--more-->
 
-At its most basic: A system designed to match users to things that they will like.
+Growing up, my mother and I used to have a rule where if she suggested a meal for dinner, I could not wholesale dismiss it.  This meant that I either had to accept that green beans were going to be part of my nightly routine, with their skin rubbing against my teeth like nails on a chalkboard, or, I had to come up with a similarly healthy alternative.  Had I known then what I know today, I would built us a recommender system for dinner so I never had to eat green beans again.
 
-The "things" can be products, brands, media, or even other people.
-Ideally, they should be things the user doesn't know about.
-The goal is to rank all the possible things that are available to the user and to only present the top items
+A recommendation system does exactly what it sounds like it does: it recommends products/media/people to users based on a mathematical algorithm, and those recommendations are rated in descending order of what the user might like.
 
+Brief history of rec systems - who uses them.
 
 1/4 to a 1/3 of consumer choices at Amazon are driven by personalized recommendations
 Netflix says there recommendation engine reduces churn saving the company in excess of $1 billion a year

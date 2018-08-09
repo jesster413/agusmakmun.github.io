@@ -139,8 +139,8 @@ layout: compress
           text-align:center;
           float: right;
           margin-top: 10px;
-          margin-right: 42rem;
-          width: 500px;
+          margin-right: 36rem;
+          width: 600px;
         }
       .nav li{
         display:inline;
@@ -240,10 +240,10 @@ layout: compress
       </div>
       <!-- end /.col-sm-8 -->
       <div class="container">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <div class="fixed-condition">
             <ul class="sidebar-right">
-              <i><p><font size="4">Did you know...</font></p>
+              <p><font size="4">Did you know...</font></p>
                   {% for fact in site.quick_facts %}
                     <li{% if forloop.last %} class="last"{% endif %}> {{ fact.output }}</li>
                   {% endfor %}

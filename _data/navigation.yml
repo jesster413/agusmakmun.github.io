@@ -2,7 +2,7 @@
   url: "https://thedatasleuth.github.io"
 - title: About
   url: /about/
-- title: Blog
+- title: The Data Sleuth Blog
   url: /projects/
   sublinks:
     - title: Posts by Date
@@ -17,15 +17,17 @@
   url: /projects/
 - title: Resources
   url: /resources/
-  sublinks:
-    - title: Books
-      url: /resources/
-    - title: separator
-    - title: Blogs
-      url: /resources/
-    - title: separator
-    - title: Podcasts
-      url: /resources/
+  # sublinks:
+  #   - title: Books
+  #     url: /resources/
+  #   - title: separator
+  #   - title: Blogs
+  #     url: /resources/
+  #   - title: separator
+  #   - title: Podcasts
+  #     url: /resources/
+# - title: Services
+#   url:  /contact/
 - title: Contact
   url:  /contact/
 

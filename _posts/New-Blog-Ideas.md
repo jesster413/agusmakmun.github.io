@@ -8,6 +8,10 @@ Data imputation
 
 regularization
 
-salary preds (Intro to XGBoost)
-
 recommender system
+
+codewars challenge
+
+time series
+
+Practicing Self-(care) Join

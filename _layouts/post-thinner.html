@@ -139,8 +139,8 @@ layout: compress
           text-align:center;
           float: right;
           margin-top: 10px;
-          margin-right: 42rem;
-          width: 500px;
+          margin-right: 36rem;
+          width: 600px;
         }
       .nav li{
         display:inline;
@@ -225,7 +225,7 @@ layout: compress
         </div>
         <!-- end /.fixed-condition -->
       </div>
-        <div class="col-sm-6 col-offset-1 main-layout">
+        <div class="col-sm-7 col-offset-1 main-layout">
         {{ content }}
         <footer>
           &copy; {{ site.author }}
@@ -240,7 +240,7 @@ layout: compress
       </div>
       <!-- end /.col-sm-8 -->
       <div class="container">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <div class="fixed-condition">
             <ul class="sidebar-related">
               <p><font size="4">Related Posts</font></p>
@@ -258,7 +258,7 @@ layout: compress
                 <li class="relatedPost">
                   <a href="{{ site.url }}{{ post.url }}"><font size="3">{{ post.title }}</font></a><br>
                   {% if post.categories %}
-                    (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
+                    (<font size="2">Categories:</font> {% for category in post.categories %}<a href="/category/{{ category }}"><font size="2">{{ category }}</font></a>{% if forloop.last == false %}, {% endif %}{% endfor %})
                   {% endif %}
                 </li>
           {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
