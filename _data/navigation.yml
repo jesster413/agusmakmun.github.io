@@ -27,6 +27,8 @@
     - title: Podcasts
       url: /resources/
     # - title: separator
+  - title: Contact
+    url:  /contact/
 
 # - title: Contact
 #   url: /contact/
