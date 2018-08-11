@@ -19,7 +19,7 @@ Below is a list of prompts and my answers to the [SELECT FROM world Tutorial](ht
 
 ### Introduction
 
-1. [Read the notes about this table.](https://sqlzoo.net/wiki/Read_the_notes_about_this_table.) Observe the result of running this SQL command to show the name, continent and population of all countries.
+[Read the notes about this table.](https://sqlzoo.net/wiki/Read_the_notes_about_this_table.) Observe the result of running this SQL command to show the name, continent and population of all countries.
 
 ```sql
 SELECT name, continent, population FROM world;
@@ -28,7 +28,7 @@ SELECT name, continent, population FROM world;
 
 ### Large Countries
 
-2. How to use WHERE to filter records. Show the name for the countries that have a population of at least 200 million. 200 million is 200000000, there are eight zeros.
+How to use WHERE to filter records. Show the name for the countries that have a population of at least 200 million. 200 million is 200000000, there are eight zeros.
 
 ```sql
 SELECT name FROM world
@@ -38,7 +38,7 @@ WHERE population >= 200000000;
 
 ### Per capita GDP
 
-3. Give the name and the per capita GDP for those countries with a population of at least 200 million.
+Give the name and the per capita GDP for those countries with a population of at least 200 million.
 
 ```sql
 SELECT name, gdp/population FROM world
@@ -48,7 +48,7 @@ WHERE population >= 200000000;
 
 ### South America In millions
 
-4. Show the name and population in millions for the countries of the continent 'South America'. Divide the population by 1000000 to get population in millions.
+Show the name and population in millions for the countries of the continent 'South America'. Divide the population by 1000000 to get population in millions.
 
 ```sql
 SELECT name, population/1000000 FROM world
@@ -58,7 +58,7 @@ WHERE continent = 'South America';
 
 ### France, Germany, Italy
 
-5. Show the name and population for France, Germany, Italy
+Show the name and population for France, Germany, Italy
 
 ```sql
 SELECT name, population FROM world
@@ -68,7 +68,7 @@ WHERE name IN ('France', 'Germany', 'Italy');
 
 ### United
 
-6. Show the countries which have a name that includes the word 'United'
+Show the countries which have a name that includes the word 'United'
 
 ```sql
 SELECT name FROM world
@@ -78,7 +78,7 @@ WHERE name LIKE '%United%';
 
 ### Two ways to be big
 
-7. Two ways to be big: A country is big if it has an area of more than 3 million sq km or it has a population of more than 250 million.
+Two ways to be big: A country is big if it has an area of more than 3 million sq km or it has a population of more than 250 million.
 
 Show the countries that are big by area or big by population. Show name, population and area.
 
@@ -90,7 +90,7 @@ WHERE area > 3000000 OR population > 250000000;
 
 ### One or the other (but not both)
 
-8. Exclusive OR (XOR). Show the countries that are big by area or big by population but not both. Show name, population and area.
+Exclusive OR (XOR). Show the countries that are big by area or big by population but not both. Show name, population and area.
 
 Australia has a big area but a small population, it should be included.
 Indonesia has a big population but a small area, it should be included.
@@ -105,7 +105,7 @@ WHERE area > 3000000 XOR population > 250000000;
 
 ### Rounding
 
-9. Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.
+Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.
 
 For South America show population in millions and GDP in billions both to 2 decimal places.
 
@@ -117,7 +117,7 @@ WHERE continent = 'South America';
 
 ### Trillion dollar economies
 
-10. Show the name and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.
+Show the name and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.
 
 Show per-capita GDP for the trillion dollar countries to the nearest $1000.
 
@@ -129,7 +129,7 @@ WHERE gdp >= 1000000000000;
 
 ### Name and capital have the same length
 
-11. Greece has capital Athens.
+Greece has capital Athens.
 
 Each of the strings 'Greece', and 'Athens' has 6 characters.
 
@@ -145,7 +145,7 @@ WHERE LENGTH(name) = LENGTH(capital);
 
 ### Matching name and capital
 
-12. The capital of Sweden is Stockholm. Both words start with the letter 'S'.
+The capital of Sweden is Stockholm. Both words start with the letter 'S'.
 
 Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.
 You can use the function LEFT to isolate the first character.
@@ -159,7 +159,7 @@ WHERE LEFT(name,1) = LEFT(capital, 1) AND name <> capital;
 
 ### All the vowels
 
-13. Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name.
+Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name.
 
 Find the country that has all the vowels and no spaces in its name.
 
