@@ -61,13 +61,15 @@ markdown: kramdown
 kramdown:
     math_engine: mathjax
     syntax_highlighter: rouge
-
+# plugins_dir: ./_scripts
 gems:
   - jekyll-paginate
   - jekyll-gist
+  - jemoji
   # - jekyll-time-to-read
 # plugins:
 #   - jekyll-time-to-read
+# emoji_dir: ./images/emoji
 
 
 compress_html:
