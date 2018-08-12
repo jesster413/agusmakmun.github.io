@@ -110,7 +110,7 @@ Show the name and population in millions and the GDP in billions for the countri
 For South America show population in millions and GDP in billions both to 2 decimal places.
 
 ```sql
-SELECT name,  ROUND(population/1000000, 2), ROUND (gdp/1000000000, 2) FROM world
+SELECT name, ROUND(population/1000000, 2), ROUND (gdp/1000000000, 2) FROM world
 WHERE continent = 'South America';
 ```
 <br>
