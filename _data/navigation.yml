@@ -26,8 +26,8 @@
   #   - title: separator
   #   - title: Podcasts
   #     url: /resources/
-# - title: Services
-#   url:  /services/
+- title: For Hire
+  url:  /services/
 - title: Contact
   url:  /contact/
 

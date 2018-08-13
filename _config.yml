@@ -27,6 +27,9 @@ social:
     - icon: fa-github
       link: "https://github.com/thedatasleuth"
 
+    - icon: fa-rss
+      link: "https://thedatasleuth.github.io/feed.xml"
+
     - icon: fa-briefcase
       link: "https://resume.github.io/?thedatasleuth"
 
