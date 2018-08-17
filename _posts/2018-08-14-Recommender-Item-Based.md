@@ -1,0 +1,158 @@
+---
+layout: post
+title: What's for Dinner Tonight? Part 1 (Item-Based Collaborative Filtering Recommender System)
+categories: Recommender-Systems
+description: A walk-through of an item-based collaborative filtering recommender system using the MovieLens database
+series: "Recommender Systems"
+excerpt_separator: <!--more-->
+published: False
+---
+*A walk-through of an item-based collaborative filtering recommender system using the MovieLens database.*
+
+<!--more-->
+
+Growing up, my mother and I used to have a rule where if she suggested a meal for dinner, I could not wholesale dismiss it.  This meant that I either had to accept that green beans were going to be part of my nightly routine, with their skin rubbing against my teeth like nails on a chalkboard, or, I had to come up with a similarly healthy alternative.  Had I known then what I know today, I would built us a recommender system for dinner so I never had to eat green beans again.
+
+Recommender systems rose in popularity in the 1990s with Amazon being one of the more prominent early adopters.  Today, recommender systems can be seen everywhere - from the movies we watch, to the music we listen to, to the articles we read.  Even people can be recommended as "items" in dating apps like Tinder.  Recommender systems have become so profitable to companies in terms of increasing user activity, maximizing revenue, and reducing customer churn that [Netflix famously offered a million dollars](https://www.netflixprize.com/) to the person/team who could improve the accuracy of their recommendation predictions by 10%.  The winning algorithm was [so complicated](https://www.wired.com/2012/04/netflix-prize-costs/) that the engineering costs to implement it outweighed the benefits.
+
+While the algorithms underpinning the recommendation engines have advanced significantly, the concepts behind them remain relatively simple.  There are two main ways to recommend an item: Collaborative Filtering and Content-based filtering.  Within collaborative-based filtering, items can either be recommended based on identifying users with similar tastes (user-based) or based on items that are rated or ranked similarly (item-based).
+
+In user-based collaborative filtering, recommendations are made to consumers based on their likeness to other consumers.  In other words, the model looks for your taste doppelganger and makes recommendations to you based on what your doppelganger has liked in the past.  In item-based filtering, recommendations are made based on similarity between items using explicit information captured from users.  For example, a movie is recommended to a customer based on it's similar rating to another movie that the customer has watched.
+
+In a future post, I will explore content-based filtering, which is a method of identifying similar items based on the item's features.  For example, Taylor Swift's songs can often be categorized as Pop with lyrics relating to failed relationships.  A similarly-situated artist might be Justin Bieber given how many times he's been rebuffed by Selena Gomez.
+
+### Opening Credits
+
+I imported two datasets from MovieLens, the movies themselves and the corresponding ratings.  I merged the two dataframes together on the overlapping 'movieId' column, similar to a join in SQL with the following code snippet:
+
+```python
+ratings = pd.merge(ratings, movies, how='inner', on='movieId')
+```
+
+This created a 'ratings' dataframe with over 100,000 rows of data.  In sum, there were 671 unique userIds and 9,066 unique movies, meaning that many users rated multiple movies.  At the low end of the spectrum, userId 485 rated 20 movies.  At the other end of the spectrum, userId 547 rated 2,391 movies.  If we assume that the average length of a movie is 130 minutes, userId 547 has spent over 5,000 hours watching films.
+
+The most frequently rated film was Forrest Gump with 341 total ratings and an average rating of 4.05.  Here's a plot of the top ten most rated movies in the database:
+
+![most-rated-movies.png](/static/img/most-rated-movies.png)
+
+Overall, the users were generous with their ratings, giving an average rating of 3.54 out of 5.  Below is a plot of the distribution of ratings for all movies.  
+
+![ratings-count.png](/static/img/ratings-count.png)
+
+Of all the movies, The Shawshank Redemption received the most 5.0 ratings but users felt the most ambivalent about the 1989 making of Batman, which received the most 3.0 ratings.
+
+![ratings-comparision.png](/static/img/ratings-comparision.png)
+
+### Sparse Pivot Table
+
+I then transformed the ratings dataframe into a pivot table, designating the userId as the index, the titles of the movies as the columns, and the ratings of the movies as the cell values with the following code snippet:
+
+```python
+pivot = pd.pivot_table(ratings, index='userId', columns='title', values='rating')
+```
+
+The cosine of two non-zero vectors can be derived by using the following formula based on a Euclidean distance calculation[^2]:
+
+$$\vec{A} \cdot \vec{B} = \left\| \vec{A}\right\| \left\| \vec{B}\right\|cos(\theta)$$
+
+The equation for cosine similarity is the same as the uncentered correlation coefficient whereby XYZ and ABC.  Cosine similarity is a similarity metric that uses the cosine between two vectors to compute a scalar value that represents how closely related these vectors are.
+
+$$
+cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{\left\| \vec{A}\right\| \left\| \vec{B}\right\| } \
+= \frac{\sum{A_i B_i}}{\sqrt{\sum{A_i^2}}\sqrt{\sum{B_i^2}}}
+$$
+
+When calculating the similarity between items, the cosine ranges from -1 (the exact opposite of the selected item) to 1 (the same as the selected item).  A value of 0 indicates that the two items are neither similar nor dissimilar - they are just decorrelated.  Values between -1 and 0 indicate dissimilarity while values between 0 and 1 indicate similarity.  
+
+However, the data can be further normalized by subtracting the center mean of the rows from the data points within the row using the following function:
+
+```python
+def mean_center_rows(df):
+    return (df.T - df.mean(axis=1)).T
+```
+
+Note that this equation is identical to the Pearson correlation coefficient, meaning that the cosine similarity will range from 0 to 1 instead of -1 to 1.  I incorporated the `mean_center_rows` function when applying scikit-learn's cosine_similarity algorithm to create a similarity matrix from the pivot table:
+
+```python
+sim_matrix = cosine_similarity(mean_center_rows(pivot.T).fillna(0))
+```
+
+
+Because not every userId watched every movie, there are many NaN values in this pivot table dataframe.  In order to get the data into a format more conducive to analysis, I filled the missing values within the pivot table with zeros, transposed it so that the titles of the movies are now the index column, and converted the dataframe into a compressed sparse row matrix with the following code:
+
+```python
+sparse_pivot = sparse.csr_matrix(pivot.T.fillna(0))
+```
+
+This transformation tracks only the usedId based ratings for each movie and discards the superfluous NaN values.  With this information, I was then able to calculate the Euclidean distance between movies using sklearn's pairwise_distances function:
+
+```python
+distances = pairwise_distances(sparse_pivot, metric='cosine')
+```
+
+
+# Pairwise distances
+def euclidean_distances(X, Y=None, Y_norm_squared=None, squared=False,
+                        X_norm_squared=None):
+    """
+    Considering the rows of X (and Y=X) as vectors, compute the
+    distance matrix between each pair of vectors.
+    For efficiency reasons, the euclidean distance between a pair of row
+    vector x and y is computed as::
+        dist(x, y) = sqrt(dot(x, x) - 2 * dot(x, y) + dot(y, y))
+    This formulation has two advantages over other ways of computing distances.
+    First, it is computationally efficient when dealing with sparse data.
+    Second, if one argument varies but the other remains unchanged, then
+    `dot(x, x)` and/or `dot(y, y)` can be pre-computed.
+    However, this is not the most precise way of doing this computation, and
+    the distance matrix returned by this function may not be exactly
+    symmetric as required by, e.g., ``scipy.spatial.distance`` functions.[^1]
+
+Cosine distance is defined as 1.0 minus the cosine similarity.
+Angle of 0∘0∘ (same direction): cos(0∘)=1cos⁡(0∘)=1. Perfectly similar.
+Angle of 90∘90∘ (orthogonal): cos(90∘)=0cos⁡(90∘)=0. Totally dissimilar.
+Angle of 180∘180∘ (opposite direction): cos(90∘)=−1cos⁡(90∘)=−1. Opposite.
+
+
+
+
+
+
+
+
+
+I then tranformed that into a dataframe where the index column matched the columns running across the dataframe with the following code snippet:
+
+```python
+distances_df = pd.DataFrame(distances, index=pivot.columns, columns=pivot.columns)
+```
+
+This looks a lot like a correlation matrix because it effectively is.  While titles that are the exact same have perfect cosine similarity of 1.0 because they are the same exact movie, we are now able to analyze movies that are similar.
+
+### Demo
+
+For example, going back to Shawshank Redemption, the average rating was a 4.49 with 311 ratings and according to cosine similarity, the most similar movies were:
+
+```
+Pulp Fiction (1994)                 0.326045
+Silence of the Lambs, The (1991)    0.340622
+Forrest Gump (1994)                 0.342756
+Usual Suspects, The (1995)          0.401438
+Schindler's List (1993)             0.407621
+Braveheart (1995)                   0.432712
+Seven (a.k.a. Se7en) (1995)         0.434131
+Fugitive, The (1993)                0.449233
+Dances with Wolves (1990)           0.450477
+Saving Private Ryan (1998)          0.455761
+```
+
+### Future Research
+
+Cold-start problem
+
+For a complete look at the underlying code for this post, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Recommender-System-Item-Based).
+
+---
+
+[^1]:[https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/metrics/pairwise.py](https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/metrics/pairwise.py)
+[^2]: [https://en.wikipedia.org/wiki/Cosine_similarity](https://en.wikipedia.org/wiki/Cosine_similarity)
