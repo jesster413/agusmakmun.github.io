@@ -43,7 +43,7 @@ Of all the movies, The Shawshank Redemption received the most 5.0 ratings but us
 
 ![ratings-comparision.png](/static/img/ratings-comparision.png)
 
-### Sparse Pivot Table
+### Call to Action
 
 I then transformed the ratings dataframe into a pivot table, designating the userId as the index, the titles of the movies as the columns, and the ratings of the movies as the cell values with the following code snippet:
 
@@ -51,11 +51,17 @@ I then transformed the ratings dataframe into a pivot table, designating the use
 pivot = pd.pivot_table(ratings, index='userId', columns='title', values='rating')
 ```
 
-The cosine of two non-zero vectors can be derived by using the following formula based on a Euclidean distance calculation[^2]:
+Because not every userId watched every movie, there are many NaN values in this pivot table.  In order to get the data into a format more conducive to analysis, I filled the missing values with zeros, transposed it so that the titles of the movies are now the index column, and converted the dataframe into a compressed sparse row matrix.  This transformation tracks only the usedId based ratings for each movie and discards the superfluous NaN values.
+
+```python
+sparse_pivot = sparse.csr_matrix(pivot.T.fillna(0))
+```
+
+Having pivoted the data, I was then able to calculate a similarity metric between two vectors (movies) using cosine similarity and pairwise distances, both of which are functions within scikit-learn.  Cosine similarity uses the cosine between two vectors to compute a scalar value that represents how closely related these vectors are.  That scalar value can be derived by using a Euclidean distance formula[^2].    
 
 $$\vec{A} \cdot \vec{B} = \left\| \vec{A}\right\| \left\| \vec{B}\right\|cos(\theta)$$
 
-The equation for cosine similarity is the same as the uncentered correlation coefficient whereby XYZ and ABC.  Cosine similarity is a similarity metric that uses the cosine between two vectors to compute a scalar value that represents how closely related these vectors are.
+The equation for cosine similarity is the same as the uncentered correlation coefficient whereby XYZ and ABC.
 
 $$
 cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{\left\| \vec{A}\right\| \left\| \vec{B}\right\| } \
@@ -77,14 +83,7 @@ Note that this equation is identical to the Pearson correlation coefficient, mea
 sim_matrix = cosine_similarity(mean_center_rows(pivot.T).fillna(0))
 ```
 
-
-Because not every userId watched every movie, there are many NaN values in this pivot table dataframe.  In order to get the data into a format more conducive to analysis, I filled the missing values within the pivot table with zeros, transposed it so that the titles of the movies are now the index column, and converted the dataframe into a compressed sparse row matrix with the following code:
-
-```python
-sparse_pivot = sparse.csr_matrix(pivot.T.fillna(0))
-```
-
-This transformation tracks only the usedId based ratings for each movie and discards the superfluous NaN values.  With this information, I was then able to calculate the Euclidean distance between movies using sklearn's pairwise_distances function:
+Another way to calculate similarity between two vectors is with scikit-learn's pairwise distances, which using Euclidean distance formula.  With this information, I was then able to calculate the Euclidean distance between movies using sklearn's pairwise_distances function:
 
 ```python
 distances = pairwise_distances(sparse_pivot, metric='cosine')
