@@ -3,6 +3,10 @@ layout: post
 title: What's for Dinner Tonight? Part 1 (Item-Based Collaborative Filtering Recommender System)
 categories: Recommender-Systems
 description: A walk-through of an item-based collaborative filtering recommender system using the MovieLens database
+tags:
+  - Recommender System
+  - Item-Based Collaborative Filtering
+  - Machine Learning
 series: "Recommender Systems"
 excerpt_separator: <!--more-->
 published: False
@@ -23,7 +27,7 @@ In a future post, I will explore content-based filtering, which is a method of i
 
 ### Opening Credits
 
-I imported two datasets from MovieLens, the movies themselves and the corresponding ratings.  I merged the two dataframes together on the overlapping 'movieId' column, similar to a join in SQL with the following code snippet:
+To begin, I imported two datasets from MovieLens, the movies themselves and the corresponding ratings.  I merged the two dataframes together on the overlapping 'movieId' column, similar to a join in SQL with the following code snippet:
 
 ```python
 ratings = pd.merge(ratings, movies, how='inner', on='movieId')
@@ -43,7 +47,7 @@ Of all the movies, The Shawshank Redemption received the most 5.0 ratings but us
 
 ![ratings-comparision.png](/static/img/ratings-comparision.png)
 
-### Call to Action
+### The Exposition
 
 I then transformed the ratings dataframe into a pivot table, designating the userId as the index, the titles of the movies as the columns, and the ratings of the movies as the cell values with the following code snippet:
 
@@ -51,17 +55,27 @@ I then transformed the ratings dataframe into a pivot table, designating the use
 pivot = pd.pivot_table(ratings, index='userId', columns='title', values='rating')
 ```
 
-Because not every userId watched every movie, there are many NaN values in this pivot table.  In order to get the data into a format more conducive to analysis, I filled the missing values with zeros, transposed it so that the titles of the movies are now the index column, and converted the dataframe into a compressed sparse row matrix.  This transformation tracks only the usedId based ratings for each movie and discards the superfluous NaN values.
+Because not every userId watched every movie, there are many NaN values in this pivot table.  In order to get the data into a format more conducive to analysis, I filled the missing values with zeros, transposed it so that the titles of the movies are now the index column, and converted the dataframe into a compressed sparse row matrix.  This transformation tracks only the userId based ratings for each movie and discards the superfluous NaN values.
 
 ```python
 sparse_pivot = sparse.csr_matrix(pivot.T.fillna(0))
 ```
 
-Having pivoted the data, I was then able to calculate a similarity metric between two vectors (movies) using cosine similarity and pairwise distances, both of which are functions within scikit-learn.  Cosine similarity uses the cosine between two vectors to compute a scalar value that represents how closely related these vectors are.  That scalar value can be derived by using a Euclidean distance formula[^2].    
+<br>
+
+### The Rising Action
+
+Having pivoted the data, I was then able to calculate a scalar value which represents how similar (or dissimilar) two vectors are using a Euclidean distance formula.  Visually, two vectors that are headed in exact same direction with cos(0∘) = 1 are the exact same.  Vectors with a cos(90∘) = 0 (a right angle) are dissimilar.  Finally, vectors that are headed in opposite directions (a degree of 180) where cos(90∘)= − 1 are opposite of each other.  Below is a helpful diagram.
+
+![vectors.png](/static/img/vectors.png)[^][^][https://www.safaribooksonline.com/library/view/mastering-machine-learning/9781785283451/ba8bef27-953e-42a4-8180-cea152af8118.xhtml]
+
+I calculated this scalar value, also known as a similarity metric, between two vectors (movies) using two distinct (but similar) functions within scikit-learn: cosine similarity and pairwise distances.
+
+#### Cosine Similarity
+
+Cosine similarity uses the cosine between two vectors to compute a scalar value, derived from the Euclidean dot formula seen below.
 
 $$\vec{A} \cdot \vec{B} = \left\| \vec{A}\right\| \left\| \vec{B}\right\|cos(\theta)$$
-
-The equation for cosine similarity is the same as the uncentered correlation coefficient whereby XYZ and ABC.
 
 $$
 cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{\left\| \vec{A}\right\| \left\| \vec{B}\right\| } \
@@ -70,57 +84,30 @@ $$
 
 When calculating the similarity between items, the cosine ranges from -1 (the exact opposite of the selected item) to 1 (the same as the selected item).  A value of 0 indicates that the two items are neither similar nor dissimilar - they are just decorrelated.  Values between -1 and 0 indicate dissimilarity while values between 0 and 1 indicate similarity.  
 
-However, the data can be further normalized by subtracting the center mean of the rows from the data points within the row using the following function:
+The equation for cosine similarity is the same as the uncentered correlation coefficient.  However, the data can be centered (and therefore further normalized) by subtracting the center mean of the rows from the data points within the row using the following function:
 
 ```python
 def mean_center_rows(df):
     return (df.T - df.mean(axis=1)).T
 ```
 
-Note that this equation is identical to the Pearson correlation coefficient, meaning that the cosine similarity will range from 0 to 1 instead of -1 to 1.  I incorporated the `mean_center_rows` function when applying scikit-learn's cosine_similarity algorithm to create a similarity matrix from the pivot table:
+With a centered mean, the equation is identical to the Pearson correlation coefficient, meaning that the cosine similarity will range from 0 to 1 instead of -1 to 1.  I incorporated the `mean_center_rows` function when applying scikit-learn's cosine_similarity algorithm to create a similarity matrix from the pivot table:
 
 ```python
 sim_matrix = cosine_similarity(mean_center_rows(pivot.T).fillna(0))
 ```
 
-Another way to calculate similarity between two vectors is with scikit-learn's pairwise distances, which using Euclidean distance formula.  With this information, I was then able to calculate the Euclidean distance between movies using sklearn's pairwise_distances function:
+<br>
+
+#### Pairwise Distances
+
+Another way to calculate similarity between two vectors is with scikit-learn's pairwise distances.  Similar to the cosine similarity function, pairwise distances uses cosine to calculate the scalar value, however, cosine distance is calculated as 1.0 minus cosine similarity.
 
 ```python
 distances = pairwise_distances(sparse_pivot, metric='cosine')
 ```
 
-
-# Pairwise distances
-def euclidean_distances(X, Y=None, Y_norm_squared=None, squared=False,
-                        X_norm_squared=None):
-    """
-    Considering the rows of X (and Y=X) as vectors, compute the
-    distance matrix between each pair of vectors.
-    For efficiency reasons, the euclidean distance between a pair of row
-    vector x and y is computed as::
-        dist(x, y) = sqrt(dot(x, x) - 2 * dot(x, y) + dot(y, y))
-    This formulation has two advantages over other ways of computing distances.
-    First, it is computationally efficient when dealing with sparse data.
-    Second, if one argument varies but the other remains unchanged, then
-    `dot(x, x)` and/or `dot(y, y)` can be pre-computed.
-    However, this is not the most precise way of doing this computation, and
-    the distance matrix returned by this function may not be exactly
-    symmetric as required by, e.g., ``scipy.spatial.distance`` functions.[^1]
-
-Cosine distance is defined as 1.0 minus the cosine similarity.
-Angle of 0∘0∘ (same direction): cos(0∘)=1cos⁡(0∘)=1. Perfectly similar.
-Angle of 90∘90∘ (orthogonal): cos(90∘)=0cos⁡(90∘)=0. Totally dissimilar.
-Angle of 180∘180∘ (opposite direction): cos(90∘)=−1cos⁡(90∘)=−1. Opposite.
-
-
-
-
-
-
-
-
-
-I then tranformed that into a dataframe where the index column matched the columns running across the dataframe with the following code snippet:
+I then transformed that into a dataframe where the index column matched the columns running across the dataframe with the following code snippet:
 
 ```python
 distances_df = pd.DataFrame(distances, index=pivot.columns, columns=pivot.columns)
@@ -128,7 +115,7 @@ distances_df = pd.DataFrame(distances, index=pivot.columns, columns=pivot.column
 
 This looks a lot like a correlation matrix because it effectively is.  While titles that are the exact same have perfect cosine similarity of 1.0 because they are the same exact movie, we are now able to analyze movies that are similar.
 
-### Demo
+### The Climax
 
 For example, going back to Shawshank Redemption, the average rating was a 4.49 with 311 ratings and according to cosine similarity, the most similar movies were:
 
@@ -145,7 +132,7 @@ Dances with Wolves (1990)           0.450477
 Saving Private Ryan (1998)          0.455761
 ```
 
-### Future Research
+### Final Credits
 
 Cold-start problem
 
@@ -154,4 +141,4 @@ For a complete look at the underlying code for this post, head on over to the co
 ---
 
 [^1]:[https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/metrics/pairwise.py](https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/metrics/pairwise.py)
-[^2]: [https://en.wikipedia.org/wiki/Cosine_similarity](https://en.wikipedia.org/wiki/Cosine_similarity)
+[^2]: [https://www.safaribooksonline.com/library/view/mastering-machine-learning/9781785283451/ba8bef27-953e-42a4-8180-cea152af8118.xhtml](https://www.safaribooksonline.com/library/view/mastering-machine-learning/9781785283451/ba8bef27-953e-42a4-8180-cea152af8118.xhtml)
