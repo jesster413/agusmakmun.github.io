@@ -9,7 +9,7 @@ tags:
   - Machine Learning
 series: "Recommender Systems"
 excerpt_separator: <!--more-->
-published: True
+published: False
 ---
 *A walk-through of an item-based collaborative filtering recommender system using the MovieLens database.*
 ![rec-image.png](/static/img/rec-image.png)
