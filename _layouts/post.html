@@ -14,16 +14,16 @@ layout: post-thinner
 
 <div class="content">
   <div class="post">{{ content | emojify }}</div>
-  <!-- {% include series.html %}
+  {% include series.html %}
   <div class="panel seriesNote">
     <p>
     This article is <strong>Part {{ idx }}</strong> in a <strong>{{ count }}-Part</strong> Series.
     </p>
     <ul>
-    {% assign count = '0' %}
+    {% assign count = 0 %}
     {% for post in site.posts reversed %}
     {% if post.series == page.series %}
-        {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+        {% capture count %}{{ count | plus: 1 }}{% endcapture %}
         <li>Part {{ count }} -
         {% if page.url == post.url %}
             This Article
@@ -34,7 +34,7 @@ layout: post-thinner
     {% endif %}
     {% endfor %}
     </ul>
-</div> -->
+</div>
 
 </div>
 
