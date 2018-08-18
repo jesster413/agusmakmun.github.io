@@ -6,8 +6,9 @@ description: Visions of the future are never completely true, but with the right
 highlight_code: true
 published: True
 ---
-
 *Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used to predict handwritten numbers.*
+
+![odysseus.jpg](/static/img/odysseus.jpg)
 
 <!--more-->
 

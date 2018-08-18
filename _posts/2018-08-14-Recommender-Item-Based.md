@@ -9,9 +9,10 @@ tags:
   - Machine Learning
 series: "Recommender Systems"
 excerpt_separator: <!--more-->
-published: False
+published: True
 ---
 *A walk-through of an item-based collaborative filtering recommender system using the MovieLens database.*
+![rec-image.png](/static/img/rec-image.png)
 
 <!--more-->
 
@@ -134,7 +135,7 @@ Saving Private Ryan (1998)          0.455761
 
 ### Final Credits
 
-Cold-start problem
+While collaborative filtering is a good way to identify similar items, it does suffer from the cold start problem.
 
 For a complete look at the underlying code for this post, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Recommender-System-Item-Based).
 
