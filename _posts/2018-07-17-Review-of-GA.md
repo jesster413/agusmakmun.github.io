@@ -4,11 +4,7 @@ title: Review of General Assembly's Data Science Immersive Course
 categories: General-Assembly
 description: An honest, post-graduation review of General Assembly's 12-week Data Science Immersive course.
 series:
-tags:
-  - Data Science Immersive Course
-  - General Assembly
-  - Bootcamp Career Accelerator
-  - Machine Learning
+tags: Data-Science General-Assembly Bootcamp
 excerpt_separator: <!--more-->
 published: True
 ---
@@ -103,6 +99,7 @@ If I can answer any more questions specifically about my own experience as a now
 Here's a picture of my cohort on our (very long) last day of class after 20 capstone presentations!
 
 ![dsi-pic.jpg](/static/img/dsi-pic.jpg)
+
 
 ---
 [^1]: [https://generalassemb.ly/why-ga-is-worth-it](https://generalassemb.ly/why-ga-is-worth-it)
