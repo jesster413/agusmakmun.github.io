@@ -9,6 +9,8 @@ published: True
 
 *On April 23, 2018, I enrolled in General Assembly's Data Science course, a full-time immersion program designed to teach programming languages, data analysis techniques, and machine learning skills in 12 weeks.*
 
+![datascience.jpg](/static/img/datascience.jpg)
+
 <!--more-->
 
 On April 23, 2018, I enrolled in General Assembly's Data Science course, a full-time immersion program designed to teach programming languages, data analysis techniques, and machine learning skills in 12 weeks.  On the first day, I was writing code in Python, parsing out a dictionary full of Pokemon characteristics, and wondering if I had made a huge mistake.

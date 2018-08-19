@@ -8,6 +8,8 @@ published: True
 ---
 *Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?*
 
+![filings.jpg](/static/img/filings.jpg)
+
 <!--more-->
 
 The FBI and the American Association of Certified Fraud Examiners estimate that white collar crime costs 300 to 600 billion dollars a year.  That’s the equivalent of Warren Buffet’s net worth 3.5 times over, or buying out the debt of New York City's MTA 9 times over, or purchasing the New York Knicks 90 times over.  It’s incredible amount of money and also a very wide range, suggesting that enforcement agencies don't actually know the extent of the damage cause by white collar crime.

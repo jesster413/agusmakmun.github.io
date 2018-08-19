@@ -14,6 +14,8 @@ published: True
 
 *A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.*
 
+![sqlzoo.png](/static/img/sqlzoo.png)
+
 <!--more-->
 
 Lately I've been focusing on my Python projects so I thought I'd switch it up and do some SQL practice using [SQL Zoo's](https://sqlzoo.net/) interactive tutorials.  These tutorials are filled with prompts to query databases using SQL.  What's great about this site is that it shows the results of the query right next to the prompt line, allowing the user to verify that the query pulled the desired results.  SQL Zoo confirms answers with a :)

@@ -9,6 +9,8 @@ published: True
 
 *Sometimes you can't get everything you want.  Here's an afternoon hackathon project that challenged me to make the most of what I had.*
 
+![fast-good-cheap.png](/static/img/fast-good-cheap.png)
+
 <!--more-->
 
 We've all heard it before - you can get something fast and cheap, but it probably won't be very good; you could get something good and cheap, but it will take a long time; or you can get something good and fast, but it's going to cost you.  In that vein, I participated in an afternoon hacking challenge that prompted us to predict whether a person's salary was above $50,000.

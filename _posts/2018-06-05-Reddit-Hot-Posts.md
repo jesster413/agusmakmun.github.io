@@ -9,6 +9,8 @@ published: True
 
 *With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) lines of code, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.*
 
+![reddit.png](/static/img/reddit.png)
+
 <!--more-->
 
 Reddit claims to be the front page of the internet, and that's because they are. With an average of 542 million monthly visitors, of which 234 million are unique, Reddit is the third most visited site in the U.S. and ranked sixth in the world. Reddit is subdivided into subreddits, which are themed discussion boards created and populated by Reddit users with links, text, videos and images. These subreddits span an endless array of interests including world news, sports, economics, movies, music, fitness, and more. Reddit members discuss proposed topics in the comments section, and the most popular comments are "up-voted" to the top of the discussion board.  In 2015, Reddit users submitted nearly 75 million posts and followed up with nearly three quarters of a billion comments.  With so many users, submissions, comments, and up-votes, it can seem impossible to craft a post that will ever see the light of day.

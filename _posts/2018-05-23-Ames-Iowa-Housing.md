@@ -9,6 +9,8 @@ published: True
 
 *When buying a new home, everyone wants the most bang for the buck.  To that end, I analyzed homes in Ames, Iowa to identify what features of a house contribute the most to its sale price.*
 
+![houses.jpg](/static/img/houses.jpg)
+
 <!--more-->
 
 Buying a house is one of life's most significant milestones, and according to the most recent census report on residential vacancies, around 64% of homes are occupant-owned.[^1]  But within the homeownership population, there is a wide range of what is considered desirable in a home which is unique to each home buyer.  Some might want more bedrooms to accommodate a larger family.  Others might want more garage space to fit their growing car collection.  And still others might want a wrap-around porch for those hot summer nights.  Regardless of individual preferences, however, it seems safe to assume that everyone wants the most bang for their buck.  To that end, participated in a private Kaggle challenge during which I analyzed a [dataset](https://www.kaggle.com/c/dsi-us-4-project-2-regression-challenge) of homes located in Ames, Iowa to identify what features of a house contribute the most to its sale price.
