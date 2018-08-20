@@ -7,14 +7,14 @@ tags:
 - Recommender Systems
 series:
 excerpt_separator: <!--more-->
-published: False
+published: True
 ---
 *A walk-through of an item-based collaborative filtering recommender system using the MovieLens database.*
 ![rec-image.png](/static/img/rec-image.png)
 
 <!--more-->
 
-Growing up, my mother and I used to have a rule where if she suggested a meal for dinner, I could not wholesale dismiss it.  This meant that I either had to accept that green beans were going to be part of my nightly routine, with their skin rubbing against my teeth like nails on a chalkboard, or, I had to come up with a similarly healthy alternative.  Had I known then what I know today, I would built us a recommender system for dinner so I never had to eat green beans again.
+Growing up, my mother and I used to have a rule where if she suggested a meal for dinner, I could not wholesale dismiss it.  This meant that I either had to accept that green beans were going to be part of my nightly routine, with their skin rubbing against my teeth like nails on a chalkboard, or, I had to come up with a similarly healthy alternative.  Had I known then what I know today, I would have built us a recommender system for dinner so I never had to eat green beans again.
 
 Recommender systems rose in popularity in the 1990s with Amazon being one of the more prominent early adopters.  Today, recommender systems can be seen everywhere - from the movies we watch, to the music we listen to, to the articles we read.  Even people can be recommended as "items" in dating apps like Tinder.  Recommender systems have become so profitable to companies in terms of increasing user activity, maximizing revenue, and reducing customer churn that [Netflix famously offered a million dollars](https://www.netflixprize.com/) to the person/team who could improve the accuracy of their recommendation predictions by 10%.  The winning algorithm was [so complicated](https://www.wired.com/2012/04/netflix-prize-costs/) that the engineering costs to implement it outweighed the benefits.
 
@@ -38,11 +38,7 @@ The most frequently rated film was Forrest Gump with 341 total ratings and an av
 
 ![most-rated-movies.png](/static/img/most-rated-movies.png)
 
-Overall, the users were generous with their ratings, giving an average rating of 3.54 out of 5.  Below is a plot of the distribution of ratings for all movies.  
-
-![ratings-count.png](/static/img/ratings-count.png)
-
-Of all the movies, The Shawshank Redemption received the most 5.0 ratings but users felt the most ambivalent about the 1989 making of Batman, which received the most 3.0 ratings.
+Overall, the users were generous with their ratings, giving an average rating of 3.54 out of 5.  Of all the movies, however, The Shawshank Redemption received the most 5.0 ratings while users felt the most ambivalent about the 1989 making of Batman, which received the most 3.0 ratings.
 
 ![ratings-comparision.png](/static/img/ratings-comparision.png)
 
@@ -120,9 +116,14 @@ This looks a lot like a correlation matrix because it effectively is.  While tit
 
 ### The Climax
 
-To illustrate how this recommender system works, let's return to Shawshank Redemption which had an average rating of 4.49 and 311 total ratings.  According to cosine similarity, the most similar movies were:
+To illustrate how this recommender system works, let's return to Shawshank Redemption which had an average rating of 4.49 and 311 total ratings.  According to pairwise distances, the most similar movies were:
 
 ```
+Shawshank Redemption, The (1994)
+Average Rating 4.487138263665595
+Count of ratings 311
+Similar movies
+title
 Pulp Fiction (1994)                 0.326045
 Silence of the Lambs, The (1991)    0.340622
 Forrest Gump (1994)                 0.342756
@@ -135,9 +136,31 @@ Dances with Wolves (1990)           0.450477
 Saving Private Ryan (1998)          0.455761
 ```
 
+According to the similarity matrix, the most similar movies to Shawshank Redemption are:
+
+```
+Shawshank Redemption, The (1994)
+Average Rating 4.487138263665595
+Count of ratings 311
+Similar movies
+title
+Raven, The (1963)                                             -0.243137
+American Ninja 2: The Confrontation (1987)                    -0.228703
+Protector, The (a.k.a. Warrior King) (Tom yum goong) (2005)   -0.228703
+District 13 (Banlieue 13) (2004)                              -0.225775
+Jason and the Argonauts (1963)                                -0.221448
+Last Starfighter, The (1984)                                  -0.219225
+Land of the Dead (2005)                                       -0.218736
+Remo Williams: The Adventure Begins (1985)                    -0.215152
+Carnival of Souls (1962)                                      -0.214143
+Quiet Earth, The (1985)                                       -0.200115
+```
+
 ### Final Credits
 
-While collaborative filtering is a good way to identify similar items, it does suffer from the cold start problem.  in order for items to be correlated, and therefore, recommended to users, users need to input similarly scaled data points about the item.  In this case, a rating.    Without explicit user data, items can be mined themselves for data.  This is the basis for content-based filtering which I will explore in more detail in a future post.
+While collaborative filtering is a good way to identify similar items, it does suffer from the cold start problem:  In order for items to be correlated, and therefore, recommended to users, items require input from users - in this case, a rating.  As items receive more data points from users, the overall recommendation accuracy of the engine will increase.  The problem starts all over again with every new addition to the existing database.  
+
+The advantage to a collaborative filtering approach, however, is that it does not require feature engineering, which, if you've ever tried to recommend a movie to someone, you'll know is a bit of a guessing game.  Do they like the movie because of the actors?  Or because of the genre?  Or the setting?  Or because of the enigmatic way the director captured the true nature of the human experience?  This is content-based filtering, for better or worse, which seeks to recommend items to users based on features similar to the item selected by the user.  In a future post, I will explore this type of recommendation engine in further detail.
 
 For a complete look at the underlying code for this post, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Recommender-System-Item-Based).
 
