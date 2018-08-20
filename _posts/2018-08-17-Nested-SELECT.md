@@ -138,4 +138,10 @@ WHERE population > ALL
 ```
 <br>
 
+
+<small>
+    {% for tag in page.tags %}
+    <a href="/tags/{{ tag }}/">{{ tag }}</a>
+    {% endfor %}
+</small>
 ---
