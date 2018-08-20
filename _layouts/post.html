@@ -7,7 +7,7 @@ layout: post-thinner
 
 <!-- <span<li><font size="3"><a class="time">{{ page.date | date_to_string }}</a></font></li></span> -->
 {% if page.categories %}
-  Tags<span<li><font size="4"><a class="categories"></a></font></li>
+  Category<span<li><font size="4"><a class="categories"></a></font></li>
     &raquo; {% for category in page.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}<br><br>
   </span>
 {% endif %}
@@ -15,56 +15,9 @@ layout: post-thinner
 <div class="content">
   <div class="post">{{ content | emojify }}</div>
   {% include series.html %}
-  <div class="panel seriesNote">
-    <p>
-    This article is <strong>Part {{ idx }}</strong> in a <strong>{{ count }}-Part</strong> Series.
-    </p>
-    <ul>
-    {% assign count = 0 %}
-    {% for post in site.posts reversed %}
-    {% if post.series == page.series %}
-        {% capture count %}{{ count | plus: 1 }}{% endcapture %}
-        <li>Part {{ count }} -
-        {% if page.url == post.url %}
-            This Article
-        {% else %}
-            <a href="{{post.url}}">{{post.title}}</a>
-        {% endif %}
-        </li>
-    {% endif %}
-    {% endfor %}
-    </ul>
-</div>
 
 </div>
 
-<!-- {% assign hasSimilar = '' %}
-  {% for post in site.posts  %}
-    {% assign postHasSimilar = false %}
-      {% for tag in post.categories %}
-        {% for thisTag in page.categories %}
-          {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-            {% if hasSimilar.size == 0 %}
-            <div class="panel-body">
-              <h4>Related Posts</h4>
-              <ul>
-            {% endif %}
-                <li class="relatedPost">
-                  <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                  {% if post.categories %}
-                    (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
-                  {% endif %}
-                </li>
-          {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-          {% assign postHasSimilar = true %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-  {% if hasSimilar.size > 0 %}
-  </ul>
-</div>
-{% endif %} -->
 
 <div class="PageNavigation">
   {% if page.previous.url %}

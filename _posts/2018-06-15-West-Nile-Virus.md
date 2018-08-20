@@ -1,8 +1,14 @@
 ---
 layout: post
 title: West Nile Virus
-categories: Classification Kaggle
+categories: Predictive-Modeling
 description: In June 2015, the City of Chicago released data to Kaggle and asked competitors to predict which areas of the city would be more prone to West Nile Virus outbreaks.
+tags:
+- Balanced Classes
+- Kaggle
+- XGBoost
+- Random Forest
+- Python
 excerpt_separator: <!--more-->
 published: True
 ---

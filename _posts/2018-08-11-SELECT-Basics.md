@@ -6,8 +6,7 @@ description: A complete list of my answers to SQL Zoo's SELECT FROM world Tutori
 highlight_code: true
 series: "SQL Zoology"
 tags:
-  - SQL
-  - SQL Zoo
+- SQL
 excerpt_separator: <!--more-->
 published: True
 ---

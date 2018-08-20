@@ -131,7 +131,6 @@ layout: compress
         table.dataframe tr:hover {
           background: #b8d1f3;
         }
-
         .nav{
           list-style:none;
           margin:0;
@@ -149,7 +148,6 @@ layout: compress
         display:inline-block;
         padding:10px;
       }
-
         </style>
 
   </head>
@@ -236,13 +234,14 @@ layout: compress
           <!-- <div class="btn-github" style="float:right;">
             <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
             <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-          </div>
-        </footer> -->
-      <!-- </div> -->
+          </div> -->
+        </footer>
+      </div>
       <!-- end /.col-sm-8 -->
       <div class="container">
         <div class="col-sm-2">
           <div class="fixed-condition">
+            <p><font size="4">Tags</font></p>
             <p>
               {% for tag in site.tags %}
               <!-- Here's a hack to generate a "tag cloud" where the size of
@@ -250,10 +249,13 @@ layout: compress
               that tag. -->
               <a href="/tags/{{ tag[0] }}/"
               style="font-size: {{ tag[1] | size | times: 2 | plus: 10 }}px">
-                  {{ tag[0] }} |
+                  {{ tag[0] }} <font size="4">|</font>
               </a>
               {% endfor %}
-      </p>
+            </p>
+          </div>
+        </div>
+      </div>
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->

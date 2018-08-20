@@ -6,8 +6,7 @@ description: A complete list of my answers to SQL Zoo's SELECT within SELECT Tut
 excerpt_separator: <!--more-->
 series: "SQL Zoology"
 tags:
-  - SQL
-  - SQL Zoo
+- SQL
 published: True
 ---
 *A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.*

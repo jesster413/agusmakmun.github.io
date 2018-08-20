@@ -4,10 +4,8 @@ title: What's for Dinner Tonight? Part 1 (Item-Based Collaborative Filtering Rec
 categories: Recommender-Systems
 description: A walk-through of an item-based collaborative filtering recommender system using the MovieLens database
 tags:
-  - Recommender System
-  - Item-Based Collaborative Filtering
-  - Machine Learning
-series: "Recommender Systems"
+- Recommender Systems
+series:
 excerpt_separator: <!--more-->
 published: False
 ---
@@ -66,17 +64,21 @@ sparse_pivot = sparse.csr_matrix(pivot.T.fillna(0))
 
 ### The Rising Action
 
-Having pivoted the data, I was then able to calculate a scalar value which represents how similar (or dissimilar) two vectors are using a Euclidean distance formula.  Visually, two vectors that are headed in exact same direction with cos(0∘) = 1 are the exact same.  Vectors with a cos(90∘) = 0 (a right angle) are dissimilar.  Finally, vectors that are headed in opposite directions (a degree of 180) where cos(90∘)= − 1 are opposite of each other.  Below is a helpful diagram.
+Having pivoted the data, I was then able to calculate a scalar value which represents how similar (or dissimilar) two vectors are using a Euclidean distance formula.  As seen below in the diagram:
 
-![vectors.png](/static/img/vectors.png)[^][^][https://www.safaribooksonline.com/library/view/mastering-machine-learning/9781785283451/ba8bef27-953e-42a4-8180-cea152af8118.xhtml]
+Two vectors that are headed in exact same direction with cos(0&deg;) = 1 are the exact same.  
+
+Vectors with a cos(90&deg;) = 0 (a right angle) are dissimilar.  
+
+Finally, vectors that are headed in opposite directions (a degree of 180&deg;) where cos(90&deg;)= − 1 are opposite of each other.  
+
+![vectors.png](/static/img/vectors.png)[^2]
 
 I calculated this scalar value, also known as a similarity metric, between two vectors (movies) using two distinct (but similar) functions within scikit-learn: cosine similarity and pairwise distances.
 
 #### Cosine Similarity
 
 Cosine similarity uses the cosine between two vectors to compute a scalar value, derived from the Euclidean dot formula seen below.
-
-$$\vec{A} \cdot \vec{B} = \left\| \vec{A}\right\| \left\| \vec{B}\right\|cos(\theta)$$
 
 $$
 cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{\left\| \vec{A}\right\| \left\| \vec{B}\right\| } \
@@ -102,7 +104,7 @@ sim_matrix = cosine_similarity(mean_center_rows(pivot.T).fillna(0))
 
 #### Pairwise Distances
 
-Another way to calculate similarity between two vectors is with scikit-learn's pairwise distances.  Similar to the cosine similarity function, pairwise distances uses cosine to calculate the scalar value, however, cosine distance is calculated as 1.0 minus cosine similarity.
+Another way to calculate similarity between two vectors is with scikit-learn's pairwise distances.  Similar to the cosine similarity function, pairwise distances uses cosine to calculate the scalar value by setting the metric to `cosine` as seen below.
 
 ```python
 distances = pairwise_distances(sparse_pivot, metric='cosine')
@@ -114,11 +116,11 @@ I then transformed that into a dataframe where the index column matched the colu
 distances_df = pd.DataFrame(distances, index=pivot.columns, columns=pivot.columns)
 ```
 
-This looks a lot like a correlation matrix because it effectively is.  While titles that are the exact same have perfect cosine similarity of 1.0 because they are the same exact movie, we are now able to analyze movies that are similar.
+This looks a lot like a correlation matrix because it effectively is.  While titles that are the exact same have perfect cosine similarity of 1.0 because they are the same exact movie, values between -1 and 1 indicate dissimilarity or similarity, respectively.  
 
 ### The Climax
 
-For example, going back to Shawshank Redemption, the average rating was a 4.49 with 311 ratings and according to cosine similarity, the most similar movies were:
+To illustrate how this recommender system works, let's return to Shawshank Redemption which had an average rating of 4.49 and 311 total ratings.  According to cosine similarity, the most similar movies were:
 
 ```
 Pulp Fiction (1994)                 0.326045
@@ -135,7 +137,7 @@ Saving Private Ryan (1998)          0.455761
 
 ### Final Credits
 
-While collaborative filtering is a good way to identify similar items, it does suffer from the cold start problem.
+While collaborative filtering is a good way to identify similar items, it does suffer from the cold start problem.  in order for items to be correlated, and therefore, recommended to users, users need to input similarly scaled data points about the item.  In this case, a rating.    Without explicit user data, items can be mined themselves for data.  This is the basis for content-based filtering which I will explore in more detail in a future post.
 
 For a complete look at the underlying code for this post, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Recommender-System-Item-Based).
 
