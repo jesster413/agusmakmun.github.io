@@ -102,10 +102,5 @@ Here's a picture of my cohort on our (very long) last day of class after 20 caps
 
 ![dsi-pic.jpg](/static/img/dsi-pic.jpg)
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 [^1]: [https://generalassemb.ly/why-ga-is-worth-it](https://generalassemb.ly/why-ga-is-worth-it)

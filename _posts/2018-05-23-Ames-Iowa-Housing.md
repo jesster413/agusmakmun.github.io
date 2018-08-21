@@ -87,11 +87,6 @@ Having conducted this analysis, it appears that the overall quality of a house, 
 
 To view the code associated with this project, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Ames-Iowa-Housing-Prices/tree/master)
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 
 [^1]:[https://www.census.gov/housing/hvs/files/currenthvspress.pdf](https://www.census.gov/housing/hvs/files/currenthvspress.pdf)

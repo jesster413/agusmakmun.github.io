@@ -95,9 +95,3 @@ Again, these sentences were created from the corpus of 'hot' words I created fro
 
 
 If you'd like to see all of the code associated with this project, head on over to the corresponding [GitHub Repo.](https://github.com/jesster413/Reddit-NLP)
-
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>

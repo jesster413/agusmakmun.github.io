@@ -81,11 +81,6 @@ Having tuned my models, I submitted my predictions to Kaggle.  While my best sco
 
 If you're interested in seeing the code associated with this project, head on over to the related [GitHub repo](https://github.com/thedatasleuth/West-Nile-Virus).
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 [^1]: [http://www.northwestmvcd.org/Northwestmvcd/West_Nile.html](http://www.northwestmvcd.org/Northwestmvcd/West_Nile.html)
 [^2]: [http://chicago.cbslocal.com/2018/05/30/west-nile-virus-reported/](http://chicago.cbslocal.com/2018/05/30/west-nile-virus-reported/)

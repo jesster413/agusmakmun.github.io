@@ -29,9 +29,3 @@ And that's the path that led me to writing for-loops over a dictionary of full o
 This blog, The Data Sleuth, was inspired by my experiences in both investigative work as well as data science.  It is a collection of my work that I began in my course and that I have continued to refine in the following weeks and months post-graduation.  Feel free to read through the blog posts which are usually shorter topical pieces or have a looked at my portfolio in the 'Projects' section, where I go more in depth into the methodology I followed for that particular project.  Should you have any questions related to the topics I write about, any code associated with my projects, or just want to chat about my experience in the coding bootcamp, do not hesitate to reach out via email by clicking on the envelope icon on the left.  I look forward to hearing from you!
 
 Welcome to The Data Sleuth.
-
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>

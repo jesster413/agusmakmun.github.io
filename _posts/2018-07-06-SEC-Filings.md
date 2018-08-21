@@ -93,11 +93,6 @@ While this was a toy project based on a handful of inputs related to corporate d
 
 To see all of the code associated with this project, head on over to the related [GitHub repo](https://github.com/jesster413/SEC-Filings).
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 
 [^1]: [https://www.investopedia.com/terms/s/sec-form-1-a.asp](https://www.investopedia.com/terms/s/sec-form-1-a.asp)

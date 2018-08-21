@@ -94,10 +94,5 @@ As machine learning continues to be integrated into our daily lives, we should b
 
 To see all of the code associated with this post, check out the associated [GitHub repo](https://github.com/thedatasleuth/Digit-Recognizer-Keras).
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 [^1]:[https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)

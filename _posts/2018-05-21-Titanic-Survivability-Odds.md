@@ -101,9 +101,3 @@ In contrast, a three year old female in first class had a 75% chance of survival
 ![titanic-lime-survived.png](/static/img/titanic-lime-survived.png)
 
 To see all of the code associated with this project, check out the corresponding [GitHub repo](https://github.com/thedatasleuth/Titanic-Survival-Predictions).
-
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>

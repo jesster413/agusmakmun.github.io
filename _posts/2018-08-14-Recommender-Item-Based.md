@@ -164,11 +164,6 @@ The advantage to a collaborative filtering approach, however, is that it does no
 
 For a complete look at the underlying code for this post, head on over to the corresponding [GitHub repo](https://github.com/thedatasleuth/Recommender-System-Item-Based).
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 
 [^1]:[https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/metrics/pairwise.py](https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/metrics/pairwise.py)

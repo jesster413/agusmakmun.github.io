@@ -62,10 +62,5 @@ To view the underlying code for this post, check out the corresponding [GitHub r
 
 ![peach.gif](/static/img/peach.gif)
 
-<small>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a>
-    {% endfor %}
-</small>
 ---
 [^1]: [https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)
