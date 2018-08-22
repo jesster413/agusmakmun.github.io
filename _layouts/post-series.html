@@ -1,0 +1,22 @@
+---
+layout: post-thinner
+---
+
+{% comment %} We need an array to hold sub posts of the series. Below line is kind of hack to make one {% endcomment %}
+{% assign seriesarray = '|' | split : '|' %}
+
+{% for post in site.posts  %}
+
+	{% comment %} Is this(loop) a sub-post and does it match the series index slug? {% endcomment %}
+	{% if post.series and page.series_slug != nil and post.series == page.series_slug %}
+
+        {% capture postitem %}    <li> <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> </li> {% endcapture %}
+        {% assign seriesarray = seriesarray | push: postitem %}
+
+    {% endif %}
+{% endfor %}
+
+{% comment %} At this point, seriesarray will hold all the sub-posts for this series. Just iterate threw them to like below. {% endcomment %}
+{% if seriesarray.size > 0 %} <ul> {% endif %}
+{% for post in seriesarray %} {{ post }} {% endfor %}
+{% if seriesarray.size > 0 %} <ul> {% endif %}
