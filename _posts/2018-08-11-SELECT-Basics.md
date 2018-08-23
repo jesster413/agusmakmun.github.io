@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SELECT FROM world Tutorial (SQL Zoo Series)
+cover_image: sqlzoo.png
 categories: SQL
 description: A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.
 highlight_code: true
@@ -12,8 +13,6 @@ published: True
 ---
 
 *A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.*
-
-![sqlzoo.png](/static/img/sqlzoo.png)
 
 <!--more-->
 

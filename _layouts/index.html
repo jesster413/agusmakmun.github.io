@@ -226,13 +226,6 @@ layout: compress
       </div>
       <div class="col-sm-7 col-offset-1 main-layout">
         {{ content }}
-        {% for post in paginator.posts %}
-    <li>
-        <a href="{{ post.url }}">{{ post.title}}</a><br />
-        <span>{{ post.date | date_to_string }} &bull; ...  </span>
-        <img src="/static/img/{{ post.cover_image }}" alt="{{ post.cover_alt }}" />
-    </li>
-{% endfor %}
         <footer>
           &copy; {{ site.author }}
           {% if site.github %}

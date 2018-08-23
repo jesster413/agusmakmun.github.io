@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fast, Good, Cheap (Intro to XGBoost)
+cover_image: fast-good-cheap.png
 categories: Predictive-Modeling
 description: Sometimes you can't get everything you want.  Here's an afternoon hackathon project that challenged me to make the most of what I had.
 tags:
@@ -12,8 +13,6 @@ published: True
 ---
 
 *Sometimes you can't get everything you want.  Here's an afternoon hackathon project that challenged me to make the most of what I had.*
-
-![fast-good-cheap.png](/static/img/fast-good-cheap.png)
 
 <!--more-->
 

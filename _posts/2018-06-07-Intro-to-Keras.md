@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Writing's on the Wall, Part 1 (Intro to Keras)
+cover_image: Penelope.jpg
 categories: Neural-Network
 description: Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used to predict handwritten numbers.
 tags:
@@ -11,8 +12,6 @@ excerpt_separator: <!--more-->
 published: True
 ---
 *Visions of the future are never completely true, but with the right key, some can be more truthful than others.  Here's an introduction to the neural network library, Keras, which I used to predict handwritten numbers.*
-
-![Penelope.jpg](/static/img/Penelope.jpg)
 
 <!--more-->
 

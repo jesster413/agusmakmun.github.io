@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What's for Dinner Tonight? Part 1 (Item-Based Collaborative Filtering Recommender System)
+cover_image: rec-image.png
 categories: Recommender-Systems
 description: A walk-through of an item-based collaborative filtering recommender system using the MovieLens database
 tags:
@@ -10,7 +11,6 @@ excerpt_separator: <!--more-->
 published: True
 ---
 *A walk-through of an item-based collaborative filtering recommender system using the MovieLens database.*
-![rec-image.png](/static/img/rec-image.png)
 
 <!--more-->
 

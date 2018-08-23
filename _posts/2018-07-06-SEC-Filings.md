@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SEC Filings
+cover_image: filings.jpg
 categories: Predictive-Modeling Web-scraping
 description: Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?
 tags:
@@ -14,8 +15,6 @@ excerpt_separator: <!--more-->
 published: True
 ---
 *Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?*
-
-![filings.jpg](/static/img/filings.jpg)
 
 <!--more-->
 

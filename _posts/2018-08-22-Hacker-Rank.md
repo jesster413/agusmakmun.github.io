@@ -1,16 +1,15 @@
 ---
 layout: post
 title: Hacker Rank Challenges
-cover_image: /static/img/hackerrank.png
+cover_image: hackerrank.png
 description: My answers to Challenges in Hacker Rank
 categories: SQL
-
 highlight_code: true
 series_slug: "Hacker Rank"
 tags:
 - SQL
 excerpt_separator: <!--more-->
-published: True
+published: False
 ---
 
 *My answers to Challenges in Hacker Rank.*

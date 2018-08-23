@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reddit Hot Posts
+cover_image: reddit.png
 categories: Web-scraping Natural-Language-Processing
 description: With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) lines of code, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.
 tags:
@@ -13,8 +14,6 @@ published: True
 ---
 
 *With an endless supply of things to read on the internet, it seems impossible to write a post that anyone else but your mom will read.  But with a few (hundred) lines of code, even a platform as wild as Reddit can be neatly distilled into a handful of targeted insights.*
-
-![reddit.png](/static/img/reddit.png)
 
 <!--more-->
 
