@@ -8,12 +8,10 @@ series_slug: "SQL Zoology"
 tags:
 - SQL
 excerpt_separator: <!--more-->
-published: True
+published: False
 ---
 
 *A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.*
-
-![sqlzoo.png](/static/img/sqlzoo.png)
 
 <!--more-->
 
