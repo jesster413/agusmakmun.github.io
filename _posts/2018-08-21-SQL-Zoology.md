@@ -1,15 +1,14 @@
 ---
 layout: post
-title: SELECT FROM world Tutorial (SQL Zoo Series)
-cover_image: sqlzoo.png
+title: SQL Zoology
 categories: SQL
 description: A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.
 highlight_code: true
-series: "SQL Zoology"
+series_slug: "SQL Zoology"
 tags:
 - SQL
 excerpt_separator: <!--more-->
-published: True
+published: False
 ---
 
 *A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.*

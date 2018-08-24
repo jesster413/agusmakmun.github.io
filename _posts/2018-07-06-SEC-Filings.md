@@ -1,14 +1,20 @@
 ---
 layout: post
 title: SEC Filings
-categories: Classification Web-scraping Natural-Language-Processing
+cover_image: filings.jpg
+categories: Predictive-Modeling Web-scraping
 description: Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?
+tags:
+- Balanced Classes
+- Web Scraping
+- XGBoost
+- Random Forest
+- Python
+- Beautiful Soup
 excerpt_separator: <!--more-->
 published: True
 ---
 *Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?*
-
-![filings.jpg](/static/img/filings.jpg)
 
 <!--more-->
 

@@ -1,15 +1,18 @@
 ---
 layout: post
 title: Review of General Assembly's Data Science Immersive Course
+cover_image: dsi.jpg
 categories: General-Assembly
 description: An honest, post-graduation review of General Assembly's 12-week Data Science Immersive course.
 series:
-tags: Data-Science General-Assembly Bootcamp
+tags:
+- General Assembly
+- Bootcamp
 excerpt_separator: <!--more-->
 published: True
 ---
 *An honest, post-graduation review of the course's layout, syllabus, and instructors.*
-![dsi.jpg](/static/img/dsi.jpg)
+
 <!--more-->
 
 General Assembly bills itself as a leader in Education.  Founded in 2011, GA claims to have "transformed tens of thousands of careers through pioneering, experiential education in today’s most in-demand skills"[^1] such as data science, web development, and user-experience design.  GA offers a wide range of classes and workshops, from 2-hour info sessions to 3-month, full time immersion courses.
@@ -99,7 +102,6 @@ If I can answer any more questions specifically about my own experience as a now
 Here's a picture of my cohort on our (very long) last day of class after 20 capstone presentations!
 
 ![dsi-pic.jpg](/static/img/dsi-pic.jpg)
-
 
 ---
 [^1]: [https://generalassemb.ly/why-ga-is-worth-it](https://generalassemb.ly/why-ga-is-worth-it)

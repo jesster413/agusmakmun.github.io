@@ -6,8 +6,7 @@ description: A complete list of my answers to SQL Zoo's SELECT within SELECT Tut
 excerpt_separator: <!--more-->
 series: "SQL Zoology"
 tags:
-  - SQL
-  - SQL Zoo
+- SQL
 published: True
 ---
 *A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.*
@@ -16,6 +15,7 @@ published: True
 
 Here's the second part of a series of SQL Zoo tutorials which focuses on [nested SELECT](https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial) statements for comparative querying.
 <br>
+
 ### Bigger than Russia
 List each country name where the population is larger than that of 'Russia'.
 

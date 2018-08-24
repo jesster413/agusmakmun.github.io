@@ -69,6 +69,7 @@ gems:
   - jekyll-paginate
   - jekyll-gist
   - jemoji
+  - jekyll-seo-tag
   # - jekyll-time-to-read
 # plugins:
 #   - jekyll-time-to-read
