@@ -6,8 +6,9 @@ layout: index
   <h1>{{ site.title }}</h1>
   <hr />
 
-  <ol class="posts">
+<ol class="posts">
     {% for post in paginator.posts %}
+    <img class="post__image" src="/static/img/{{ post.cover_image}}" alt="{{ post.cover_alt }}" />
       <li><font size = "5"><a href="{{ post.url }}">{{ post.title }}</a></font> <br><font size="4"<i><span>{{ post.date | date_to_string }} &bull; </span></i></font></li>
       <font size="4"<i><span>{% assign words = post.content | number_of_words %}
       {% if words < 360 %}
@@ -16,9 +17,7 @@ layout: index
         {{ words | divided_by:180 }} min read
       {% endif %}</span></i></font></li>
       {{ post.excerpt }}
-      <img class="image" src="/static/img/{{ post.cover_image}}" alt="{{ post.cover_alt }}" />
   </li>
-      <br>
       <hr />
     {% endfor %}
   </ol>
