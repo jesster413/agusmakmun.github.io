@@ -8,7 +8,7 @@ layout: index
 
 <ol class="posts">
     {% for post in paginator.posts %}
-    <li class="post">
+    <li class="post-listing">
       <img class="post__image" src="/static/img/{{ post.cover_image}}" alt="{{ post.cover_alt }}" />
       <div class="post__text">
         <a class="post__title" href="{{ post.url }}">{{ post.title }}</a><br>
