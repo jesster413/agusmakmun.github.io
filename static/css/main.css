@@ -13,11 +13,24 @@ ol {
   padding-left: 0;
 }
 
+.post {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  align-items: center;
+  border-bottom: 1px solid #F7F1F1;
+  margin: 20px 0px;
+}
+
+.post__title {
+  font-size: 20px;
+}
+
 .post__image {
   /* Set the image sizing. Using "max-" allows
   it to be responsive a bit.  You can just use
   'width: 200px' if you want.
-
   Ideally, your images would be exactly 200px
   by 200px or something, as sending giant pictures
   and then resizing them with css isn't nearly
