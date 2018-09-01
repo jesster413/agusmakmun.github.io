@@ -2,6 +2,7 @@
 layout: post
 title: SEC Filings
 cover_image: filings.jpg
+cover_alt: web scraping machine learning predictive modeling data science project
 categories: Predictive-Modeling Web-scraping
 description: Complex financial schemes usually involve a lot of documents, but what if machine learning could help financial regulators identify which corporations to investigate?
 tags:

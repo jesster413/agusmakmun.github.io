@@ -2,6 +2,7 @@
 layout: post
 title: Review of General Assembly's Data Science Immersive Course
 cover_image: dsi.jpg
+cover_alt: General Assembly's Data Science Immersive course
 categories: General-Assembly
 description: An honest, post-graduation review of General Assembly's 12-week Data Science Immersive course.
 series:

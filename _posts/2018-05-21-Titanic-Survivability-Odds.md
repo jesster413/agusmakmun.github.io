@@ -2,6 +2,7 @@
 layout: post
 title: Titanic Survivability Odds
 cover_image: titanic.jpg
+cover_alt: Kaggle Machine Learning competition Titanic dataset
 categories: Predictive-Modeling
 description: While the infamous shipwreck happened over 100 years ago, its cultural significance is sunk deep into our collective memory as one of the most tragic manifestations of hubris, classism, and dumb luck.  To that end, I analyzed the data provided on Kaggle's website to determine more specifically how features such as age, gender, class, and wealth predetermined a passenger's fate on April 15, 1911 aboard the RMS Titanic.
 tags:
