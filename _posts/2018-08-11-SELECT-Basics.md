@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SELECT FROM world Tutorial (SQL Zoo Series)
+title: SELECT FROM world Tutorial
 cover_image: sqlzoo.png
 cover_alt: SQL Zoo SELECT FROM world Tutorial
 categories: SQL
