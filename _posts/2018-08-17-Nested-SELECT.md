@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SELECT within SELECT Tutorial (SQL Zoo Series)
+title: SELECT within SELECT Tutorial
 categories: SQL
 description: A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.
 excerpt_separator: <!--more-->
@@ -9,12 +9,12 @@ tags:
 - SQL
 published: True
 ---
-*A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.*
+<!-- *A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.* -->
 
 <!--more-->
 
-Here's the second part of a series of SQL Zoo tutorials which focuses on [nested SELECT](https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial) statements for comparative querying.
-<br>
+<!-- Here's the second part of a series of SQL Zoo tutorials which focuses on [nested SELECT](https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial) statements for comparative querying.
+<br> -->
 
 ### Bigger than Russia
 List each country name where the population is larger than that of 'Russia'.
