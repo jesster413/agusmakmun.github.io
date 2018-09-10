@@ -5,7 +5,6 @@ cover_image: sqlzoo.png
 cover_alt: SQL Zoo Tutorials
 categories: SQL
 description: A complete list of my answers to the SQL Zoo Tutorials.
-series: "SQL Zoology"
 tags:
 - SQL
 excerpt_separator: <!--more-->
