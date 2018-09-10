@@ -11,8 +11,8 @@ tags:
 excerpt_separator: <!--more-->
 published: True
 ---
-
-*A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.*
+<!--
+*A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.* -->
 
 <!--more-->
 
