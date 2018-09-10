@@ -5,8 +5,12 @@ cover_image: sqlzoo.png
 cover_alt: SQL Zoo Tutorials
 categories: SQL
 description: A complete list of my answers to the SQL Zoo Tutorials.
+<<<<<<< HEAD
 series_slug: "SQL Zoology"
 series: "SQL Zoology"
+=======
+highlight_code: true
+>>>>>>> b6719de54f2de818d3bebc1b87d29c4cc689d0d4
 tags:
 - SQL
 excerpt_separator: <!--more-->
