@@ -4,10 +4,8 @@ title: SELECT FROM world Tutorial (SQL Zoo Series)
 cover_image: sqlzoo.png
 cover_alt: SQL Zoo SELECT FROM world Tutorial
 categories: SQL
-description: A complete list of my answers to SQL Zoo's SELECT FROM world Tutorial.  Part of a series of SQL Zoo tutorials.
+description: A complete list of my answers to SQL Zoo Tutorials.
 highlight_code: true
-series: "SQL Zoology"
-series_slug: "SQL Zoology"
 tags:
 - SQL
 excerpt_separator: <!--more-->
