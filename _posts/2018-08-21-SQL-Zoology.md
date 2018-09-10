@@ -23,3 +23,5 @@ Below is a list of posts that contain prompts and answers to each of the chapter
 [SELECT FROM world Tutorial](https://thedatasleuth.github.io/sql/2018/08/11/SELECT-Basics.html)
 
 [SELECT within SELECT Tutorial](https://thedatasleuth.github.io/sql/2018/08/17/Nested-SELECT.html)
+
+[SUM and COUNT Tutorial](https://thedatasleuth.github.io/sql/2018/08/10/SUM-COUNT.html)
