@@ -5,7 +5,8 @@ author: Jess Chace
 categories: SQL
 description: A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.
 excerpt_separator: <!--more-->
-series: "SQL Zoology"
+series: "SQL Zoo"
+skip_pagination: True
 tags:
 - SQL
 published: True

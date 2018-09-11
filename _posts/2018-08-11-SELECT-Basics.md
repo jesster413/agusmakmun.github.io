@@ -6,7 +6,8 @@ cover_image: sqlzoo.png
 cover_alt: SQL Zoo SELECT FROM world Tutorial
 categories: SQL
 description: A complete list of my answers to SQL Zoo Tutorials.
-series: "SQL Zoology"
+series: "SQL Zoo"
+skip_pagination: True
 tags:
 - SQL
 excerpt_separator: <!--more-->
