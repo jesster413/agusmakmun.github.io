@@ -16,6 +16,7 @@ layout: index
       <div class="post__text">
         <a class="post__title" href="{{ post.url }}">{{ post.title }}</a><br>
         <span>
+          By {{ post.author }}<br>
           {{ post.date | date_to_string }} &bull;
           {% assign words = post.content | number_of_words %}
           {% if words < 360 %}
@@ -23,8 +24,8 @@ layout: index
           {% else %}
             {{ words | divided_by:180 }} min read
           {% endif %}
-        </span><br>
-        By {{ post.author }}
+        </span>
+
         {{ post.excerpt }}
       </div>
     </li>
