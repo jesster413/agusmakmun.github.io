@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Hacker Rank Challenges
+author: Jess Chace
 cover_image: hackerrank.png
-cover_alt: Hacker Rank tutorials for Python and SQL 
+cover_alt: Hacker Rank tutorials for Python and SQL
 description: My answers to Challenges in Hacker Rank
 categories: SQL
 highlight_code: true

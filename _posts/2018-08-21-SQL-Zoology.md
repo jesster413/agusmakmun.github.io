@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQL Zoology
+author: Jess Chace
 cover_image: sqlzoo.png
 cover_alt: SQL Zoo Tutorials
 categories: SQL

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SELECT FROM world Tutorial
+author: Jess Chace
 cover_image: sqlzoo.png
 cover_alt: SQL Zoo SELECT FROM world Tutorial
 categories: SQL

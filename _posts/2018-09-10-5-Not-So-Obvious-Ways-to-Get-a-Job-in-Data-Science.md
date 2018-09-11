@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 5 Not So Obvious Ways to Get a Job in Data Science
+author: Jess Chace
 cover_image: hired.jpg
 cover_alt: data science job search
 cover_description: The search for a job can be exhausting, frustrating, and perplexing, even in a field as hot as data science is right now.  To get some actual traction with employers, don't do what everyone else does.  Here are five ways to look for a data-oriented job that can actually connect you to a hiring manager.

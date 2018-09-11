@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Writing's on the Wall, Part 1 (Intro to Keras)
+author: Jess Chace
 cover_image: Penelope.jpg
 cover_alt: Machine learning with Keras
 categories: Neural-Network

@@ -23,7 +23,8 @@ layout: index
           {% else %}
             {{ words | divided_by:180 }} min read
           {% endif %}
-        </span>
+        </span><br>
+        By {{ post.author }}
         {{ post.excerpt }}
       </div>
     </li>

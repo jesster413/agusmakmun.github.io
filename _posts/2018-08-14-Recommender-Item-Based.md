@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What's for Dinner Tonight? Part 1 (Item-Based Collaborative Filtering Recommender System)
+author: Jess Chace
 cover_image: rec-image.png
 cover_alt: machine learning recommender system item-based collaborative filtering
 categories: Recommender-Systems

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ames, Iowa Housing Prices
+author: Jess Chace
 cover_image: houses.jpg
 cover_alt: Kaggle Linear Regression Ames Iowa Housing Prices
 categories: Predictive-Modeling

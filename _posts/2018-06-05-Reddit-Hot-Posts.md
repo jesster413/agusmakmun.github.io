@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reddit Hot Posts
+author: Jess Chace
 cover_image: reddit.png
 cover_alt: Web scraping and natural langauge processing Reddit data science project
 categories: Web-scraping Natural-Language-Processing

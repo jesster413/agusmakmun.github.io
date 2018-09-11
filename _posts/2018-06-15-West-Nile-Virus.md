@@ -1,6 +1,7 @@
 ---
 layout: post
 title: West Nile Virus
+author: Jess Chace
 cover_image: wnv-resized.jpg
 cover_alt: Kaggle machine learning competition West Nile Virus
 categories: Predictive-Modeling

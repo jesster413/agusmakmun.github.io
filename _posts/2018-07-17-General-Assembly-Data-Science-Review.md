@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Review of General Assembly's Data Science Immersive Course
+author: Jess Chace
 cover_image: dsi.jpg
 cover_alt: General Assembly's Data Science Immersive course
 categories: General-Assembly

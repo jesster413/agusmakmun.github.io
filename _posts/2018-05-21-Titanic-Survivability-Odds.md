@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Titanic Survivability Odds
+author: Jess Chace
 cover_image: titanic.jpg
 cover_alt: Kaggle Machine Learning competition Titanic dataset
 categories: Predictive-Modeling

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SEC Filings
+author: Jess Chace
 cover_image: filings.jpg
 cover_alt: web scraping machine learning predictive modeling data science project
 categories: Predictive-Modeling Web-scraping

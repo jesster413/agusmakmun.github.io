@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why Data Science?
+author: Jess Chace
 cover_image: datascience.jpg
 cover_alt: Data Science
 categories: General-Assembly
