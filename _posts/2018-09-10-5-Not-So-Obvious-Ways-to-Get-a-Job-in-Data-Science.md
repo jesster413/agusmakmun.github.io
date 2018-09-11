@@ -49,7 +49,7 @@ Moreover, having a blog demonstrates a deeper level of interest in data than the
 
 ### Lunch Clubs
 
-When I think of networking, I imagine a room full of people standing around awkwardly working the crowd to figure out who might be able to help them advance their agendas, whether it's to find a job, pitch an investor, or meet a potential co-founder.  But without any structure, it can feel it can feel like a giant waste of time.  When I meet up with someone in a professional setting, I like for both people to know why they are there and what the goal of the meeting is.  
+When I think of networking, I imagine a room full of people standing around awkwardly working the crowd to figure out who might be able to help them advance their agendas, whether it's to find a job, pitch an investor, or meet a potential co-founder.  But without any structure, it can feel like a giant waste of time.  When I meet up with someone in a professional setting, I like for both people to know why they are there and what the goal of the meeting is.  
 
 Lunch clubs like [Lunchclub.ai](https://lunchclub.ai) and [LetsLunch](https://letslunch.com/) cut through the ambiguity by pairing people up with similar networking intentions.  As a member, you state your role during the initial sign-up period, and upon acceptance to the club, you receive invites to meet up with people who can actually help you.  Job seekers can pair up with prospective employers, start-ups can match with investors, and people who just want to connect with other professionals in their field can meet up one-on-one, too.  And even if it's a total bust, at least you got to sit down and eat.  
 
