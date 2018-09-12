@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQL Zoology
+title: SQL Zoo
 author: Jess Chace
 cover_image: sqlzoo.png
 cover_alt: SQL Zoo Tutorials
@@ -20,9 +20,3 @@ published: True
 Lately I've been focusing on my Python projects so I thought I'd switch it up and do some SQL practice using [SQL Zoo's](https://sqlzoo.net/) interactive tutorials.  These tutorials are filled with prompts to query databases using SQL.  What's great about this site is that it shows the results of the query right next to the prompt line, allowing the user to verify that the query pulled the desired results.  SQL Zoo confirms answers with a :)
 
 Below is a list of posts that contain prompts and answers to each of the chapters in SQL Zoo.
-
-[SELECT FROM world Tutorial](https://thedatasleuth.github.io/sql/2018/08/11/SELECT-Basics.html)
-
-[SELECT within SELECT Tutorial](https://thedatasleuth.github.io/sql/2018/08/17/Nested-SELECT.html)
-
-[SUM and COUNT Tutorial](https://thedatasleuth.github.io/sql/2018/08/10/SUM-COUNT.html)
