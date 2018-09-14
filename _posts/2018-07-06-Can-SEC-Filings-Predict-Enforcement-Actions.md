@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SEC Filings
+title: Can SEC Filings Predict Enforcement Actions?
 author: Jess Chace
 cover_image: filings.jpg
 cover_alt: web scraping machine learning predictive modeling data science project

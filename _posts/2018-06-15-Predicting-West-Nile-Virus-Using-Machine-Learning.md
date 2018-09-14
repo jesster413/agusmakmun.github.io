@@ -1,6 +1,6 @@
 ---
 layout: post
-title: West Nile Virus
+title: Predicting West Nile Virus in Chicago Using Advanced Modeling Techniques
 author: Jess Chace
 cover_image: wnv-resized.jpg
 cover_alt: Kaggle machine learning competition West Nile Virus

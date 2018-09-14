@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why Data Science?
+title: Why I Decided to Learn Data Science
 author: Jess Chace
 cover_image: datascience.jpg
 cover_alt: Data Science

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fast, Good, Cheap (Intro to XGBoost)
+title: Salary Predictions Using Only 3 Features and XGBoost
 author: Jess Chace
 cover_image: fast-good-cheap.png
 cover_alt: Predictive Modeling Hackathon

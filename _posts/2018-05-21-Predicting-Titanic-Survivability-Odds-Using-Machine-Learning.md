@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Titanic Survivability Odds
+title: Would I Have Survived the Titanic?
 author: Jess Chace
 cover_image: titanic.jpg
 cover_alt: Kaggle Machine Learning competition Titanic dataset

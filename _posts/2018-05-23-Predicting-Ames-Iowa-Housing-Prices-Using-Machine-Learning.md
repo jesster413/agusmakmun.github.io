@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ames, Iowa Housing Prices
+title: How to Predict Housing Prices with Linear Regression
 author: Jess Chace
 cover_image: houses.jpg
 cover_alt: Kaggle Linear Regression Ames Iowa Housing Prices

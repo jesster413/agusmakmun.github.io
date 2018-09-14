@@ -2,7 +2,7 @@
 layout: post
 title: SELECT within SELECT Tutorial
 author: Jess Chace
-categories: SQL
+categories: 
 description: A complete list of my answers to SQL Zoo's SELECT within SELECT Tutorial.  Part of a series of SQL Zoo tutorials.
 excerpt_separator: <!--more-->
 series: "SQL Zoo"
