@@ -54,9 +54,12 @@ questions i've been asked on data science interviews
   9. what about our business model interests you?
   10. tell me about a time you've dealt with a difficult person and how you overcame that.
 
-  5 Not So Obvious Ways to Get a Job in Data
-  1. Slack Channels
-  2. Start a Blog
-  3. Lunch Clubs
-  4. Cold email companies you admire
-  5. Hackathons
+How to Elevate your Data Science Brand
+1. kaggle
+2. StackOverflow
+3. Hacker ranked
+4. Code Wars
+5. Data camp
+6. GitHub
+
+review of R Programming Workshop
