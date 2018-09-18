@@ -47,4 +47,4 @@ For Democrat-represented districts, the REF party also increased its voter share
 
 Below is an interactive chart made with Dash.  Feel free to set the focus of the chart by drilling down onto a District using the drop down menu at the top left as well as clicking any combination of the political party boxes on the right.  What trends do you see across districts and parties?  
 
-<iframe src="https://ny-congressional-districts.herokuapp.com/" width="860px" height="520px"></iframe>
+<iframe src="https://ny-congressional-districts.herokuapp.com/" width="520px" height="520px"></iframe>
