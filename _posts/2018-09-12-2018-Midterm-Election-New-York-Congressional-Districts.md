@@ -45,6 +45,6 @@ For the REF party, there was some increase in Republican-represented districts l
 
 For Democrat-represented districts, the REF party also increased its voter share most significantly in District 18 in Orange, Putnam, Southern Dutchess, and Northeastern Westchester counties in 2016, and in District 3, Northern Long Island and District 4, Central and Southern Nassau county, and to a lesser extent District 5, Queens, and District 10, an amalgamation of the Upper West Side, the Financial District, Greenwich Village, and Borough Park in Brooklyn, District 16, Northern Bronx and Southern Westchester and District 20 Albany and Schenectady in 2017.
 
-Below is an interactive chart made with Dash.  Feel free to set the focus of the chart by drilling down onto a District using the drop down menu at the top left as well as clicking any combination of the political party boxes on the right.  What trends do you see across districts and parties?  
+Below is an interactive chart made with Dash.  Feel free to set the focus of the chart by drilling down onto a District using the drop down menu at the top left and clicking any combination of the political party boxes on the right.  What trends do you see across districts and parties?  
 
-<iframe src="https://ny-congressional-districts.herokuapp.com/" width="600px" height="520px"></iframe>
+<iframe src="https://ny-congressional-districts.herokuapp.com/" width="620px" height="520px"></iframe>
