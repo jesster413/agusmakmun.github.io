@@ -4,16 +4,16 @@ title: Voter Registration by New York Congressional Districts for 2018 Midterm E
 author: Jess Chace
 cover_image: newyork.png
 cover_alt: 2018 Midterm Elections for New York Congressional Districts
-cover_description: 2018 Midterm Elections for New York Congressional Districts
+cover_description: Analysis of Voter Registration for the 27 New York Congressional Districts in anticipation of the 2018 Midterm Elections.  
 categories: Python
-description: 2018 Midterm Elections for New York Congressional Districts
+description: Analysis of Voter Registration for the 27 New York Congressional Districts in anticipation of the 2018 Midterm Elections with an interactive Dash chart.
 tags:
 - Python
 excerpt_separator: <!--more-->
 published: True
 ---
 
-*2018 Midterm Elections for New York Congressional Districts*
+*Analysis of Voter Registration for the 27 New York Congressional Districts in anticipation of the 2018 Midterm Elections with an interactive Dash chart.*
 
 <!--more-->
 
@@ -45,7 +45,9 @@ For the REF party, there was some increase in Republican-represented districts l
 
 For Democrat-represented districts, the REF party also increased its voter share most significantly in District 18 in Orange, Putnam, Southern Dutchess, and Northeastern Westchester counties in 2016, and in District 3, Northern Long Island and District 4, Central and Southern Nassau county, and to a lesser extent District 5, Queens, and District 10, an amalgamation of the Upper West Side, the Financial District, Greenwich Village, and Borough Park in Brooklyn, District 16, Northern Bronx and Southern Westchester and District 20 Albany and Schenectady in 2017.
 
+Below is an interactive chart made with Dash.  Feel free to set the focus of the chart by drilling down onto a District using the drop down menu at the top left as well as clicking any combination of the political party boxes on the right.  What trends do you see across districts and parties?  
+
 <div>
-    <a href="https://plot.ly/~jesster413/884/?share_key=02H0eb50iPmCoV7whJ3azh" target="_blank" title="Plot 884" style="display: block; text-align: center;"><img src="https://plot.ly/~jesster413/884.png?share_key=02H0eb50iPmCoV7whJ3azh" alt="Plot 884" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="jesster413:884" sharekey-plotly="02H0eb50iPmCoV7whJ3azh" src="https://plot.ly/embed.js" async></script>
+    <a href="https://plot.ly/~jesster413/886/?share_key=mNxqQx7kqvZ599OUWKWApJ" target="_blank" title="Plot 886" style="display: block; text-align: center;"><img src="https://plot.ly/~jesster413/886.png?share_key=mNxqQx7kqvZ599OUWKWApJ" alt="Plot 886" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="jesster413:886" sharekey-plotly="mNxqQx7kqvZ599OUWKWApJ" src="https://plot.ly/embed.js" async></script>
 </div>
