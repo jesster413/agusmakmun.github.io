@@ -23,7 +23,7 @@ Under their [Elections](https://public.enigma.com/browse/tag/elections/34) colle
 
 ### Voter Registration across Political Parties from 2014-2018
 
-In an election as divisive as the one in 2016, it makes sense that voters had a strong reaction leading up to and after the election, regardless of political affiliation.  Reflected in the interactive chart below created with Dash are voter registration numbers for all 27 districts of New York which can be filtered by year using the drop down menu.  Click on any combination of the political parties to compare how the number of voters change from year to year.
+The interactive chart below created with Dash displays voter registration numbers for all 27 districts of New York which can be filtered by year using the drop down menu.  Click on any combination of the boxes in the legend to compare voters across political parties.  Here's a few questions to get you started on your analysis:  Did the Democrats lose any districts to the Republicans?  If so, where and when?  What's the greatest party affiliation after the Democrats and Republicans?  Does that political affiliation represent opportunity or apathy?  Where does the Independent Party have the most registered voters?  What other trends can you see?
 
 <iframe src="https://ny-districts-by-year.herokuapp.com/" width="620px" height="520px"></iframe>
 
