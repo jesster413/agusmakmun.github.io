@@ -26,7 +26,9 @@ Have a click through the charts below and feel free to share your own findings i
 ### Voter Registration across Political Parties from 2014-2018
 
 The chart below displays voter registration numbers for all 27 districts of New York which can be filtered by year using the drop-down menu.  Click on any combination of the boxes in the legend to compare voters across political parties.  Here are a few questions to get you started on your analysis:  Did the Democrats lose any districts to the Republicans?  If so, where and when?  What's the greatest party affiliation after the Democrats and Republicans?  Does that political affiliation represent opportunity or apathy?  Where does the Independent Party have the most registered voters?  What other trends can you see?
+
 <br>
+
 <iframe src="https://ny-districts-by-year.herokuapp.com/" width="620px" height="520px"></iframe>
 
 ### Percentage Change of Voter Registration
@@ -38,7 +40,9 @@ Founded in 2014, the Women's Equality Party (WEP) was created by Andrew Cuomo, t
 The Reform Party (REF), another fringe political party founded in 2014, is a ballot-access qualified party created by [Curtis Sliwa](https://www.nyreformparty.com/endorsements).  Silwa initially founded another group called the Guardian Angels in 1979 and is a regular contributor to several talk radio and television shows, including Fox 5.  
 
 Click through the chart below to see how each district has responded to the introduction of these new parties.  Do you see any patterns emerging across districts that are represented by a Democrat as opposed to a Republican?
+
 <br>
+
 <iframe src="https://ny-congressional-districts.herokuapp.com/" width="620px" height="520px"></iframe>
 
 <!-- District 1, located in Eastern Long Island, District 2, located on Southern Long Island, and Districts 23 and 27, both located in Western New York, all of which are represented by a Republican congressman, show a significant percentage change in voter registration for the WEP party in 2016.  Similarly, for Democrat-represented districts like District 3 located in Northern Long Island, District 7, located in Queens, District 18, located in Orange, Putnam, Southern Dutchess, and Northeastern Westchester, District 20, located in Albany and Schenectady, all saw a huge spike in WEP registration in 2016.    
@@ -52,7 +56,9 @@ For Democrat-represented districts, the REF party also increased its voter share
 Counting the number of registered voters, however, does not equate to how many people will actually vote.  In the 2016 Presidential election, for example, [58%](https://www.pbs.org/newshour/politics/voter-turnout-2016-elections) of [eligible voters](https://en.wikipedia.org/wiki/Voter_turnout) cast a ballot.  So how can you tell if someone will vote or not?  One way to identify potential voter turnout is to take a look at the active and [inactive voter registration](http://vote.nyc.ny.us/html/voters/faq.shtml)[^1].  Voters who are active are more likely to show up to the polls than are inactive voters.  
 
 Click through the chart below to see the breakdown of active and inactive voters across all districts for each party in 2018.  Is there a party that is consistently active across all districts?  Which party is the most inactive?  Who's more active between the Democrats and Republicans?  Thinking back to the fringe parties percentage change chart, what do you think it means that a newly founded fringe party has inactive voters?
+
 <br>
+
 <iframe src="https://active-inactive-ny-voters2.herokuapp.com/" width="620px" height="520px"></iframe>
 
 ### Final Thoughts
