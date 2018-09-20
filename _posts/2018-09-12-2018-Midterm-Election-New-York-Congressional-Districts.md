@@ -61,7 +61,7 @@ The 2018 midterm elections are significant for a number of different reasons.  R
 
 Many of the 2018 Midterm elections will be held on **Tuesday, November 6, 2018**.  All 435 seats in the United States House of Representatives and 35 of the 100 seats in the United States Senate will be contested.[^2]  Vote early and vote often.    
 
-
+---
 
 [^1]: A voter in inactive status who does not vote in two consecutive Federal Elections is, in the fifth year, removed from the list of the register. The voter must re-register in order to vote.
 [^2]: [https://en.wikipedia.org/wiki/United_States_elections,_2018](https://en.wikipedia.org/wiki/United_States_elections,_2018)
