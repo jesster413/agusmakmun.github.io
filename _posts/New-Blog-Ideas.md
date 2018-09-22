@@ -11,6 +11,8 @@ try for one new post a week:
 4. Cool thing I found
 5. review of some data thing
 
+how i built my first dash app
+
 
 Data imputation
 
