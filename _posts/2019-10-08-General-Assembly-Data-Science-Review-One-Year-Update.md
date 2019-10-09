@@ -30,8 +30,8 @@ what are my headers
   - what my expectations were
   - what reality was
   - was my criticisms are
-  - my new job and what the bootcamp meant for that 
-
+  - my new job and what the bootcamp meant for that
+  - more stuff 
 
 this post is supposed to be a review of GA - so i should offer criticism about what worked for me and what fell short of my expectations
 

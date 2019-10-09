@@ -10,7 +10,7 @@ tags:
 - Python
 - Plotly-Dash
 excerpt_separator: <!--more-->
-published: True
+published: False
 ---
 
 *How I created my first Plotly-Dash app.*
