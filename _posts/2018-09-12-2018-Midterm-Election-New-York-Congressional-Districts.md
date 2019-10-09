@@ -9,6 +9,7 @@ categories: Python
 description: Analysis of Voter Registration for the 27 New York Congressional Districts in anticipation of the 2018 Midterm Elections
 tags:
 - Python
+- Plotly-Dash
 excerpt_separator: <!--more-->
 published: True
 ---
